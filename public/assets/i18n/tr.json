@@ -1,0 +1,71 @@
+{
+  "NAVIGATION": {
+    "BRAND": "<span class='color'>AKADEMİK</span>DESTEK",
+    "HOME": "ANA SAYFA",
+    "BLOG": "BLOG",
+    "REGISTER": "KAYDOL",
+    "LOGIN": "GİRİŞ YAP"
+  },
+  "INTRO": {
+    "WELCOME": "<span class='color'>AKADEMİK</span>DESTEK'E HOŞGELDİNİZ",
+    "INTRO": "Akademik kariyerinizi, akademik destek ile <strong>daha da güçlendiriyoruz</strong>",
+    "START_USING": "Kullanmaya Başla"
+  },
+  "ABOUT": {
+    "SOME_WORDS_ABOUT_US" : "<strong>hakkımızda</strong> bir kaç kelime",
+    "ABOUT_US_FIRST" : "Uzman ve akademisyen kadrolarımız ile, yayınlarınız için editöryel düzenlemeler, İngilizce - Türkçe çeviriler, istatistik ve temel algoritma yazılımları ile ilgili teknik destek ve isteğinize uygun hızlı web sitesi dizaynları konularında işlerinizi kolaylaştırıyoruz.",
+    "ABOUT_US_SECOND" : "İhtiyacınız olan desteğe ilişkin bağlantıyı takip ederek isteklerinizi belirtebilirsiniz. Başvurunuza en kısa sürede cevap verilecektir.",
+    "MISSION": "Hedefimiz",
+    "MISSION_DESCRIPTION": "Benzersiz ve kaliteli hizmet",
+    "SKILLS": "Yeteneğimiz",
+    "SKILLS_DESCRIPTION": "Hızlı ve mükemmel sonuçlar"
+  },
+  "TEAM": {
+    "MEET_OUR_TEAM": "<strong>EKİBİMİZLE</strong> TANIŞIN",
+    "TEAM_FIRST": {
+      "NAME": "Hazar Altınbaş",
+      "POSITION": "Kurucu / Akademisyen",
+      "DESCRIPTION": "2010 senesinden beri akademisyenlik yapıyorum."
+    }
+  },
+  "HOME": {
+    "TITLE": "<span class='color'>AKADEMİK</span>DESTEK",
+    "HOME": "ANA SAYFA",
+    "CONTACT": "İLETİŞİM",
+    "WELCOME": "<span class='color'>AKADEMİK</span>DESTEK'E HOŞGELDİNİZ",
+    "INTRO": "Akademik kariyerinizi, akademik destek ile <strong>daha da güçlendiriyoruz</strong>",
+    "LANGUAGE": "ENGLISH",
+    "ABOUT": "HAKKINDA",
+    "ABOUT_US": "Hakkımızda",
+    "SOME_WORDS_ABOUT_US" : "<strong>hakkımızda</strong> bir kaç kelime",
+    "ABOUT_US_FIRST" : "Uzman ve akademisyen kadrolarımız ile, yayınlarınız için editöryel düzenlemeler, İngilizce - Türkçe çeviriler, istatistik ve temel algoritma yazılımları ile ilgili teknik destek ve isteğinize uygun hızlı web sitesi dizaynları konularında işlerinizi kolaylaştırıyoruz.",
+    "ABOUT_US_SECOND" : "İhtiyacınız olan desteğe ilişkin bağlantıyı takip ederek isteklerinizi belirtebilirsiniz. Başvurunuza en kısa sürede cevap verilecektir.",
+    "MISSION": "Hedefimiz",
+    "MISSION_DESCRIPTION": "Benzersiz ve kaliteli hizmet",
+    "SKILLS": "Yeteneğimiz",
+    "SKILLS_DESCRIPTION": "Hızlı ve mükemmel sonuçlar",
+    "OUR_SERVICES":"<strong>hizmetlerimize</strong> göz atın",
+    "WORD_PROCESS_SUPPORT": "Kelime işlemci Desteklerimiz",
+    "MS_WORD": "M.S. WORD",
+    "MS_WORD_DESCRIPTION": "Word programında yazdığınız makale, tez, kitap vb. çalışmalarınızın, klavuzlara uygun olarak yeniden düzenlenmesi, içindekiler- şekiller- tablolar vs. dizinlerinin oluşturulması, referansların ve kaynakçanın oluşturulması, sayfa numaralandırma ve biçimlendirmeleri, vs.",
+    "LATEX": "LATEX",
+    "LATEX_DESCRIPTION": "Word ya da benzeri programlarda yazdığınız/yazacağınız metinlerinizi, istenen Latex dizaynına uygun olarak düzenliyoruz.",
+    "STATISTICS": "İSTATİKSEL",
+    "STATISTICS_DESCRIPTION": "Özellikle sosyal bilimler alanında, SPSS ve R yazılımlarında yapacağınız çalışmalar için her türlü desteği veriyoruz: analizlerinizin yapılması ve sonuçların raporlanması, genel kod yazımları ile çalışmalarınızdaki değişikliklere anında uyarlanabilen algoritmalar, çzöüm bulamadığınız noktalarda işinizi kolaylaştıracak hızlı çözümler.",
+    "ALGORITHM": "ALGORİTMA OLUŞTURMA",
+    "ALGORITHM_DESCRIPTION": "C, C++, R, MATLAB programlarında algoritmalar oluşturma, mevcut algoritmalarınızda yaşadığınız aksaklıklara çözümler ve optimizasyon problemlerinize yönelik metasezgisel algoritma dizayn ve destekleri.",
+    "EXCEL_TEMPLATE": "EXCEL ŞABLON VE MAKRO OLUŞTURMA",
+    "EXCEL_TEMPLATE_DESCRIPTION": "Excel’de özet tablolar ve formüller ile verilerinize kolay ulaşım, VBA makro ile verilerinizin isteğe uygun şekilde ayıklanması, düzenlenmesi, rapor edilmesi, dosyalara yazdırılması vs.",
+    "FILTER": "TİPE GÖRE FİLTRELE",
+    "FEEL_FREE_TO_CONTACT": "<strong>BİZE ULAŞMAK</strong> İÇİN KENDİNİZİ RAHAT HİSSEDİN",
+    "CONTACT_DESCRIPTION": "Bizimle istediğiniz zaman iletişime geçebilirsiniz. En kısa sürede sorularınıza ve taleplerinize yanıt veriyor olucaz.",
+    "EMAIL": "E-Posta Adresi",
+    "ENTER_EMAIL": "E-Posta girin",
+    "ENTER_SUBJECT": "Konu girin",
+    "ENTER_MESSAGE": "Mesaj girin",
+    "SUBJECT": "Konu",
+    "MESSAGE": "Mesaj",
+    "SEND": "Gönder",
+    "ALL_RIGHTS_RESERVED": "TÜM HAKLARI SAKLIDIR. © 2017."
+  }
+}

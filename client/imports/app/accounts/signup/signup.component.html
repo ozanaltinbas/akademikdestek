@@ -1,0 +1,61 @@
+<div class="container" style="padding-top: 70px;">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="at-form">
+                <div class="at-title">
+                    <h3>Create an Account</h3>
+                </div>
+                <div class="at-oauth">
+                    <button class="btn at-social-btn" id="at-facebook" name="facebook">
+                        <i class="fa fa-facebook"></i> Register with Facebook
+                    </button>
+                    <button class="btn at-social-btn" id="at-twitter" name="twitter">
+                        <i class="fa fa-twitter"></i> Register with Twitter
+                    </button>
+                    <button class="btn at-social-btn" id="at-google" name="google">
+                        <i class="fa fa-google"></i> Register with Google
+                    </button>
+                </div>
+                <div class="at-sep">
+                    <strong>OR</strong>
+                </div>
+                <div class="at-pwd-form">
+                    <form role="form" id="at-pwd-form" novalidate="" action="http://useraccounts-bootstrap.meteorapp.com/sign-up#" method="POST">
+                        <fieldset>
+                            <div class="at-input form-group has-feedback">
+                                <label class="control-label" for="at-field-email">
+                                    Email
+                                </label>
+                                <input type="email" class="form-control" id="at-field-email" name="at-field-email" placeholder="Email" autocapitalize="none" autocorrect="off">
+                                <span class="help-block hide"></span>
+                            </div>
+                            <div class="at-input form-group has-feedback">
+                                <label class="control-label" for="at-field-password">
+                                    Password
+                                </label>
+                                <input type="password" class="form-control" id="at-field-password" name="at-field-password" placeholder="Password" autocapitalize="none" autocorrect="off">
+                                <span class="help-block hide"></span>
+                            </div>
+                            <div class="at-input form-group has-feedback">
+                                <label class="control-label" for="at-field-password_again">
+                                    Password (again)
+                                </label>
+                                <input type="password" class="form-control" id="at-field-password_again" name="at-field-password_again" placeholder="Password (again)" autocapitalize="none" autocorrect="off">
+                                <span class="help-block hide"></span>
+                            </div>
+                            <button type="submit" class="at-btn submit btn btn-lg btn-block btn-default" id="at-btn">
+                                Register
+                            </button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="at-signin-link">
+                    <p>
+                        If you already have an account
+                        <a routerLink="/login" id="at-signIn" class="at-link at-signin">sign in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

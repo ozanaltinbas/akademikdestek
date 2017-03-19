@@ -1,0 +1,42 @@
+<div id="tf-testimonials" class="text-center">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="section-title center wow rubberBand">
+                        <h2 [innerHtml]="'HOME.FEEL_FREE_TO_CONTACT' | translate "></h2>
+                        <div class="line">
+                            <hr>
+                        </div>
+                        <div class="clearfix"></div>
+                        <em>{{ 'HOME.CONTACT_DESCRIPTION' | translate }}</em>
+                    </div>
+                    <form (ngSubmit)="sendEmail($event);" [formGroup]="mailForm">
+                        <div class="row">
+                            <div class="col-md-6 wow rubberBand">
+                                <div class="form-group">
+                                    <label for="email_input">{{ 'HOME.EMAIL' | translate }}</label>
+                                    <input type="email" class="form-control" id="email_input" placeholder="{{ 'HOME.ENTER_EMAIL' | translate }}"
+                                           formControlName="email">
+                                </div>
+                            </div>
+                            <div class="col-md-6 wow rubberBand">
+                                <div class="form-group">
+                                    <label for="subject_input">{{ 'HOME.SUBJECT' | translate }}</label>
+                                    <input type="text" class="form-control" id="subject_input" placeholder="{{ 'HOME.ENTER_SUBJECT' | translate }}"
+                                           formControlName="subject">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group wow rubberBand">
+                            <label for="message_input">{{ 'HOME.MESSAGE' | translate }}</label>
+                            <textarea class="form-control" rows="4" id="message_input"
+                                      formControlName="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn tf-btn btn-default wow rubberBand">{{ 'HOME.SEND' | translate }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
