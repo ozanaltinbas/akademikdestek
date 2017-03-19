@@ -3,56 +3,56 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="at-form">
                 <div class="at-title">
-                    <h3>Create an Account</h3>
+                    <h3>{{ 'ACCOUNTS.SIGNUP.create_account' | translate }}</h3>
                 </div>
                 <div class="at-oauth">
                     <button class="btn at-social-btn" id="at-facebook" name="facebook">
-                        <i class="fa fa-facebook"></i> Register with Facebook
+                        <i class="fa fa-facebook"></i> {{ 'ACCOUNTS.SIGNUP.register_with_facebook' | translate }}
                     </button>
                     <button class="btn at-social-btn" id="at-twitter" name="twitter">
-                        <i class="fa fa-twitter"></i> Register with Twitter
+                        <i class="fa fa-twitter"></i> {{ 'ACCOUNTS.SIGNUP.register_with_twitter' | translate }}
                     </button>
                     <button class="btn at-social-btn" id="at-google" name="google">
-                        <i class="fa fa-google"></i> Register with Google
+                        <i class="fa fa-google"></i> {{ 'ACCOUNTS.SIGNUP.register_with_google' | translate }}
                     </button>
                 </div>
                 <div class="at-sep">
-                    <strong>OR</strong>
+                    <strong>{{ 'ACCOUNTS.SIGNUP.OR' | translate }}</strong>
                 </div>
                 <div class="at-pwd-form">
                     <form role="form" id="at-pwd-form" novalidate="" action="http://useraccounts-bootstrap.meteorapp.com/sign-up#" method="POST">
                         <fieldset>
                             <div class="at-input form-group has-feedback">
                                 <label class="control-label" for="at-field-email">
-                                    Email
+                                    {{ 'ACCOUNTS.SIGNUP.email' | translate }}
                                 </label>
-                                <input type="email" class="form-control" id="at-field-email" name="at-field-email" placeholder="Email" autocapitalize="none" autocorrect="off">
+                                <input type="email" class="form-control" id="at-field-email" name="at-field-email" placeholder="{{ 'ACCOUNTS.SIGNUP.email' | translate }}" autocapitalize="none" autocorrect="off">
                                 <span class="help-block hide"></span>
                             </div>
                             <div class="at-input form-group has-feedback">
                                 <label class="control-label" for="at-field-password">
-                                    Password
+                                    {{ 'ACCOUNTS.SIGNUP.password' | translate }}
                                 </label>
-                                <input type="password" class="form-control" id="at-field-password" name="at-field-password" placeholder="Password" autocapitalize="none" autocorrect="off">
+                                <input type="password" class="form-control" id="at-field-password" name="at-field-password" placeholder="{{ 'ACCOUNTS.SIGNUP.password' | translate }}" autocapitalize="none" autocorrect="off">
                                 <span class="help-block hide"></span>
                             </div>
                             <div class="at-input form-group has-feedback">
                                 <label class="control-label" for="at-field-password_again">
-                                    Password (again)
+                                    {{ 'ACCOUNTS.SIGNUP.password_again' | translate }}
                                 </label>
-                                <input type="password" class="form-control" id="at-field-password_again" name="at-field-password_again" placeholder="Password (again)" autocapitalize="none" autocorrect="off">
+                                <input type="password" class="form-control" id="at-field-password_again" name="at-field-password_again" placeholder="{{ 'ACCOUNTS.SIGNUP.password_again' | translate }}" autocapitalize="none" autocorrect="off">
                                 <span class="help-block hide"></span>
                             </div>
                             <button type="submit" class="at-btn submit btn btn-lg btn-block btn-default" id="at-btn">
-                                Register
+                                {{ 'ACCOUNTS.SIGNUP.register' | translate }}
                             </button>
                         </fieldset>
                     </form>
                 </div>
                 <div class="at-signin-link">
                     <p>
-                        If you already have an account
-                        <a routerLink="/login" id="at-signIn" class="at-link at-signin">sign in</a>
+                        {{ 'ACCOUNTS.SIGNUP.already_have_an_account' | translate }}
+                        <a routerLink="/login" id="at-signIn" class="at-link at-signin">{{ 'ACCOUNTS.SIGNUP.login' | translate }}</a>
                     </p>
                 </div>
             </div>

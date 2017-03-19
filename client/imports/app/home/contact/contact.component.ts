@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, onDestroy } from '@angular/core';
 import { MeteorObservable } from 'meteor-rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MessageNotSendComponent } from './message/message-not-send.component';
+import { MessageSendComponent } from './message/message-send.component';
 
 import template from './contact.component.html';
 import style from './contact.component.scss';
@@ -10,13 +12,11 @@ import style from './contact.component.scss';
     template,
     styles: [ style ]
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
 
-    mailForm: FormGroup;
-    selectedOption: string;
+    mailForm:FormGroup;
 
-    constructor(private formBuilder: FormBuilder) {
-
+    constructor(private formBuilder:FormBuilder) {
     }
 
     ngOnInit() {
@@ -45,6 +45,10 @@ export class ContactComponent implements OnInit {
                 console.log(error);
             });
         }
+    }
+
+    ngOnDestroy(): void {
+        
     }
 
 }

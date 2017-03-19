@@ -67,5 +67,39 @@
     "MESSAGE": "Mesaj",
     "SEND": "Gönder",
     "ALL_RIGHTS_RESERVED": "TÜM HAKLARI SAKLIDIR. © 2017."
+  },
+  "ACCOUNTS" : {
+    "SIGNUP" : {
+      "create_account" : "Yeni Hesap Oluştur",
+      "register_with_facebook" : "Facebook ile Kaydol",
+      "register_with_twitter" : "Twitter ile Kaydol",
+      "register_with_google" : "Google ile Kaydol",
+      "OR" : "ya da",
+      "email" : "E-Posta",
+      "password" : "Şifre",
+      "password_again" : "Şifre (Tekrar)",
+      "register" : "Kaydol",
+      "already_have_an_account" : "Zaten bir hesabın mı var ?",
+      "login" : "Giriş yap."
+    },
+    "LOGIN" : {
+      "login" : "Giriş Yap",
+      "login_with_facebook" : "Facebook ile Giriş Yap",
+      "login_with_twitter" : "Twitter ile Giriş Yap",
+      "login_with_google" : "Google ile Giriş Yap",
+      "OR" : "ya da",
+      "email" : "E-Posta",
+      "password" : "Şifre",
+      "forgot_your_password" : "Şifreni mi unuttun ?",
+      "no_account_yet" : "Henüz bir hesabın mı yok ?",
+      "register" : "Kaydol."
+    },
+    "RECOVER" : {
+      "reset_password" : "Şifreni Yenile",
+      "email" : "E-Posta",
+      "email_reset_link" : "Şifre Yenileme Linkini Gönder",
+      "no_account_yet" : "Henüz bir hesabın mı yok ?",
+      "register" : "Kaydol."
+    }
   }
 }
