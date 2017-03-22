@@ -4,7 +4,9 @@
     "HOME": "ANA SAYFA",
     "BLOG": "BLOG",
     "REGISTER": "KAYDOL",
-    "LOGIN": "GİRİŞ YAP"
+    "LOGIN": "GİRİŞ YAP",
+    "LOGOUT": "ÇIKIŞ YAP",
+    "PROFILE" : "PROFİLİM"
   },
   "INTRO": {
     "WELCOME": "<span class='color'>AKADEMİK</span>DESTEK'E HOŞGELDİNİZ",
@@ -23,9 +25,19 @@
   "TEAM": {
     "MEET_OUR_TEAM": "<strong>EKİBİMİZLE</strong> TANIŞIN",
     "TEAM_FIRST": {
-      "NAME": "Hazar Altınbaş",
+      "NAME": "TAYFUN BİŞKİN",
       "POSITION": "Kurucu / Akademisyen",
-      "DESCRIPTION": "2010 senesinden beri akademisyenlik yapıyorum."
+      "DESCRIPTION": "Elektrik-elektronik mühendisliği lisans, yüksek lisans eğitiminin ardından doktora eğitimine devam etmektedir. Çeşitli üniversitelerde akademik deneyime sahiptir. CERN’de araştırmacı olarak bulunmuştur."
+    },
+    "TEAM_SECOND": {
+      "NAME": "HAZAR ALTINBAŞ",
+      "POSITION": "Kurucu / Akademisyen",
+      "DESCRIPTION": "Endüstri mühendisliği lisans, finansman yüksek lisans eğitiminin ardından, endüstri mühendisliği yüksek lisans, işletme doktora eğitimine devam etmektedir. 6 yıllık akademik deneyime sahiptir. Yurt dışından akademisyenlerle çalışmalarda bulunmaktadır."
+    },
+    "TEAM_THIRD": {
+      "NAME": "BURAK ÖÇLÜ",
+      "POSITION": "Kurucu / Akademisyen",
+      "DESCRIPTION": "İşletme bilim dalında lisans eğitimini ve tedarik zinciri yönetimi alanında yüksek lisans eğitimini tamamlamıştır. 1 yıl süresince Almanya’da işletme alanında çalışmalarda bulunmuştur. E-ticaret sitesi oluşturma, sipariş yönetimi ve dijital pazarlama alanında internet sitesi girişimlerinde yer almıştır."
     }
   },
   "HOME": {
@@ -100,6 +112,16 @@
       "email_reset_link" : "Şifre Yenileme Linkini Gönder",
       "no_account_yet" : "Henüz bir hesabın mı yok ?",
       "register" : "Kaydol."
+    },
+    "ERROR" : {
+      "all_fields_required" : "Tüm alanları girmeniz gerekmektedir",
+      "email_not_valid" : "Geçerli bir E-Posta adresi girmeniz gerekmektedir",
+      "password_length" : "Girdiğiniz şifre en az 6 karakter uzunluğunda olmalıdır",
+      "password_again_length" : "Girdiğiniz tekrar şifresi en az 6 karakter uzunluğunda olmalıdır",
+      "passwords_not_equal" : "Girdiğiniz şifrelerin aynı olması gerekmektedir",
+      "Email already exists." : "Girdiğiniz E-Posta adresi daha önceden alınmış",
+      "User not found" : "Böyle bir kullanıcı bulunamadı",
+      "Incorrect password" : "Yanlış şifre girdiniz"
     }
   }
 }

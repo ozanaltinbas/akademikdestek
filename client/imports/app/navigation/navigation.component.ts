@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
-import * as $ from 'jquery';
+import { AccountsService } from '../../services/accounts.service';
+import { InjectUser } from "angular2-meteor-accounts-ui";
 
 import template from './navigation.component.html';
 import style from './navigation.component.scss';
@@ -10,10 +11,11 @@ import style from './navigation.component.scss';
     template,
     styles: [ style ]
 })
+@InjectUser('user')
 export class NavigationComponent {
 
-    constructor(private translate: TranslateService) {
-
+    constructor(private translate: TranslateService,
+                private accountsService: AccountsService) {
     }
 
     ngAfterViewInit(): void {
@@ -42,6 +44,11 @@ export class NavigationComponent {
             // let's convert it to turkish.
             this.translate.use('tr');
         }
+    }
+
+    logout() {
+        // logout the user
+        this.accountsService.logout();
     }
 
 }

@@ -3,6 +3,8 @@ import 'animate.css/animate.min.css';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
+import '../both/methods';
+
 import { AppModule } from './imports/app/app.module';
 
 const platform = platformBrowserDynamic();

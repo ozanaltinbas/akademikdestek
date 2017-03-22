@@ -4,42 +4,44 @@ import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from "@angular/material";
+import { AccountsModule } from 'angular2-meteor-accounts-ui';
 
-import { Routes } from './app.routes';
+import { Routes, ROUTES_PROVIDERS } from './app.routes';
 import { AppComponent } from './app.component';
 import { NAVIGATION_DECLARATIONS } from './navigation/index';
 import { HOME_DECLARATIONS } from './home/index';
 import { BLOG_DECLARATIONS } from './blog/index';
-import { LOADER_DECLARATIONS } from './loader/index';
+import { PROFILE_DECLARATIONS } from './profile/index';
 import { FOOTER_DECLARATIONS } from './footer-bar/index';
 import { ACCOUNTS_DECLARATIONS } from './accounts/index';
+import { SERVICES_DECLARATIONS } from '../services/index';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
+    RouterModule.forRoot(Routes),
+    AccountsModule,
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
       useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
       deps: [Http]
-    }),
-    FormsModule,
-    ReactiveFormsModule,
-    MaterialModule.forRoot(),
-    RouterModule.forRoot(Routes)
+    })
   ],
   declarations: [
     AppComponent,
     ...NAVIGATION_DECLARATIONS,
+    ...FOOTER_DECLARATIONS,
+    ...ACCOUNTS_DECLARATIONS,
     ...HOME_DECLARATIONS,
     ...BLOG_DECLARATIONS,
-    ...LOADER_DECLARATIONS,
-    ...FOOTER_DECLARATIONS,
-    ...ACCOUNTS_DECLARATIONS
+    ...PROFILE_DECLARATIONS
   ],
   providers: [
-
+    ...ROUTES_PROVIDERS,
+    ...SERVICES_DECLARATIONS
   ],
   bootstrap: [
     AppComponent

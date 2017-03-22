@@ -5,14 +5,25 @@
                 <div class="at-title">
                     <h3>{{ 'ACCOUNTS.RECOVER.reset_password' | translate }}</h3>
                 </div>
+                <div class="at-error alert alert-danger" *ngIf="error">
+                    <p>{{ error | translate }}</p>
+                </div>
                 <div class="at-pwd-form">
-                    <form role="form" id="at-pwd-form" novalidate="" action="http://useraccounts-bootstrap.meteorapp.com/forgot-password#" method="POST">
+                    <form id="at-pwd-form" [formGroup]="recoverForm" (ngSubmit)="recover()"
+                          novalidate>
                         <fieldset>
                             <div class="at-input form-group has-feedback">
                                 <label class="control-label" for="at-field-email">
                                     {{ 'ACCOUNTS.RECOVER.email' | translate }}
                                 </label>
-                                <input type="email" class="form-control" id="at-field-email" name="at-field-email" placeholder="{{ 'ACCOUNTS.RECOVER.email' | translate }}" autocapitalize="none" autocorrect="off">
+                                <input type="email"
+                                       class="form-control"
+                                       id="at-field-email"
+                                       name="at-field-email"
+                                       placeholder="{{ 'ACCOUNTS.RECOVER.email' | translate }}"
+                                       autocapitalize="none"
+                                       autocorrect="off"
+                                       formControlName="email">
                                 <span class="help-block hide"></span>
                             </div>
                             <button type="submit" class="at-btn submit btn btn-lg btn-block btn-default" id="at-btn">

@@ -11,10 +11,11 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a routerLink="/" class="page-scroll">{{ 'NAVIGATION.HOME' | translate }}</a></li>
                 <li><a routerLink="/blog" class="page-scroll">{{ 'NAVIGATION.BLOG' | translate }}</a></li>
-                <li><a routerLink="/signup" class="page-scroll">{{ 'NAVIGATION.REGISTER' | translate }}</a></li>
-                <li><a routerLink="/login" class="page-scroll">{{ 'NAVIGATION.LOGIN' | translate }}</a></li>
+                <li *ngIf="!user"><a routerLink="/signup" class="page-scroll">{{ 'NAVIGATION.REGISTER' | translate }}</a></li>
+                <li *ngIf="!user"><a routerLink="/login" class="page-scroll">{{ 'NAVIGATION.LOGIN' | translate }}</a></li>
+                <li *ngIf="user"><a routerLink="/profile" class="page-scroll">{{ 'NAVIGATION.PROFILE' | translate }}</a></li>
+                <li *ngIf="user"><a href="javascript:void(0);" (click)="logout();" class="page-scroll">{{ 'NAVIGATION.LOGOUT' | translate }}</a></li>
                 <li><a href="javascript:void(0)" class="page-scroll"
                        (click)="changeLanguage($event)">{{ 'HOME.LANGUAGE' | translate }}</a></li>
             </ul>

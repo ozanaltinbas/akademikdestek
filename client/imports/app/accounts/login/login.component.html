@@ -6,37 +6,48 @@
                     <h3>{{ 'ACCOUNTS.LOGIN.login' | translate }}</h3>
                 </div>
                 <div class="at-oauth">
-                    <button class="btn at-social-btn" id="at-facebook" name="facebook">
+                    <button class="btn at-social-btn hvr-grow" id="at-facebook" name="facebook">
                         <i class="fa fa-facebook"></i> {{ 'ACCOUNTS.LOGIN.login_with_facebook' | translate }}
                     </button>
-                    <button class="btn at-social-btn" id="at-twitter" name="twitter">
+                    <button class="btn at-social-btn hvr-grow" id="at-twitter" name="twitter">
                         <i class="fa fa-twitter"></i> {{ 'ACCOUNTS.LOGIN.login_with_twitter' | translate }}
                     </button>
-                    <button class="btn at-social-btn" id="at-google" name="google">
+                    <button class="btn at-social-btn hvr-grow" id="at-google" name="google">
                         <i class="fa fa-google"></i> {{ 'ACCOUNTS.LOGIN.login_with_google' | translate }}
                     </button>
                 </div>
                 <div class="at-sep">
                     <strong>{{ 'ACCOUNTS.LOGIN.OR' | translate }}</strong>
                 </div>
-                <div class="at-error alert alert-danger">
-                    <p>Login forbidden</p>
+                <div class="at-error alert alert-danger" *ngIf="error">
+                    <p>{{ error | translate }}</p>
                 </div>
                 <div class="at-pwd-form">
-                    <form role="form" id="at-pwd-form" novalidate="" action="http://useraccounts-bootstrap.meteorapp.com/sign-in#" method="POST">
+                    <form id="at-pwd-form" [formGroup]="loginForm" (ngSubmit)="login()"
+                          novalidate>
                         <fieldset>
                             <div class="at-input form-group has-feedback">
                                 <label class="control-label" for="at-field-email">
                                     {{ 'ACCOUNTS.LOGIN.email' | translate }}
                                 </label>
-                                <input type="email" class="form-control" id="at-field-email" name="at-field-email" placeholder="{{ 'ACCOUNTS.LOGIN.email' | translate }}" autocapitalize="none" autocorrect="off">
+                                <input type="email"
+                                       class="form-control"
+                                       id="at-field-email"
+                                       name="at-field-email"
+                                       placeholder="{{ 'ACCOUNTS.LOGIN.email' | translate }}"
+                                       formControlName="email">
                                 <span class="help-block hide"></span>
                             </div>
                             <div class="at-input form-group has-feedback">
                                 <label class="control-label" for="at-field-password">
                                     {{ 'ACCOUNTS.LOGIN.password' | translate }}
                                 </label>
-                                <input type="password" class="form-control" id="at-field-password" name="at-field-password" placeholder="{{ 'ACCOUNTS.LOGIN.password' | translate }}" autocapitalize="none" autocorrect="off">
+                                <input type="password"
+                                       class="form-control"
+                                       id="at-field-password"
+                                       name="at-field-password"
+                                       placeholder="{{ 'ACCOUNTS.LOGIN.password' | translate }}"
+                                       formControlName="password">
                                 <span class="help-block hide"></span>
                             </div>
                             <div class="at-pwd-link">
