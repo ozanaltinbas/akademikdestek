@@ -13,7 +13,7 @@ Meteor.methods({
 
         if (Meteor.isServer) {
 
-            let error: Error = {
+            let errors: Error = {
                 "error": error,
                 "reason": reason,
                 "details": details,
@@ -21,7 +21,7 @@ Meteor.methods({
                 "createdAt": new Date()
             };
             
-            Errors.insert(error);
+            Errors.insert(errors);
         }
     }
 });
