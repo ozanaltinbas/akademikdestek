@@ -7,22 +7,13 @@
             <div class="col-md-6 wow zoomIn">
                 <div class="about-text">
                     <div class="section-title">
-                        <h2 [innerHtml]="'ABOUT.SOME_WORDS_ABOUT_US' | translate "></h2>
+                        <h2 [innerHtml]="'ABOUT.SOME_WORDS' | translate "></h2>
                         <hr>
                         <div class="clearfix"></div>
                     </div>
-                    <p class="intro">{{ 'ABOUT.ABOUT_US_FIRST' | translate }}</p>
-                    <p class="intro">{{ 'ABOUT.ABOUT_US_SECOND' | translate }}</p>
-                    <ul class="about-list">
-                        <li>
-                            <span class="fa fa-dot-circle-o"></span>
-                            <strong>{{ 'ABOUT.MISSION' | translate }}</strong> - <em>{{ 'ABOUT.MISSION_DESCRIPTION' | translate }}</em>
-                        </li>
-                        <li>
-                            <span class="fa fa-dot-circle-o"></span>
-                            <strong>{{ 'ABOUT.SKILLS' | translate }}</strong> - <em>{{ 'ABOUT.SKILLS_DESCRIPTION' | translate }}</em>
-                        </li>
-                    </ul>
+                    <p [innerHtml]="'ABOUT.DESCRIPTION' | translate "></p>
+                    <p>{{ 'ABOUT.CONTACT' | translate }}</p>
+                    <p>{{ 'ABOUT.REPLY' | translate }}</p>
                 </div>
             </div>
         </div>

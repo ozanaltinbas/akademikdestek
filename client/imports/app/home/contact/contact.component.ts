@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MeteorObservable } from 'meteor-rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MessageNotSendComponent } from './message/message-not-send.component';
-import { MessageSendComponent } from './message/message-send.component';
+import '../../../../../both/methods/contact.methods.ts';
 
 import template from './contact.component.html';
 import style from './contact.component.scss';
@@ -14,12 +13,20 @@ import style from './contact.component.scss';
 })
 export class ContactComponent implements OnInit {
 
-    mailForm:FormGroup;
+    mailForm: FormGroup;
 
     constructor(private formBuilder:FormBuilder) {
     }
 
     ngOnInit() {
+        this.initializeContactForm();
+    }
+
+    ngAfterViewInit(): void {
+
+    }
+
+    initializeContactForm() : void {
         this.mailForm = this.formBuilder.group({
             email: ['', Validators.required],
             subject: ['', Validators.required],
@@ -27,22 +34,18 @@ export class ContactComponent implements OnInit {
         });
     }
 
-    ngAfterViewInit(): void {
-
-    }
-
     sendEmail(event) {
-        // Prevent default event.
+        // prevent default event.
         event.preventDefault();
         // if the mail form is valid,
         if (this.mailForm.valid) {
             // Send the mail.
             MeteorObservable.call('sendMail', this.mailForm.value.email, this.mailForm.value.subject, this.mailForm.value.message).subscribe(() => {
                 // Mail successfully sent.
-                console.log("mail gönderildi.");
+                $('#message-send').modal();
+                this.initializeContactForm();
             }, (error) => {
-                // Unable to send email.
-                console.log(error);
+                $('#message-not-send').modal();
             });
         }
     }

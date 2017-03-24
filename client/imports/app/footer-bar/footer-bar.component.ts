@@ -10,8 +10,10 @@ import style from './footer-bar.component.scss';
 })
 export class FooterBarComponent {
 
-    constructor() {
+    year: string;
 
+    constructor() {
+        this.year = new Date();
     }
 
     ngAfterViewInit(): void {

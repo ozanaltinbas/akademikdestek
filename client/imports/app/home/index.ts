@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { TeamComponent } from './team/team.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
+import { CONTACT_MESSAGES_DECLARATIONS } from './contact/message/index';
 
 export const HOME_DECLARATIONS = [
     HomeComponent,
@@ -11,5 +12,6 @@ export const HOME_DECLARATIONS = [
     AboutComponent,
     TeamComponent,
     ServicesComponent,
-    ContactComponent
+    ContactComponent,
+    ...CONTACT_MESSAGES_DECLARATIONS
 ];

@@ -2,15 +2,21 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Meteor } from 'meteor/meteor';
 import { InjectUser } from "angular2-meteor-accounts-ui";
+import { Router } from '@angular/router';
 
 @Injectable()
 @InjectUser('user')
 export class AccountsService {
 
+    constructor(private router: Router) {
+
+    }
+
     user: Meteor.User;
 
     isLoggedIn(): boolean {
-        return this.user && this.user._id;
+        if (this.user && this.user._id) return true;
+        return false;
     }
 
     validateEmail(email: string) : string {
@@ -86,6 +92,7 @@ export class AccountsService {
 
     logout() : void {
         Meteor.logout();
+        this.router.navigate(['/']);
     }
 
 }

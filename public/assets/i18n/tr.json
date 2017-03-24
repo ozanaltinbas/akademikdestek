@@ -9,36 +9,67 @@
     "PROFILE" : "PROFİLİM"
   },
   "INTRO": {
-    "WELCOME": "<span class='color'>AKADEMİK</span>DESTEK'E HOŞGELDİNİZ",
-    "INTRO": "Akademik kariyerinizi, akademik destek ile <strong>daha da güçlendiriyoruz</strong>",
+    "GREETING": "<span class='color'>AKADEMİK</span>DESTEK'E HOŞGELDİNİZ",
+    "DESCRIPTION": "Akademik kariyerinizi, akademik destek ile <strong>daha da güçlendiriyoruz</strong>",
     "START_USING": "Kullanmaya Başla"
   },
   "ABOUT": {
-    "SOME_WORDS_ABOUT_US" : "<strong>hakkımızda</strong> bir kaç kelime",
-    "ABOUT_US_FIRST" : "Uzman ve akademisyen kadrolarımız ile, yayınlarınız için editöryel düzenlemeler, İngilizce - Türkçe çeviriler, istatistik ve temel algoritma yazılımları ile ilgili teknik destek ve isteğinize uygun hızlı web sitesi dizaynları konularında işlerinizi kolaylaştırıyoruz.",
-    "ABOUT_US_SECOND" : "İhtiyacınız olan desteğe ilişkin bağlantıyı takip ederek isteklerinizi belirtebilirsiniz. Başvurunuza en kısa sürede cevap verilecektir.",
-    "MISSION": "Hedefimiz",
-    "MISSION_DESCRIPTION": "Benzersiz ve kaliteli hizmet",
-    "SKILLS": "Yeteneğimiz",
-    "SKILLS_DESCRIPTION": "Hızlı ve mükemmel sonuçlar"
+    "SOME_WORDS": "<strong>HAKKIMIZDA</strong> BİRKAÇ KELİME",
+    "DESCRIPTION": "Akademik kadromuz sizlere, çeşitli uzmanlık alanlarında ihtiyaç duyduğunuz birçok destek ve hizmeti vermek için burada. Hizmetlerimizle ilgili bilgilere <a href='#services' class='page-scroll'><strong>buradan</strong></a> ulaşabilirsiniz.",
+    "CONTACT": "Sitemizdeki bağlantılardan e-posta ve sosyal medya hesaplarımız aracılığıyla bizlere ulaşabilirsiniz.",
+    "REPLY": "İsteğinize en kısa sürede yanıt verilecektir."
   },
   "TEAM": {
     "MEET_OUR_TEAM": "<strong>EKİBİMİZLE</strong> TANIŞIN",
-    "TEAM_FIRST": {
+    "DETAIL": "Detaylı Bilgi",
+    "TAYFUN": {
       "NAME": "TAYFUN BİŞKİN",
-      "POSITION": "Kurucu / Akademisyen",
+      "POSITION": "Uzman Mühendis / Araştırmacı",
       "DESCRIPTION": "Elektrik-elektronik mühendisliği lisans, yüksek lisans eğitiminin ardından doktora eğitimine devam etmektedir. Çeşitli üniversitelerde akademik deneyime sahiptir. CERN’de araştırmacı olarak bulunmuştur."
     },
-    "TEAM_SECOND": {
+    "HAZAR": {
       "NAME": "HAZAR ALTINBAŞ",
-      "POSITION": "Kurucu / Akademisyen",
+      "POSITION": "Mühendis / Uzman Finansçı / Araştırmacı",
       "DESCRIPTION": "Endüstri mühendisliği lisans, finansman yüksek lisans eğitiminin ardından, endüstri mühendisliği yüksek lisans, işletme doktora eğitimine devam etmektedir. 6 yıllık akademik deneyime sahiptir. Yurt dışından akademisyenlerle çalışmalarda bulunmaktadır."
     },
-    "TEAM_THIRD": {
+    "BURAK": {
       "NAME": "BURAK ÖÇLÜ",
-      "POSITION": "Kurucu / Akademisyen",
+      "POSITION": "Tedarik Zinciri Yönetimi Uzmanı / Araştırmacı",
       "DESCRIPTION": "İşletme bilim dalında lisans eğitimini ve tedarik zinciri yönetimi alanında yüksek lisans eğitimini tamamlamıştır. 1 yıl süresince Almanya’da işletme alanında çalışmalarda bulunmuştur. E-ticaret sitesi oluşturma, sipariş yönetimi ve dijital pazarlama alanında internet sitesi girişimlerinde yer almıştır."
     }
+  },
+  "SERVICES": {
+    "SERVICE_ONE": {
+      "TITLE": "TEZ YAYIN DÜZENLEME",
+      "DESCRIPTION": "Yazdığınız makale, tez, kitap vb. çalışmalarınızın, kılavuzlara uygun olarak yeniden düzenlenmesi, içindekiler - şekiller - tablolar vs. dizinlerinin oluşturulması, referansların ve kaynakçanın oluşturulması, sayfa numaralandırma ve biçimlendirmelerini yapıyoruz. Aynı zamanda yayınlanma süreçlerinizin takibi konusunda da destek alabilirsiniz."
+    },
+    "SERVICE_TWO": {
+      "TITLE": "VERİ DÜZENLEME / ANALİZ",
+      "DESCRIPTION": "Excel’de özet tablolar ve formüller ile verilerinize kolay ulaşım ve SPSS, R, VBA Makro ve MATLAB programlarında istatiksel analizlerin yapılması, raporlanması ve dosyalara yazdırılması için bize başvurabilirsiniz."
+    },
+    "SERVICE_THREE": {
+      "TITLE": "ALGORİTMA OLUŞTURMA, MATEMATİKSEL HESAPLAMA, OPTİMİZASYON",
+      "DESCRIPTION": "Analizlerinizde kullanılmak üzere algoritmalar oluşturma, mevcut algoritmalarınızın iyileştirilmesi, matematiksel ve olasılık optimizasyon, evrimsel ve meta- sezgisel algoritmalar ile karmaşık problemlere uygulanabilir çözümler geliştirmenize yardımcı oluyoruz."
+    },
+    "SERVICE_FOUR": {
+      "TITLE": "E-TİCARET SİTESİ OLUŞTURMA / YÖNETİMİ",
+      "DESCRIPTION": ""
+    },
+    "SERVICE_FIVE": {
+      "TITLE": "İNTERNET ÜZERİNDEN VERİ TOPLAMA / ANKET UYGULAMALARI",
+      "DESCRIPTION": ""
+    },
+    "SERVICE_SIX": {
+      "TITLE": "SİMÜLASYON ÇALIŞMALARI",
+      "DESCRIPTION": "Gerçek dünya problemlerinin simülasyon ortamında yeniden oluşturulması, dizayn ve geliştirme çalışmaları ile optimizasyonun sağlanmasına yönelik program ve algoritmalar ile destek sağlıyoruz."
+    },
+    "SERVICE_SEVEN": {
+      "TITLE": "TüRKÇE - İNGİLİZCE METİN KONTROL",
+      "DESCRIPTION": "Yazmış olduğunuz metinlerin son kontrollerini yaptırmak üzere bize başvurabilirsiniz."
+    }
+  },
+  "FOOTER": {
+    "ALL_RIGHTS_RESERVED": "Tüm Hakları Saklıdır."
   },
   "HOME": {
     "TITLE": "<span class='color'>AKADEMİK</span>DESTEK",
@@ -78,7 +109,7 @@
     "SUBJECT": "Konu",
     "MESSAGE": "Mesaj",
     "SEND": "Gönder",
-    "ALL_RIGHTS_RESERVED": "TÜM HAKLARI SAKLIDIR. © 2017."
+    "ALL_RIGHTS_RESERVED": "TÜM HAKLARI SAKLIDIR."
   },
   "ACCOUNTS" : {
     "SIGNUP" : {

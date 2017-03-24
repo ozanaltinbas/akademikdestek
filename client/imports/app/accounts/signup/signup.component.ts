@@ -63,7 +63,7 @@ export class SignupComponent implements OnInit {
                         this.error = "ACCOUNTS.ERROR." + err.reason;
                     });
                 } else {
-                    this.router.navigate(['/']);
+                    this.router.navigate(['/blog']);
                 }
             });
         } else {
