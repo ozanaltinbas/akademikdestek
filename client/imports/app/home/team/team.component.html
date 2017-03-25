@@ -16,7 +16,7 @@
                             </figure>
                             <h4>{{ 'TEAM.TAYFUN.NAME' | translate }}</h4>
                             <p>{{ 'TEAM.TAYFUN.POSITION' | translate }}</p>
-                            <a href="javascript:void(0);">{{ 'TEAM.DETAIL' | translate }}</a>
+                            <a href="javascript:void(0);" (click)="showTeamFirstDetail()">{{ 'TEAM.DETAIL' | translate }}</a>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -26,7 +26,7 @@
                             </figure>
                             <h4>{{ 'TEAM.HAZAR.NAME' | translate }}</h4>
                             <p>{{ 'TEAM.HAZAR.POSITION' | translate }}</p>
-                            <a href="javascript:void(0);">{{ 'TEAM.DETAIL' | translate }}</a>
+                            <a href="javascript:void(0);" (click)="showTeamSecondDetail()">{{ 'TEAM.DETAIL' | translate }}</a>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -36,7 +36,7 @@
                             </figure>
                             <h4>{{ 'TEAM.BURAK.NAME' | translate }}</h4>
                             <p>{{ 'TEAM.BURAK.POSITION' | translate }}</p>
-                            <a href="javascript:void(0);">{{ 'TEAM.DETAIL' | translate }}</a>
+                            <a href="javascript:void(0);" (click)="showTeamThirdDetail()">{{ 'TEAM.DETAIL' | translate }}</a>
                         </div>
                     </div>
                 </div>
@@ -57,3 +57,6 @@
         </div>
     </div>
 </div>
+<team-first></team-first>
+<team-second></team-second>
+<team-third></team-third>

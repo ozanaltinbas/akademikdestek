@@ -173,3 +173,30 @@ nav#footer p{
 	border-color: #FCAC45;
 	color: #ffffff;
 }
+
+ul, ol, li {
+	list-style: none;
+}
+
+ul.about-list{ margin: 30px 0 0 ;}
+
+ul.about-list li{
+	display: block;
+	font-size: 14px;
+	line-height: 30px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+ul.about-list li span{
+	margin-right: 10px;
+}
+
+ul.about-list li .fa {
+	color: #fcac45;
+}
+
+.about-list {
+	font-size: 16px;
+	line-height: 30px;
+	font-family: 'Open Sans', sans-serif;
+}

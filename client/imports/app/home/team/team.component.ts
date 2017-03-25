@@ -22,4 +22,16 @@ export class TeamComponent {
         new WOW().init();
     }
 
+    showTeamFirstDetail(): void {
+        $('#team-first-modal').modal()
+    }
+
+    showTeamSecondDetail(): void {
+        $('#team-second-modal').modal()
+    }
+
+    showTeamThirdDetail(): void {
+        $('#team-third-modal').modal()
+    }
+
 }

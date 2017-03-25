@@ -177,6 +177,7 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/http/1.2.11/web.browser/test_responder.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/mongo-id/1.0.6/web.browser/id.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/uncaught.hook.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/force-ssl/1.0.13/web.browser/force_ssl_common.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/uncaught.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/ordered-dict/1.0.9/web.browser/ordered_dict.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/timeout.js" />
@@ -552,6 +553,7 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/http/1.2.11/web.browser/test_responder.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/mongo-id/1.0.6/web.browser/id.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/uncaught.hook.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/force-ssl/1.0.13/web.browser/force_ssl_common.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/uncaught.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/ordered-dict/1.0.9/web.browser/ordered_dict.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/timeout.js" />

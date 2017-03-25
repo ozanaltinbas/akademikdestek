@@ -14,6 +14,7 @@ import style from './contact.component.scss';
 export class ContactComponent implements OnInit {
 
     mailForm: FormGroup;
+    onProgress: boolean = false;
 
     constructor(private formBuilder:FormBuilder) {
     }
@@ -39,12 +40,16 @@ export class ContactComponent implements OnInit {
         event.preventDefault();
         // if the mail form is valid,
         if (this.mailForm.valid) {
-            // Send the mail.
+            // set as on progress
+            this.onProgress = true;
+            // send the mail.
             MeteorObservable.call('sendMail', this.mailForm.value.email, this.mailForm.value.subject, this.mailForm.value.message).subscribe(() => {
-                // Mail successfully sent.
-                $('#message-send').modal();
+                // mail successfully sent.
                 this.initializeContactForm();
+                this.onProgress = false;
+                $('#message-send').modal();
             }, (error) => {
+                this.onProgress = false;
                 $('#message-not-send').modal();
             });
         }
