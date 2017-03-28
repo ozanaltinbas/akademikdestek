@@ -1,7 +1,4 @@
-import { Meteor } from 'meteor/meteor';
-
-Meteor.startup(() => {
-    
+export function startSmtpConfiguration() : void {
     let smtp = {
         port: 587,
         username: 'academikdestek@gmail.com',
@@ -10,4 +7,4 @@ Meteor.startup(() => {
     }
 
     process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
-});
+}

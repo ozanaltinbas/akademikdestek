@@ -1,13 +1,13 @@
 import { MongoObservable } from 'meteor-rxjs';
-import { Comment } from '../models/comment.model';
+import { Post } from '../models/post.model';
 
-export const Comments = new MongoObservable.Collection<Comment>('comments');
+export const Posts = new MongoObservable.Collection<Post>('posts');
 
 function allow() {
     return false;
 }
 
-Comments.allow({
+Posts.allow({
     insert: allow,
     update: allow,
     remove: allow

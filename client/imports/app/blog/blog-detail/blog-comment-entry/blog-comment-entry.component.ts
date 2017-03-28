@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MeteorObservable } from 'meteor-rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { InjectUser } from "angular2-meteor-accounts-ui";
-import '../../../../../both/methods/blog.methods.ts';
+import '../../../../../../both/methods/blog-comments.methods.ts';
 
-import template from './blog-entry.component.html';
-import style from './blog-entry.component.scss';
+import template from './blog-comment-entry.component.html';
+import style from './blog-comment-entry.component.scss';
 
 @Component({
-    selector: 'blog-entry',
+    selector: 'blog-comment-entry',
     template,
     styles: [ style ]
 })
 @InjectUser('user')
-export class BlogEntryComponent implements OnInit {
+export class BlogCommentEntryComponent implements OnInit {
 
-    blogForm: FormGroup;
+    @Input() blogId: string;
+    blogCommentForm: FormGroup;
     user: Meteor.User;
     onProgress: boolean = false;
 
@@ -24,38 +25,36 @@ export class BlogEntryComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.initializeBlogEntryForm();
+        this.initializeBlogCommentEntryForm();
     }
 
     ngAfterViewInit(): void {
 
     }
 
-    initializeBlogEntryForm() : void {
+    initializeBlogCommentEntryForm() : void {
         // initialize blog form
-        this.blogForm = this.formBuilder.group({
-            title: ['', Validators.required],
-            subtitle: ['', Validators.required],
+        this.blogCommentForm = this.formBuilder.group({
             content: ['', Validators.required]
         });
     }
 
-    insertBlog(event) {
+    insertBlogComment(event) {
         // prevent default event.
         event.preventDefault();
         // if the mail form is valid,
-        if (this.blogForm.valid) {
+        if (this.blogCommentForm.valid) {
             // set as on progress
             this.onProgress = true;
             // send the mail.
-            MeteorObservable.call('insertBlog', this.blogForm.value.title, this.blogForm.value.subtitle, this.blogForm.value.content, this.user._id).subscribe(() => {
+            MeteorObservable.call('insertBlogComment', this.blogId, this.blogCommentForm.value.content, this.user._id).subscribe(() => {
                 // mail successfully sent.
-                this.initializeBlogEntryForm();
+                this.initializeBlogCommentEntryForm();
                 this.onProgress = false;
             }, (error) => {
                 this.onProgress = false;
+                console.log(error);
             });
         }
     }
-
 }

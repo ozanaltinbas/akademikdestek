@@ -11,11 +11,13 @@ import { AppComponent } from './app.component';
 import { LoaderComponent } from './loader/loader.component';
 import { NAVIGATION_DECLARATIONS } from './navigation/index';
 import { HOME_DECLARATIONS } from './home/index';
+import { POSTS_DECLARATIONS } from './posts/index';
 import { BLOG_DECLARATIONS } from './blog/index';
 import { PROFILE_DECLARATIONS } from './profile/index';
 import { FOOTER_DECLARATIONS } from './footer-bar/index';
 import { ACCOUNTS_DECLARATIONS } from './accounts/index';
 import { SERVICES_DECLARATIONS } from '../services/index';
+import { PIPE_DECLARATIONS } from '../pipes/index';
 
 @NgModule({
   imports: [
@@ -38,8 +40,10 @@ import { SERVICES_DECLARATIONS } from '../services/index';
     ...FOOTER_DECLARATIONS,
     ...ACCOUNTS_DECLARATIONS,
     ...HOME_DECLARATIONS,
+    ...POSTS_DECLARATIONS,
     ...BLOG_DECLARATIONS,
-    ...PROFILE_DECLARATIONS
+    ...PROFILE_DECLARATIONS,
+    ...PIPE_DECLARATIONS
   ],
   providers: [
     ...ROUTES_PROVIDERS,

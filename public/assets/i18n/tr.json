@@ -3,6 +3,7 @@
     "BRAND": "<span class='color'>AKADEMİK</span>DESTEK",
     "HOME": "ANA SAYFA",
     "BLOG": "BLOG",
+    "POSTS": "GÖNDERİLER",
     "REGISTER": "KAYDOL",
     "LOGIN": "GİRİŞ YAP",
     "LOGOUT": "ÇIKIŞ YAP",
@@ -156,6 +157,9 @@
       "User not found" : "Böyle bir kullanıcı bulunamadı",
       "Incorrect password" : "Yanlış şifre girdiniz"
     }
+  },
+  "BLOG": {
+    "TITLE": "BLOG"
   },
   "CLOSE": "Kapat"
 }

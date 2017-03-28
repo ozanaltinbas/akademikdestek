@@ -10,7 +10,7 @@ import style from './footer-bar.component.scss';
 })
 export class FooterBarComponent {
 
-    year: string;
+    year: Date;
 
     constructor() {
         this.year = new Date();

@@ -1,6 +1,6 @@
 import { CollectionObject } from './collection-object.model';
 
-export interface Comment extends CollectionObject {
+export interface BlogComment extends CollectionObject {
     blogId: string;
     content: string;
     owner: string;

@@ -6,13 +6,16 @@
                     <h3>{{ 'ACCOUNTS.SIGNUP.create_account' | translate }}</h3>
                 </div>
                 <div class="at-oauth">
-                    <button class="btn at-social-btn hvr-grow" id="at-facebook" name="facebook">
+                    <button class="btn at-social-btn hvr-grow" id="at-facebook" name="facebook"
+                        (click)="loginWithFacebook();">
                         <i class="fa fa-facebook"></i> {{ 'ACCOUNTS.SIGNUP.register_with_facebook' | translate }}
                     </button>
-                    <button class="btn at-social-btn hvr-grow" id="at-twitter" name="twitter">
+                    <button class="btn at-social-btn hvr-grow" id="at-twitter" name="twitter"
+                            (click)="loginWithTwitter();">
                         <i class="fa fa-twitter"></i> {{ 'ACCOUNTS.SIGNUP.register_with_twitter' | translate }}
                     </button>
-                    <button class="btn at-social-btn hvr-grow" id="at-google" name="google">
+                    <button class="btn at-social-btn hvr-grow" id="at-google" name="google"
+                            (click)="loginWithGoogle();">
                         <i class="fa fa-google"></i> {{ 'ACCOUNTS.SIGNUP.register_with_google' | translate }}
                     </button>
                 </div>

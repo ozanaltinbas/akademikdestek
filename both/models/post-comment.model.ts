@@ -1,8 +1,7 @@
 import { CollectionObject } from './collection-object.model';
 
-export interface Blog extends CollectionObject {
-    title: string;
-    subtitle: string;
+export interface PostComment extends CollectionObject {
+    postId: string;
     content: string;
     owner: string;
     public: boolean;
