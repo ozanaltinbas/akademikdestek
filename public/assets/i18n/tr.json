@@ -150,14 +150,15 @@
     },
     "ERROR" : {
       "all_fields_required" : "Tüm alanları girmeniz gerekmektedir",
-      "username_length" : "Geçerli bir kullanıcı adı girmeniz gerekmektedir",
+      "username_length" : "Girdiğiniz kullanıcı adı en az 3 karakter uzunluğunda olmalıdır",
       "email_not_valid" : "Geçerli bir E-Posta adresi girmeniz gerekmektedir",
       "password_length" : "Girdiğiniz şifre en az 6 karakter uzunluğunda olmalıdır",
       "password_again_length" : "Girdiğiniz tekrar şifresi en az 6 karakter uzunluğunda olmalıdır",
       "passwords_not_equal" : "Girdiğiniz şifrelerin aynı olması gerekmektedir",
       "Email already exists." : "Girdiğiniz E-Posta adresi daha önceden alınmış",
       "User not found" : "Böyle bir kullanıcı bulunamadı",
-      "Incorrect password" : "Yanlış şifre girdiniz"
+      "Incorrect password" : "Yanlış şifre girdiniz",
+      "Username already exists." : "Bu kullanıcı adı daha önceden alınmış"
     }
   },
   "BLOG": {

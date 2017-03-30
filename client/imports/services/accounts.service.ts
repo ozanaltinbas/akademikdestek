@@ -20,7 +20,7 @@ export class AccountsService {
     }
 
     validateUsername(username: string) : string {
-        if (username && username.length > 3) {
+        if (username && username.length >= 3) {
             return '';
         }
         return "ACCOUNTS.ERROR.username_length";
@@ -81,7 +81,7 @@ export class AccountsService {
 
     validateLoginForm(loginForm: FormGroup) : string {
         let result = '';
-        result = this.validateEmail(loginForm.value.email);
+        result = !(this.validateEmail(loginForm.value.email) || this.validateUsername(signupForm.value.username));
         if (result && result.length > 0) {
             return result;
         }
