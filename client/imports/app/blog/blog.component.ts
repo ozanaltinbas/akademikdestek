@@ -30,7 +30,7 @@ export class BlogComponent implements OnInit, OnDestroy {
         this.blogsSub = MeteorObservable.subscribe('blogs').subscribe(() => {
             this.blogs = Blogs.find({}, {
                 sort: {
-                    createdAt: -1
+                    createdAt: 1
                 }
             }).zone();
         });

@@ -30,6 +30,20 @@
                         novalidate>
                         <fieldset>
                             <div class="at-input form-group has-feedback">
+                                <label class="control-label" for="at-field-username">
+                                    {{ 'ACCOUNTS.USERNAME' | translate }}
+                                </label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="at-field-username"
+                                       name="at-field-username"
+                                       placeholder="{{ 'ACCOUNTS.USERNAME' | translate }}"
+                                       autocapitalize="none"
+                                       autocorrect="off"
+                                       formControlName="username">
+                                <span class="help-block hide"></span>
+                            </div>
+                            <div class="at-input form-group has-feedback">
                                 <label class="control-label" for="at-field-email">
                                     {{ 'ACCOUNTS.SIGNUP.email' | translate }}
                                 </label>

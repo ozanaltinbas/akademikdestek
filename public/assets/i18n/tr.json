@@ -115,6 +115,7 @@
     "SEND_FAIL": "Mesajınızın gönderimi sırasında hata ile karşılaşıldı. Lütfen daha sonra tekrar deneyin."
   },
   "ACCOUNTS" : {
+    "USERNAME": "Kullanıcı Adı",
     "SIGNUP" : {
       "create_account" : "Yeni Hesap Oluştur",
       "register_with_facebook" : "Facebook ile Kaydol",
@@ -149,6 +150,7 @@
     },
     "ERROR" : {
       "all_fields_required" : "Tüm alanları girmeniz gerekmektedir",
+      "username_length" : "Geçerli bir kullanıcı adı girmeniz gerekmektedir",
       "email_not_valid" : "Geçerli bir E-Posta adresi girmeniz gerekmektedir",
       "password_length" : "Girdiğiniz şifre en az 6 karakter uzunluğunda olmalıdır",
       "password_again_length" : "Girdiğiniz tekrar şifresi en az 6 karakter uzunluğunda olmalıdır",

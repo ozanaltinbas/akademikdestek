@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { Blogs } from '../../../both/collections/blogs.collection';
 
 Meteor.publish('blogs', function() {
-  return Blogs.find({}, {sort: {createdAt: -1}});
+  return Blogs.find({}, {sort: {createdAt: 1}});
 });
 
 Meteor.publish('blog-detail', function(blogId: string) {

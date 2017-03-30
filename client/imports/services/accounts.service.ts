@@ -19,6 +19,13 @@ export class AccountsService {
         return false;
     }
 
+    validateUsername(username: string) : string {
+        if (username && username.length > 3) {
+            return '';
+        }
+        return "ACCOUNTS.ERROR.username_length";
+    }
+
     validateEmail(email: string) : string {
         if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
             return '';
@@ -49,6 +56,10 @@ export class AccountsService {
 
     validateSignupForm(signupForm: FormGroup) : string {
         let result = '';
+        result = this.validateUsername(signupForm.value.username);
+        if (result && result.length > 0) {
+            return result;
+        }
         result = this.validateEmail(signupForm.value.email);
         if (result && result.length > 0) {
             return result;
