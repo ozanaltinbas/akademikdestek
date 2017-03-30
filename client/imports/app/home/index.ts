@@ -3,6 +3,7 @@ import { IntroComponent } from './intro/intro.component';
 import { AboutComponent } from './about/about.component';
 import { TeamComponent } from './team/team.component';
 import { ServicesComponent } from './services/services.component';
+import { PricingComponent } from './pricing/pricing.component';
 import { ContactComponent } from './contact/contact.component';
 import { CONTACT_MESSAGES_DECLARATIONS } from './contact/message/index';
 import { TeamFirstComponent } from './team/team-first/team-first.component';
@@ -15,6 +16,7 @@ export const HOME_DECLARATIONS = [
     AboutComponent,
     TeamComponent,
     ServicesComponent,
+    PricingComponent,
     ContactComponent,
     ...CONTACT_MESSAGES_DECLARATIONS,
     TeamFirstComponent,
