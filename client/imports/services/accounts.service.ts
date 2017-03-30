@@ -81,7 +81,14 @@ export class AccountsService {
 
     validateLoginForm(loginForm: FormGroup) : string {
         let result = '';
-        result = !(this.validateEmail(loginForm.value.email) || this.validateUsername(signupForm.value.username));
+        result = this.validateEmail(loginForm.value.email);
+        if (result && result.length > 0) {
+            result =  this.validateUsername(loginForm.value.username);
+            if (result && result.length > 0) {
+                return result;
+            }
+        }
+        result = this.validateUsername(loginForm.value.username);
         if (result && result.length > 0) {
             return result;
         }
