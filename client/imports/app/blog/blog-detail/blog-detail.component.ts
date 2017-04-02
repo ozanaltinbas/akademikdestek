@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { MeteorObservable } from 'meteor-rxjs';
-import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
 
@@ -16,7 +15,7 @@ import style_blog from '../blog.component.scss';
 @Component({
     selector: 'blog-detail',
     template,
-    styles: [ style_blog ]
+    styles: [ style, style_blog ]
 })
 export class BlogDetailComponent implements OnInit, OnDestroy {
 

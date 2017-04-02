@@ -1,6 +1,11 @@
 import { Meteor } from 'meteor/meteor';
+import { Counts } from 'meteor/tmeasday:publish-counts';
 
 import { Blogs } from '../../../both/collections/blogs.collection';
+
+interface Options {
+  [key: string]: any;
+}
 
 Meteor.publishComposite('blog-detail', function(blogId: string) {
   return {
@@ -18,10 +23,11 @@ Meteor.publishComposite('blog-detail', function(blogId: string) {
   };
 });
 
-Meteor.publishComposite('blogs', function() {
+Meteor.publishComposite('blogs', function(options: Options) {
   return {
     find() {
-      return Blogs.find({ public : true }, {sort: {createdAt: 1}});
+      Counts.publish(this, 'numberOfBlogs', Blogs.collection.find({ public : true }), { noReady: true });
+      return Blogs.find({ public : true }, options);
     },
     children: [
       {

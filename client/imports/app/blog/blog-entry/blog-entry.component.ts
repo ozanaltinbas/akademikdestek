@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MeteorObservable } from 'meteor-rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { InjectUser } from "angular2-meteor-accounts-ui";
+
 import '../../../../../both/methods/blog.methods.ts';
 
 import template from './blog-entry.component.html';

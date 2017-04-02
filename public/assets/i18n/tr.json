@@ -165,5 +165,9 @@
     "TITLE": "BLOGUMUZ",
     "SUBTITLE": "Akademik Hayata Dair Güncel Yazılar"
   },
-  "CLOSE": "Kapat"
+  "CLOSE": "Kapat",
+  "PAGINATION": {
+    "next": "Sonraki",
+    "previous": "Önceki"
+  }
 }

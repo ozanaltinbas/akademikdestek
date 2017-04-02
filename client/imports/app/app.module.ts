@@ -5,6 +5,7 @@ import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-tra
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AccountsModule } from 'angular2-meteor-accounts-ui';
+import { Ng2PaginationModule } from 'ng2-pagination';
 
 import { Routes, ROUTES_PROVIDERS } from './app.routes';
 import { AppComponent } from './app.component';
@@ -31,7 +32,8 @@ import { PIPE_DECLARATIONS } from '../pipes/index';
       provide: TranslateLoader,
       useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
       deps: [Http]
-    })
+    }),
+    Ng2PaginationModule
   ],
   declarations: [
     AppComponent,
