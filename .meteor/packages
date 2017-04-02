@@ -35,3 +35,4 @@ accounts-google@1.1.1
 force-ssl@1.0.13
 twbs:bootstrap
 tmeasday:publish-counts
+reywood:publish-composite

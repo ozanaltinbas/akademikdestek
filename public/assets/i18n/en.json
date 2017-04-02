@@ -156,5 +156,8 @@
       "Incorrect password" : "Yanlış şifre girdiniz"
     }
   },
-  "CLOSE": "Kapat"
+  "CLOSE": "Kapat",
+  "BLOG": {
+    "TITLE": "AKADEMİK BLOĞUMUZ"
+  }
 }

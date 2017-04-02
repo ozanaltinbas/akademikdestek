@@ -1,19 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Meteor } from 'meteor/meteor';
-
-import { User } from '../../../both/models/user.model';
 
 @Pipe({
   name: 'displayName'
 })
 export class DisplayNamePipe implements PipeTransform {
   transform(userId: string): string {
-
     if (!userId) {
       return '';
     }
 
-    let user = Meteor.users.findOne(userId);
+    let user = Meteor.users.findOne({ _id : userId }, { fields: { username:1, profile: 1 } });
 
     if (!user) {
       return '';
@@ -29,4 +25,5 @@ export class DisplayNamePipe implements PipeTransform {
 
     return '';
   }
+
 }

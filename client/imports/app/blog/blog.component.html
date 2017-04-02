@@ -1,3 +1,4 @@
+<loader *ngIf="!blogs"></loader>
 <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
     <div class="container">
         <div class="row">
@@ -5,6 +6,7 @@
                 <div class="site-heading">
                     <h1>{{ 'BLOG.TITLE' | translate }}</h1>
                     <hr class="small">
+                    <span class="subheading">{{ 'BLOG.SUBTITLE' | translate }}</span>
                 </div>
             </div>
         </div>
@@ -23,6 +25,7 @@
                             {{ blog.subtitle }}
                         </h3>
                     </a>
+                    <p class="post-meta">{{ blog.owner | displayName }}</p>
                 </div>
                 <hr>
             </div>

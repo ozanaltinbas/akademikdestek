@@ -11,11 +11,12 @@ import { Blog } from '../../../../../both/models/blog.model';
 
 import template from './blog-detail.component.html';
 import style from './blog-detail.component.scss';
+import style_blog from '../blog.component.scss';
 
 @Component({
     selector: 'blog-detail',
     template,
-    styles: [ style ]
+    styles: [ style_blog ]
 })
 export class BlogDetailComponent implements OnInit, OnDestroy {
 
@@ -34,10 +35,6 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
             .map(params => params['blogId'])
             .subscribe(blogId => {
                 this.blogId = blogId;
-
-                if (this.blogSub) {
-                    this.blogSub.unsubscribe();
-                }
 
                 this.blogSub = MeteorObservable.subscribe('blog-detail', this.blogId).subscribe(() => {
                     MeteorObservable.autorun().subscribe(() => {

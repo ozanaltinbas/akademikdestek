@@ -2,8 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { MeteorObservable } from 'meteor-rxjs';
-import { Blogs } from '../../../../both/collections/blogs.collection';
+
 import { Blog } from '../../../../both/models/blog.model';
+import { Blogs } from '../../../../both/collections/blogs.collection';
 
 import template from './blog.component.html';
 import style from './blog.component.scss';
@@ -16,6 +17,7 @@ import style from './blog.component.scss';
 export class BlogComponent implements OnInit, OnDestroy {
 
     blogs: Observable<Blog[]>;
+    blogsCount: number;
     blogsSub: Subscription;
 
     constructor() {
@@ -23,10 +25,6 @@ export class BlogComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        if (this.blogsSub) {
-            this.blogsSub.unsubscribe();
-        }
-
         this.blogsSub = MeteorObservable.subscribe('blogs').subscribe(() => {
             this.blogs = Blogs.find({}, {
                 sort: {
@@ -35,7 +33,7 @@ export class BlogComponent implements OnInit, OnDestroy {
             }).zone();
         });
     }
-
+    
     ngAfterViewInit(): void {
 
     }
