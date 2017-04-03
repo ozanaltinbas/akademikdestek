@@ -1,10 +1,10 @@
 <loader *ngIf="onProgress"></loader>
 <div class="well">
-    <h4>Leave a Comment:</h4>
+    <h4>{{ 'BLOG.LEAVE_A_COMMENT' | translate }}</h4>
     <form [formGroup]="blogCommentForm" (ngSubmit)="insertBlogComment($event);">
         <div class="form-group">
             <textarea class="form-control" rows="3" formControlName="content"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">{{ 'BLOG.SUBMIT' | translate }}</button>
     </form>
 </div>

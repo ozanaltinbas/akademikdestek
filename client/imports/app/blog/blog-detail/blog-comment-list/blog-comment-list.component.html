@@ -10,3 +10,8 @@
     </div>
 </div>
 <hr>
+<pagination-controls
+        class="pagination"
+        (pageChange)="onPageChanged($event)"
+        previousLabel="{{ 'PAGINATION.previous' | translate }}"
+        nextLabel="{{ 'PAGINATION.next' | translate }}"></pagination-controls>

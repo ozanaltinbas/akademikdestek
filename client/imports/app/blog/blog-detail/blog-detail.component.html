@@ -19,6 +19,10 @@
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
                     <p>{{ blog.content }}</p>
                 </div>
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                    <blog-comment-entry [blogId]="blog._id"></blog-comment-entry>
+                    <blog-comment-list [blogId]="blog._id"></blog-comment-list>
+                </div>
             </div>
         </div>
     </article>

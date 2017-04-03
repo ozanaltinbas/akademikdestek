@@ -163,7 +163,9 @@
   },
   "BLOG": {
     "TITLE": "BLOGUMUZ",
-    "SUBTITLE": "Akademik Hayata Dair Güncel Yazılar"
+    "SUBTITLE": "Akademik Hayata Dair Güncel Yazılar",
+    "LEAVE_A_COMMENT": "Yorum Bırakın",
+    "SUBMIT": "Gönder"
   },
   "CLOSE": "Kapat",
   "PAGINATION": {
