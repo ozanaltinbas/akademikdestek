@@ -148,6 +148,7 @@
       "no_account_yet" : "Henüz bir hesabın mı yok ?",
       "register" : "Kaydol."
     },
+
     "ERROR" : {
       "all_fields_required" : "Tüm alanları girmeniz gerekmektedir",
       "username_length" : "Girdiğiniz kullanıcı adı en az 3 karakter uzunluğunda olmalıdır",
@@ -160,6 +161,20 @@
       "Incorrect password" : "Yanlış şifre girdiniz",
       "Username already exists." : "Bu kullanıcı adı daha önceden alınmış"
     }
+  },
+  "PROFILE" : {
+    "title" : "Akademik Destek Platfomu Profiliniz",
+    "message" : "<strong>Profilinize </strong> ait detayları aşağıda bulabilirsiniz. Güncellemek istediğiniz bilgilerinizi değiştirip, <strong>Güncelle </strong> butonuna basınız.",
+    "updateProfile" : "Profili Güncelle",
+    "name" : "Ad :",
+    "lastname" : "Soyad : ",
+    "email" : "Mail : ",
+    "password" : "Şifre  : ",
+    "confirmPassword" : "Şifre Tekrar  : ",
+    "username" : "Kullanıcı Adı  : ",
+    "update" : "Güncelle  : ",
+    "cancel" : "Vazgeç  : "
+
   },
   "BLOG": {
     "TITLE": "BLOGUMUZ",

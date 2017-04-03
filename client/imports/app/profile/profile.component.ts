@@ -10,6 +10,8 @@ import style from './profile.component.scss';
 })
 export class ProfileComponent {
 
+    showUpdateProfile: boolean = false;
+
     constructor() {
 
     }
@@ -17,5 +19,7 @@ export class ProfileComponent {
     ngAfterViewInit(): void {
 
     }
+
+
 
 }

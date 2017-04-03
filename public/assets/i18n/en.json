@@ -145,6 +145,10 @@
       "no_account_yet" : "Henüz bir hesabın mı yok ?",
       "register" : "Kaydol."
     },
+    "PROFILE" : {
+      "baslik" : "Akademik Destek Platform Profile"
+
+    },
     "ERROR" : {
       "all_fields_required" : "Tüm alanları girmeniz gerekmektedir",
       "email_not_valid" : "Geçerli bir E-Posta adresi girmeniz gerekmektedir",
