@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
+import * as moment from 'moment';
+import 'moment/min/locales';
 
 import template from './app.component.html';
 
@@ -11,12 +13,15 @@ export class AppComponent {
 
   constructor(private translate: TranslateService) {
 
-    translate.addLangs(["en", "tr"]);
+    // translate.addLangs(["en", "tr"]);
+    translate.addLangs(["tr"]);
     translate.setDefaultLang('tr');
 
     let browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/tr/) ? browserLang : 'en');
-    
+    // translate.use(browserLang.match(/tr/) ? browserLang : 'en');
+    translate.use(browserLang.match(/tr/) ? browserLang : 'tr');
+    moment.locale('tr-tr');
+
     $("html").niceScroll();
   }
 

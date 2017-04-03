@@ -15,7 +15,7 @@ export const Routes: Route[] = [
   { path: 'login', component: LoginComponent, canActivate: ['canActivateForNotLoggedIn'] },
   { path: 'signup', component: SignupComponent, canActivate: ['canActivateForNotLoggedIn'] },
   { path: 'recover', component: RecoverComponent, canActivate: ['canActivateForNotLoggedIn'] },
-  { path: 'posts', component: PostsComponent },
+  // { path: 'posts', component: PostsComponent },
   { path: 'blog/:blogId', component: BlogDetailComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'profile', component: ProfileComponent, canActivate: ['canActivateForLoggedIn'] }
