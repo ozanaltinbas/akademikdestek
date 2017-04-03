@@ -4,9 +4,9 @@
     </a>
     <div class="media-body">
         <h4 class="media-heading">{{ blogComment.owner | displayName }}
-            <small>{{ blogComment.createdAt }}</small>
+            <small>{{ blogComment.createdAt | amTimeAgo }}</small>
         </h4>
-        {{ blogComment.content }}
+        <p>{{ blogComment.content }}</p>
     </div>
 </div>
 <hr>

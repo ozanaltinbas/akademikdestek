@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AccountsModule } from 'angular2-meteor-accounts-ui';
 import { Ng2PaginationModule } from 'ng2-pagination';
+import { MomentModule } from 'angular2-moment';
 
 import { Routes, ROUTES_PROVIDERS } from './app.routes';
 import { AppComponent } from './app.component';
@@ -33,7 +34,8 @@ import { PIPE_DECLARATIONS } from '../pipes/index';
       useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
       deps: [Http]
     }),
-    Ng2PaginationModule
+    Ng2PaginationModule,
+    MomentModule
   ],
   declarations: [
     AppComponent,
