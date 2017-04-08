@@ -1,0 +1,46 @@
+#footer {
+
+  background-color: #222222 !important;
+  border: 0px;
+  padding: 20px 0px 20px 0px;
+  color: white;
+  
+  .social {
+
+    ul {
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        padding-right: .3em;
+
+        a {
+          display: block;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          color: #FCAC45;
+          border-radius: 50%;
+          background: #fff;
+          border: solid 0px;
+          -webkit-transition: all .8s ease;
+          transition: all .8s ease;
+        }
+
+        a.linkedin:hover {
+          color: #fff;
+          background: #0077B5;
+        }
+        a.twitter:hover {
+          color: #fff;
+          background: #1da1f2;
+        }
+        a.facebook:hover {
+          color: #fff;
+          background: #3b5998;
+        }
+      }
+    }
+  }
+}

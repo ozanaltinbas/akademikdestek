@@ -1,4 +1,4 @@
-<section id="team" class="content-section">
+<section id="team">
     <div class="container">
         <div class="row text-center">
             <div class="section-title center wow zoomIn">
@@ -7,56 +7,41 @@
                     <hr>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="team-member wow zoomIn" data-wow-offset="10">
-                            <figure>
-                                <img src="img/team/tayfun.jpg" alt="" class="img-responsive">
-                            </figure>
-                            <h4>{{ 'TEAM.TAYFUN.NAME' | translate }}</h4>
-                            <p>{{ 'TEAM.TAYFUN.POSITION' | translate }}</p>
-                            <a href="javascript:void(0);" (click)="showTeamFirstDetail()">{{ 'TEAM.DETAIL' | translate }}</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-member wow zoomIn" data-wow-offset="10">
-                            <figure>
-                                <img src="img/team/hazar.jpg" alt="" class="img-responsive">
-                            </figure>
-                            <h4>{{ 'TEAM.HAZAR.NAME' | translate }}</h4>
-                            <p>{{ 'TEAM.HAZAR.POSITION' | translate }}</p>
-                            <a href="javascript:void(0);" (click)="showTeamSecondDetail()">{{ 'TEAM.DETAIL' | translate }}</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-member wow zoomIn" data-wow-offset="10">
-                            <figure>
-                                <img src="img/team/burak.jpg" alt="" class="img-responsive">
-                            </figure>
-                            <h4>{{ 'TEAM.BURAK.NAME' | translate }}</h4>
-                            <p>{{ 'TEAM.BURAK.POSITION' | translate }}</p>
-                            <a href="javascript:void(0);" (click)="showTeamThirdDetail()">{{ 'TEAM.DETAIL' | translate }}</a>
-                        </div>
-                    </div>
+        </div>
+        <div class="row">
+            <div class="col col-xs-4 col-md-4">
+                <div class="team-member text-center wow zoomIn" data-wow-offset="10">
+                    <figure (click)="showTeamFirstDetail();">
+                        <img src="img/team/tayfun.jpg" alt="" class="img-responsive">
+                    </figure>
+                    <h4>{{ 'TEAM.TAYFUN.NAME' | translate }}</h4>
+                    <p>{{ 'TEAM.TAYFUN.POSITION' | translate }}</p>
+                    <a href="javascript:void(0);" (click)="showTeamFirstDetail()">{{ 'TEAM.DETAIL' | translate }}</a>
+                </div>
+            </div>
+            <div class="col col-xs-4 col-md-4">
+                <div class="team-member text-center wow zoomIn" data-wow-offset="10">
+                    <figure (click)="showTeamSecondDetail();">
+                        <img src="img/team/hazar.jpg" alt="" class="img-responsive">
+                    </figure>
+                    <h4>{{ 'TEAM.HAZAR.NAME' | translate }}</h4>
+                    <p>{{ 'TEAM.HAZAR.POSITION' | translate }}</p>
+                    <a href="javascript:void(0);" (click)="showTeamSecondDetail()">{{ 'TEAM.DETAIL' | translate }}</a>
+                </div>
+            </div>
+            <div class="col col-xs-4 col-md-4">
+                <div class="team-member text-center wow zoomIn" data-wow-offset="10">
+                    <figure (click)="showTeamThirdDetail();">
+                        <img src="img/team/burak.jpg" alt="" class="img-responsive">
+                    </figure>
+                    <h4>{{ 'TEAM.BURAK.NAME' | translate }}</h4>
+                    <p>{{ 'TEAM.BURAK.POSITION' | translate }}</p>
+                    <a href="javascript:void(0);" (click)="showTeamThirdDetail()">{{ 'TEAM.DETAIL' | translate }}</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-        </div>
-    </div>
-</div>
 <team-first></team-first>
 <team-second></team-second>
 <team-third></team-third>

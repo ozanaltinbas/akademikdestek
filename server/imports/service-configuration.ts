@@ -16,7 +16,7 @@ export function startServiceConfiguration() : void {
 
     ServiceConfiguration.configurations.insert({
         service: 'facebook',
-        appId: '388166234895961',
+        appId: '387943488251569',
         secret: 'f20da6c4f3dd3cf09ae3c8a313fe4de0'
     });
 

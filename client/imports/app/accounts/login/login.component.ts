@@ -64,4 +64,24 @@ export class LoginComponent implements OnInit {
         }
     }
 
+    loginWithFacebook() : void {
+        Meteor.loginWithFacebook({requestPermissions: ['public_profile', 'email']}, function(err){
+            if (err) {
+                console.log('Handle errors here: ', err);
+            }
+        });
+    }
+
+    loginWithTwitter() : void {
+        Meteor.loginWithTwitter({requestPermissions: ['public_profile', 'email']}, function(err){
+            if (err) {
+                console.log('Handle errors here: ', err);
+            }
+        });
+    }
+
+    loginWithGoogle() : void {
+        Meteor.loginWithGoogle();
+    }
+
 }

@@ -5,9 +5,6 @@
 }
 
 @media (max-width: 603px){
-    #menu .navbar-collapse {
-        background-color: rgba(0, 0, 0, 0.90);
-    }
     #works li.pull-right, #works li.pull-left {
         margin-top: 10px;
         float: none !important;

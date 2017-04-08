@@ -68,7 +68,7 @@
     }
   },
   "SERVICES": {
-    "OUR_SERVICES":"<strong>hizmetlerimize</strong> göz atın",
+    "OUR_SERVICES":"<strong>HİZMETLERİMİZE</strong> GÖZ ATIN",
     "SERVICE_ONE": {
       "TITLE": "TEZ YAYIN DÜZENLEME",
       "DESCRIPTION": "Yazdığınız makale, tez, kitap vb. çalışmalarınızın, kılavuzlara uygun olarak yeniden düzenlenmesi, içindekiler - şekiller - tablolar vs. dizinlerinin oluşturulması, referansların ve kaynakçanın oluşturulması, sayfa numaralandırma ve biçimlendirmelerini yapıyoruz. Aynı zamanda yayınlanma süreçlerinizin takibi konusunda da destek alabilirsiniz."
@@ -83,18 +83,14 @@
     },
     "SERVICE_FOUR": {
       "TITLE": "E-TİCARET SİTESİ OLUŞTURMA / YÖNETİMİ",
-      "DESCRIPTION": ""
-    },
-    "SERVICE_FIVE": {
-      "TITLE": "İNTERNET ÜZERİNDEN VERİ TOPLAMA / ANKET UYGULAMALARI",
-      "DESCRIPTION": ""
+      "DESCRIPTION": "İnternet üzerinden veri toplama, anket uygulamaları"
     },
     "SERVICE_SIX": {
       "TITLE": "SİMÜLASYON ÇALIŞMALARI",
       "DESCRIPTION": "Gerçek dünya problemlerinin simülasyon ortamında yeniden oluşturulması, dizayn ve geliştirme çalışmaları ile optimizasyonun sağlanmasına yönelik program ve algoritmalar ile destek sağlıyoruz."
     },
     "SERVICE_SEVEN": {
-      "TITLE": "TüRKÇE - İNGİLİZCE METİN KONTROL",
+      "TITLE": "TÜRKÇE - İNGİLİZCE METİN KONTROL",
       "DESCRIPTION": "Yazmış olduğunuz metinlerin son kontrollerini yaptırmak üzere bize başvurabilirsiniz."
     }
   },
@@ -111,6 +107,7 @@
     "SUBJECT": "Konu",
     "MESSAGE": "Mesaj",
     "SEND": "Gönder",
+    "RESET": "Temizle",
     "SEND_SUCCESS": "Mesajınız başarılı bir şekilde gönderilmiştir. Size en kısa sürede dönüş yapıyor olucaz.",
     "SEND_FAIL": "Mesajınızın gönderimi sırasında hata ile karşılaşıldı. Lütfen daha sonra tekrar deneyin."
   },

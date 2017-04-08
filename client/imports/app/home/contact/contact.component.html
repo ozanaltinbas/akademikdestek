@@ -3,7 +3,7 @@
     <div class="overlay">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col col-md-8 col-md-offset-2">
                     <div class="section-title center wow zoomIn">
                         <h2 [innerHtml]="'CONTACT.FEEL_FREE_TO_CONTACT' | translate "></h2>
                         <div class="line">
@@ -12,16 +12,20 @@
                         <div class="clearfix"></div>
                         <em>{{ 'CONTACT.CONTACT_DESCRIPTION' | translate }}</em>
                     </div>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 10px;">
+                <div class="col col-md-8 col-md-offset-2">
                     <form (ngSubmit)="sendEmail($event);" [formGroup]="mailForm">
                         <div class="row">
-                            <div class="col-md-6 wow zoomIn">
+                            <div class="col col-md-6 wow zoomIn">
                                 <div class="form-group">
                                     <label for="email_input">{{ 'CONTACT.EMAIL' | translate }}</label>
                                     <input type="email" class="form-control" id="email_input" placeholder="{{ 'CONTACT.ENTER_EMAIL' | translate }}"
                                            formControlName="email">
                                 </div>
                             </div>
-                            <div class="col-md-6 wow zoomIn">
+                            <div class="col col-md-6 wow zoomIn">
                                 <div class="form-group">
                                     <label for="subject_input">{{ 'CONTACT.SUBJECT' | translate }}</label>
                                     <input type="text" class="form-control" id="subject_input" placeholder="{{ 'CONTACT.ENTER_SUBJECT' | translate }}"
@@ -34,7 +38,12 @@
                             <textarea class="form-control" rows="4" id="message_input"
                                       formControlName="message"></textarea>
                         </div>
-                        <button type="submit" class="btn tf-btn btn-default wow zoomIn">{{ 'CONTACT.SEND' | translate }}</button>
+                        <div class="row">
+                            <div class="col col-md-offset-6 col-md-6 text-right">
+                                <button type="submit" class="btn tf-btn btn-default wow zoomIn">{{ 'CONTACT.SEND' | translate }}</button>
+                                <button type="button" class="btn tf-btn btn-default wow zoomIn" (click)="initializeContactForm();">{{ 'CONTACT.RESET' | translate }}</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
