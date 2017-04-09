@@ -14,14 +14,6 @@ export class TeamComponent {
 
     }
 
-    ngOnInit() {
-
-    }
-
-    ngAfterViewInit(): void {
-        new WOW().init();
-    }
-
     showTeamFirstDetail(): void {
         $('#team-first-modal').modal()
     }

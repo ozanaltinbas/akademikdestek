@@ -5,10 +5,12 @@ import { Accounts } from 'meteor/accounts-base';
 import { AccountsService } from '../../../services/accounts.service';
 
 import template from './recover.component.html';
+import style from '../accounts.scss';
 
 @Component({
     selector: 'recover',
-    template
+    template,
+    styles: [ style ]
 })
 export class RecoverComponent implements OnInit {
     recoverForm: FormGroup;

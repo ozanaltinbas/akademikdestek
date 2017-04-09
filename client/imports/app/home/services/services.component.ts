@@ -14,10 +14,6 @@ export class ServicesComponent {
 
     }
 
-    ngOnInit() {
-
-    }
-
     ngAfterViewInit(): void {
 
     }

@@ -1,102 +1,106 @@
-<div class="container" style="padding-top: 70px;">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="at-form">
-                <div class="at-title">
-                    <h3>{{ 'ACCOUNTS.SIGNUP.create_account' | translate }}</h3>
-                </div>
-                <div class="at-oauth">
-                    <button class="btn at-social-btn hvr-grow" id="at-facebook" name="facebook"
-                        (click)="loginWithFacebook();">
-                        <i class="fa fa-facebook"></i> {{ 'ACCOUNTS.SIGNUP.register_with_facebook' | translate }}
-                    </button>
-                    <button class="btn at-social-btn hvr-grow" id="at-twitter" name="twitter"
-                            (click)="loginWithTwitter();">
-                        <i class="fa fa-twitter"></i> {{ 'ACCOUNTS.SIGNUP.register_with_twitter' | translate }}
-                    </button>
-                    <button class="btn at-social-btn hvr-grow" id="at-google" name="google"
-                            (click)="loginWithGoogle();">
-                        <i class="fa fa-google"></i> {{ 'ACCOUNTS.SIGNUP.register_with_google' | translate }}
-                    </button>
-                </div>
-                <div class="at-sep">
-                    <strong>{{ 'ACCOUNTS.SIGNUP.OR' | translate }}</strong>
-                </div>
-                <div class="at-error alert alert-danger" *ngIf="error">
-                    <p>{{ error | translate }}</p>
-                </div>
-                <div class="at-pwd-form">
-                    <form id="at-pwd-form" [formGroup]="signupForm" (ngSubmit)="signup()"
-                        novalidate>
-                        <fieldset>
-                            <div class="at-input form-group has-feedback">
-                                <label class="control-label" for="at-field-username">
-                                    {{ 'ACCOUNTS.USERNAME' | translate }}
-                                </label>
-                                <input type="text"
-                                       class="form-control"
-                                       id="at-field-username"
-                                       name="at-field-username"
-                                       placeholder="{{ 'ACCOUNTS.USERNAME' | translate }}"
-                                       autocapitalize="none"
-                                       autocorrect="off"
-                                       formControlName="username">
-                                <span class="help-block hide"></span>
-                            </div>
-                            <div class="at-input form-group has-feedback">
-                                <label class="control-label" for="at-field-email">
-                                    {{ 'ACCOUNTS.SIGNUP.email' | translate }}
-                                </label>
-                                <input type="email"
-                                       class="form-control"
-                                       id="at-field-email"
-                                       name="at-field-email"
-                                       placeholder="{{ 'ACCOUNTS.SIGNUP.email' | translate }}"
-                                       autocapitalize="none"
-                                       autocorrect="off"
-                                       formControlName="email">
-                                <span class="help-block hide"></span>
-                            </div>
-                            <div class="at-input form-group has-feedback">
-                                <label class="control-label" for="at-field-password">
-                                    {{ 'ACCOUNTS.SIGNUP.password' | translate }}
-                                </label>
-                                <input type="password"
-                                       class="form-control"
-                                       id="at-field-password"
-                                       name="at-field-password"
-                                       placeholder="{{ 'ACCOUNTS.SIGNUP.password' | translate }}"
-                                       autocapitalize="none"
-                                       autocorrect="off"
-                                       formControlName="password">
-                                <span class="help-block hide"></span>
-                            </div>
-                            <div class="at-input form-group has-feedback">
-                                <label class="control-label" for="at-field-password_again">
-                                    {{ 'ACCOUNTS.SIGNUP.password_again' | translate }}
-                                </label>
-                                <input type="password"
-                                       class="form-control"
-                                       id="at-field-password_again"
-                                       name="at-field-password_again"
-                                       placeholder="{{ 'ACCOUNTS.SIGNUP.password_again' | translate }}"
-                                       autocapitalize="none"
-                                       autocorrect="off"
-                                       formControlName="passwordAgain">
-                                <span class="help-block hide"></span>
-                            </div>
-                            <button type="submit" class="at-btn submit btn btn-lg btn-block btn-default" id="at-btn">
-                                {{ 'ACCOUNTS.SIGNUP.register' | translate }}
+<div class="ext-box">
+    <div class="int-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="at-form wow fadeIn hoverable">
+                        <div class="at-title">
+                            <h3>{{ 'ACCOUNTS.SIGNUP.create_account' | translate }}</h3>
+                        </div>
+                        <div class="at-oauth">
+                            <button class="btn at-social-btn" id="at-facebook" name="facebook"
+                                    (click)="loginWithFacebook();">
+                                <i class="fa fa-facebook"></i> {{ 'ACCOUNTS.SIGNUP.register_with_facebook' | translate }}
                             </button>
-                        </fieldset>
-                    </form>
-                </div>
-                <div class="at-signin-link">
-                    <p>
-                        {{ 'ACCOUNTS.SIGNUP.already_have_an_account' | translate }}
-                        <a routerLink="/login" id="at-signIn" class="at-link at-signin">
-                            {{ 'ACCOUNTS.SIGNUP.login' | translate }}</a>
-                    </p>
+                            <button class="btn at-social-btn" id="at-twitter" name="twitter"
+                                    (click)="loginWithTwitter();">
+                                <i class="fa fa-twitter"></i> {{ 'ACCOUNTS.SIGNUP.register_with_twitter' | translate }}
+                            </button>
+                            <button class="btn at-social-btn" id="at-google" name="google"
+                                    (click)="loginWithGoogle();">
+                                <i class="fa fa-google"></i> {{ 'ACCOUNTS.SIGNUP.register_with_google' | translate }}
+                            </button>
+                        </div>
+                        <div class="at-sep">
+                            <strong>{{ 'ACCOUNTS.SIGNUP.OR' | translate }}</strong>
+                        </div>
+                        <div class="at-error alert alert-danger" *ngIf="error">
+                            <p>{{ error | translate }}</p>
+                        </div>
+                        <div class="at-pwd-form">
+                            <form id="at-pwd-form" [formGroup]="signupForm" (ngSubmit)="signup()"
+                                  novalidate>
+                                <fieldset>
+                                    <div class="at-input form-group has-feedback">
+                                        <label class="control-label" for="at-field-username">
+                                            {{ 'ACCOUNTS.USERNAME' | translate }}
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="at-field-username"
+                                               name="at-field-username"
+                                               placeholder="{{ 'ACCOUNTS.USERNAME' | translate }}"
+                                               autocapitalize="none"
+                                               autocorrect="off"
+                                               formControlName="username">
+                                        <span class="help-block hide"></span>
+                                    </div>
+                                    <div class="at-input form-group has-feedback">
+                                        <label class="control-label" for="at-field-email">
+                                            {{ 'ACCOUNTS.SIGNUP.email' | translate }}
+                                        </label>
+                                        <input type="email"
+                                               class="form-control"
+                                               id="at-field-email"
+                                               name="at-field-email"
+                                               placeholder="{{ 'ACCOUNTS.SIGNUP.email' | translate }}"
+                                               autocapitalize="none"
+                                               autocorrect="off"
+                                               formControlName="email">
+                                        <span class="help-block hide"></span>
+                                    </div>
+                                    <div class="at-input form-group has-feedback">
+                                        <label class="control-label" for="at-field-password">
+                                            {{ 'ACCOUNTS.SIGNUP.password' | translate }}
+                                        </label>
+                                        <input type="password"
+                                               class="form-control"
+                                               id="at-field-password"
+                                               name="at-field-password"
+                                               placeholder="{{ 'ACCOUNTS.SIGNUP.password' | translate }}"
+                                               autocapitalize="none"
+                                               autocorrect="off"
+                                               formControlName="password">
+                                        <span class="help-block hide"></span>
+                                    </div>
+                                    <div class="at-input form-group has-feedback">
+                                        <label class="control-label" for="at-field-password_again">
+                                            {{ 'ACCOUNTS.SIGNUP.password_again' | translate }}
+                                        </label>
+                                        <input type="password"
+                                               class="form-control"
+                                               id="at-field-password_again"
+                                               name="at-field-password_again"
+                                               placeholder="{{ 'ACCOUNTS.SIGNUP.password_again' | translate }}"
+                                               autocapitalize="none"
+                                               autocorrect="off"
+                                               formControlName="passwordAgain">
+                                        <span class="help-block hide"></span>
+                                    </div>
+                                    <button type="submit" class="at-btn submit btn btn-lg btn-block btn-default" id="at-btn">
+                                        {{ 'ACCOUNTS.SIGNUP.register' | translate }}
+                                    </button>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="at-signin-link">
+                            <p>
+                                {{ 'ACCOUNTS.SIGNUP.already_have_an_account' | translate }}
+                                <a routerLink="/login" id="at-signIn" class="at-link at-signin">
+                                    {{ 'ACCOUNTS.SIGNUP.login' | translate }}</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

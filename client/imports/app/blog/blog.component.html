@@ -1,39 +1,41 @@
 <loader *ngIf="!blogs"></loader>
-<header class="intro-header" style="background-image: url('img/blog/blog.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>{{ 'BLOG.TITLE' | translate }}</h1>
-                    <hr class="small">
-                    <span class="subheading">{{ 'BLOG.SUBTITLE' | translate }}</span>
+<div class="wow fadeIn">
+    <header class="intro-header" style="background-image: url('img/blog/blog.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>{{ 'BLOG.TITLE' | translate }}</h1>
+                        <hr class="small">
+                        <span class="subheading">{{ 'BLOG.SUBTITLE' | translate }}</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-<div class="container">
-    <div class="row">
-        <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div *ngFor="let blog of blogs | async">
-                <div class="post-preview">
-                    <a [routerLink]="['/blog', blog._id]">
-                        <h2 class="post-title">
-                            {{ blog.title }}
-                        </h2>
-                        <h3 class="post-subtitle">
-                            {{ blog.subtitle }}
-                        </h3>
-                    </a>
-                    <p class="post-meta">{{ blog.owner | displayName }}</p>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div *ngFor="let blog of blogs | async">
+                    <div class="post-preview">
+                        <a [routerLink]="['/blog', blog._id]">
+                            <h2 class="post-title">
+                                {{ blog.title }}
+                            </h2>
+                            <h3 class="post-subtitle">
+                                {{ blog.subtitle }}
+                            </h3>
+                        </a>
+                        <p class="post-meta">{{ blog.owner | displayName }}</p>
+                    </div>
+                    <hr>
                 </div>
-                <hr>
+                <pagination-controls
+                        class="pagination"
+                        (pageChange)="onPageChanged($event)"
+                        previousLabel="{{ 'PAGINATION.previous' | translate }}"
+                        nextLabel="{{ 'PAGINATION.next' | translate }}"></pagination-controls>
             </div>
-            <pagination-controls
-                    class="pagination"
-                    (pageChange)="onPageChanged($event)"
-                    previousLabel="{{ 'PAGINATION.previous' | translate }}"
-                    nextLabel="{{ 'PAGINATION.next' | translate }}"></pagination-controls>
         </div>
     </div>
 </div>

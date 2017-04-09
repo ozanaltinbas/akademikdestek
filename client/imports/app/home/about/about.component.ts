@@ -14,10 +14,6 @@ export class AboutComponent {
 
     }
 
-    ngOnInit() {
-
-    }
-
     ngAfterViewInit(): void {
 
         $(function() {
