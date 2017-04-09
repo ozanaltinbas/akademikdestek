@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-                    <p>{{ blog.content }}</p>
+                    <p [innerHTML]="blog.content"></p>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
                     <blog-comment-entry [blogId]="blog._id"></blog-comment-entry>

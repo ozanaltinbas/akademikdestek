@@ -109,7 +109,6 @@ a{
 a:hover,
 a:focus{
   text-decoration: none;
-  color: #FCAC45;
 }
 
 .modal-open {
@@ -126,4 +125,16 @@ a:focus{
 .hoverable {
   transition: box-shadow .25s;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ext-box {
+  display: table;
+  width:100%;
+  min-height: 100%;
+  background-color: #f9f9f9;
+}
+
+.int-box {
+  display: table-cell;
+  vertical-align: middle;
 }

@@ -15,7 +15,7 @@ export class PostsComponent {
     }
 
     ngAfterViewInit(): void {
-
+        
     }
 
 }

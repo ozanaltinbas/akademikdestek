@@ -177,11 +177,19 @@
     "TITLE": "BLOGUMUZ",
     "SUBTITLE": "Akademik Hayata Dair Güncel Yazılar",
     "LEAVE_A_COMMENT": "Yorum Bırakın",
-    "SUBMIT": "Gönder"
+    "SUBMIT": "Gönder",
+    "BLOG_ENTRY": {
+      "TITLE": "BAŞLIK",
+      "SUBTITLE": "ALT BAŞLIK",
+      "CONTENT": "İÇERİK"
+    }
   },
   "CLOSE": "Kapat",
   "PAGINATION": {
     "next": "Sonraki",
     "previous": "Önceki"
+  },
+  "POSTS": {
+    "UNAVAILABLE": "EN KISA SÜREDE SİZİN DE GÖNDERİLERİNİZİ PAYLAŞIYOR OLUCAZ"
   }
 }

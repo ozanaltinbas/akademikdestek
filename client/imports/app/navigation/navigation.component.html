@@ -12,6 +12,7 @@
         <div class="collapse navbar-collapse" id="navigation-bar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a routerLink="/blog">{{ 'NAVIGATION.BLOG' | translate }}</a></li>
+                <li><a routerLink="/posts">{{ 'NAVIGATION.POSTS' | translate }}</a></li>
                 <li *ngIf="!user"><a routerLink="/signup">{{ 'NAVIGATION.REGISTER' | translate }}</a></li>
                 <li *ngIf="!user"><a routerLink="/login">{{ 'NAVIGATION.LOGIN' | translate }}</a></li>
                 <li *ngIf="user"><a routerLink="/profile">{{ 'NAVIGATION.PROFILE' | translate }}</a></li>
