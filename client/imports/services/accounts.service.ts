@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Meteor } from 'meteor/meteor';
-import { InjectUser } from "angular2-meteor-accounts-ui";
 import { Router } from '@angular/router';
 
 @Injectable()
-@InjectUser('user')
 export class AccountsService {
 
     constructor(private router: Router) {

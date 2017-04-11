@@ -57,7 +57,11 @@ export class SignupComponent implements OnInit {
             Accounts.createUser({
                 username: this.signupForm.value.username,
                 email: this.signupForm.value.email,
-                password: this.signupForm.value.password
+                password: this.signupForm.value.password,
+                profile: {
+                    "firstname": "",
+                    "lastname": ""
+                }
             }, (err) => {
                 if (err) {
                     this.zone.run(() => {

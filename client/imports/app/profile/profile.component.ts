@@ -19,7 +19,5 @@ export class ProfileComponent {
     ngAfterViewInit(): void {
 
     }
-
-
-
+    
 }

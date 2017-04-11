@@ -167,11 +167,12 @@
     "lastname" : "Soyad : ",
     "email" : "Mail : ",
     "password" : "Şifre  : ",
-    "confirmPassword" : "Şifre Tekrar  : ",
-    "username" : "Kullanıcı Adı  : ",
-    "update" : "Güncelle  : ",
-    "cancel" : "Vazgeç  : "
-
+    "confirmPassword" : "Şifre Tekrar : ",
+    "username" : "Kullanıcı Adı : ",
+    "update" : "Güncelle",
+    "cancel" : "Vazgeç",
+    "profile_update_success" : "Profil Bilgileriniz Güncellendi",
+    "profile_update_fail" : "Profil Bilgilerinizin Güncellenmesi Sırasında Hata İle Karşılaşıldı"
   },
   "BLOG": {
     "TITLE": "BLOGUMUZ",
