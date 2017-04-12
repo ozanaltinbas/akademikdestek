@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { MeteorObservable } from 'meteor-rxjs';
 
@@ -24,7 +24,8 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
     blog: Blog;
     blogSub: Subscription;
 
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute,
+                private router: Router) {
 
     }
 
@@ -37,13 +38,13 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
                 this.blogSub = MeteorObservable.subscribe('blog-detail', this.blogId).subscribe(() => {
                     MeteorObservable.autorun().subscribe(() => {
                         this.blog = Blogs.findOne(this.blogId);
+
+                        if (this.blog === undefined) {
+                            this.router.navigate(['/blog']);
+                        }
                     });
                 });
             });
-    }
-
-    ngAfterViewInit(): void {
-
     }
 
     ngOnDestroy() {

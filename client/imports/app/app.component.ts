@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
+
 import * as moment from 'moment';
-import 'moment/min/locales';
+import 'moment/locale/tr.js';
 
 import template from './app.component.html';
 
@@ -12,20 +13,27 @@ import template from './app.component.html';
 export class AppComponent implements OnInit {
 
   constructor(private translate: TranslateService) {
-    translate.addLangs(["tr"]);
-    translate.setDefaultLang('tr');
-    let browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/tr/) ? browserLang : 'tr');
-    moment.locale('tr-tr');
+
   }
 
   ngOnInit() {
+    // initialize language settings
+    this.initializeLanguageSettings();
+    // lets use nicescroll library
     $("html").niceScroll();
+    // lets use WOW.js library for better view
     new WOW().init();
   }
 
-  ngAfterViewInit(): void {
-
+  initializeLanguageSettings(): void {
+    // set default language as tr
+    this.translate.setDefaultLang('tr');
+    // get the browser language
+    let browserLang = this.translate.getBrowserLang();
+    // assign language of translate with tr in all conditions
+    this.translate.use(browserLang.match(/tr/) ? browserLang : 'tr');
+    // set locale as tr-tr on default.
+    moment.locale('tr-tr');
   }
 
 }

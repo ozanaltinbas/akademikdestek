@@ -354,7 +354,6 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/accounts-facebook/1.1.1/web.browser/notice.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/binary-heap/1.0.10/web.browser/max-heap.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/jsapi/index.js" />
-        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/isaac_scrollspy/0.0.1/web.browser/packages/isaac_scrollspy.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha-core/1.0.1/web.browser/cleanup.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/interfaces/bdd.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha-core/1.0.1/web.browser/setup.js" />
@@ -804,7 +803,6 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/accounts-facebook/1.1.1/web.browser/notice.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/binary-heap/1.0.10/web.browser/max-heap.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/jsapi/index.js" />
-      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/isaac_scrollspy/0.0.1/web.browser/packages/isaac_scrollspy.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha-core/1.0.1/web.browser/cleanup.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/interfaces/bdd.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha-core/1.0.1/web.browser/setup.js" />

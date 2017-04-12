@@ -23,6 +23,18 @@ export class DisplayNamePipe implements PipeTransform {
       return user.emails[0].address;
     }
 
+    if (user.services) {
+      if (user.services.twitter) {
+        return user.services.twitter.screenName;
+      }
+      if (user.services.facebook) {
+        return user.services.facebook.screenName;
+      }
+      if (user.services.google) {
+        return user.services.google.screenName;
+      }
+    }
+
     return '';
   }
 

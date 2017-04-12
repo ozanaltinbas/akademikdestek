@@ -26,7 +26,9 @@
                                 {{ blog.subtitle }}
                             </h3>
                         </a>
-                        <p class="post-meta">{{ blog.owner | displayName }}</p>
+                        <p class="post-meta">
+                            {{ 'BLOG.POSTED_BY' | translate:{'author':blog.owner | displayName, 'createdAt': blog.createdAt | amTimeAgo } }}
+                        </p>
                     </div>
                     <hr>
                 </div>

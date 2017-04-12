@@ -1,32 +1,56 @@
 import { Route } from '@angular/router';
-import { Meteor } from 'meteor/meteor';
 
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './accounts/login/login.component';
-import { SignupComponent } from './accounts/signup/signup.component';
-import { RecoverComponent } from './accounts/recover/recover.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
+import { SignupComponent } from './accounts/signup/signup.component';
+import { LoginComponent } from './accounts/login/login.component';
+import { RecoverComponent } from './accounts/recover/recover.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
 
-export const Routes: Route[] = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent, canActivate: ['canActivateForNotLoggedIn'] },
-  { path: 'signup', component: SignupComponent, canActivate: ['canActivateForNotLoggedIn'] },
-  { path: 'recover', component: RecoverComponent, canActivate: ['canActivateForNotLoggedIn'] },
-  { path: 'posts', component: PostsComponent },
-  { path: 'blog/:blogId', component: BlogDetailComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'profile', component: ProfileComponent, canActivate: ['canActivateForLoggedIn'] }
-];
+import { LoggedInGuard } from '../services/logged-in-guard';
+import { LoggedOutGuard } from '../services/logged-out-guard';
 
-export const ROUTES_PROVIDERS = [
+export const Routes: Route[] = [
   {
-    provide: 'canActivateForLoggedIn',
-    useValue: () => !! Meteor.userId()
+    path: 'blog',
+    component: BlogComponent
   },
   {
-    provide: 'canActivateForNotLoggedIn',
-    useValue: () => !!! Meteor.userId()
-  }];
+    path: 'blog/:blogId',
+    component: BlogDetailComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+    canActivate: [LoggedOutGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [LoggedOutGuard]
+  },
+  {
+    path: 'recover',
+    component: RecoverComponent,
+    canActivate: [LoggedOutGuard]
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [LoggedInGuard]
+  },
+  {
+    path: 'posts',
+    component: PostsComponent
+  },
+  { path: '',
+    component: HomeComponent
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
+];

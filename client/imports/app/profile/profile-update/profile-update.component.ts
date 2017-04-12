@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Meteor } from 'meteor/meteor';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MeteorObservable } from 'meteor-rxjs';
-import { InjectUser } from 'angular2-meteor-accounts-ui';
+import { Subscription } from 'rxjs/Subscription';
 import { User } from '../../../../../both/models/user.model';
 
 import template from './profile-update.component.html';
@@ -12,18 +13,37 @@ import style from './profile-update.component.scss';
     template,
     styles: [ style ]
 })
-@InjectUser('user')
-export class ProfileUpdateComponent implements OnInit {
+export class ProfileUpdateComponent implements OnInit, OnDestroy {
 
+    currentUser: User;
     profileUpdateForm: FormGroup;
-    currentUser: User = this.user;
+    notLoaded: boolean = true;
+    autorunSub: Subscription;
 
     constructor(private formBuilder: FormBuilder) {
 
     }
 
     ngOnInit() {
-        this.initializeFormData();
+        // assign the user to current user.
+        this.currentUser = Meteor.user();
+        // if it is subscribed
+        if (this.autorunSub) {
+            // unsubscribe it
+            this.autorunSub.unsubscribe();
+        }
+        // detect changes
+        this.autorunSub = MeteorObservable.autorun().subscribe(() => {
+            // the following will trigger if Meteor.user() changes
+            this.currentUser = Meteor.user();
+            // if it is not null now
+            if (this.currentUser) {
+                // initialize the form data
+                this.initializeFormData();
+                // set the page as loaded.
+                this.notLoaded = false;
+            }
+        });
     }
 
     initializeFormData(): void {
@@ -54,4 +74,9 @@ export class ProfileUpdateComponent implements OnInit {
             });
         }
     }
+
+    ngOnDestroy() {
+        this.autorunSub.unsubscribe();
+    }
+
 }

@@ -33,7 +33,7 @@ Meteor.publishComposite('blogs', function(options: Options) {
       {
         find(blog) {
           const options = { fields: { username: 1 }};
-          return Meteor.users.find({ _id : blog.owner }, options);
+          return Meteor.users.find({ _id : blog.owner });
         }
       }
     ]

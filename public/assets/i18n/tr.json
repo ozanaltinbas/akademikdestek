@@ -183,7 +183,8 @@
       "TITLE": "BAŞLIK",
       "SUBTITLE": "ALT BAŞLIK",
       "CONTENT": "İÇERİK"
-    }
+    },
+    "POSTED_BY": "{{author}} tarafından {{createdAt}} paylaşıldı."
   },
   "CLOSE": "Kapat",
   "PAGINATION": {
