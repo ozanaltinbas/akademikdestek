@@ -1,54 +1,56 @@
 <loader *ngIf="notLoaded"></loader>
-<div class="container">
-    <div class="row">
-        <h3>{{ 'PROFILE.title' | translate }}</h3>
-        <hr>
-        <div class="row" *ngIf="currentUser">
-            <div class="col-md-3">
-                <div class="text-center">
-                    <img src="https://cdn1.iconfinder.com/data/icons/boy-expression/512/Boy_09-128.png" class="avatar img-circle" alt="avatar">
-                    <h5>{{ currentUser.username }}</h5>
+<div class="wow fadeIn">
+    <div class="container">
+        <div class="row">
+            <h3>{{ 'PROFILE.title' | translate }}</h3>
+            <hr>
+            <div class="row" *ngIf="currentUser">
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <img src="https://cdn1.iconfinder.com/data/icons/boy-expression/512/Boy_09-128.png" class="avatar img-circle" alt="avatar">
+                        <h5>{{ currentUser.username }}</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-9 personal-info">
-                <div class="alert alert-info alert-dismissable">
-                    <a class="panel-close close" data-dismiss="alert"></a>
-                    <i class="fa fa-coffee"></i>
-                    <span [innerHTML]="'PROFILE.message' | translate"></span>
+                <div class="col-md-9 personal-info">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert"></a>
+                        <i class="fa fa-coffee"></i>
+                        <span [innerHTML]="'PROFILE.message' | translate"></span>
+                    </div>
+                    <h3>{{ 'PROFILE.updateProfile' | translate }}</h3>
+                    <form class="form-horizontal" [formGroup]="profileUpdateForm" (submit)="updateProfile();">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">{{ 'PROFILE.name' | translate }}</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text"
+                                       formControlName="firstname">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">{{ 'PROFILE.lastname' | translate }}</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text"
+                                       formControlName="lastname">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">{{ 'PROFILE.email' | translate }}</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text"
+                                       formControlName="email" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"></label>
+                            <div class="col-md-8">
+                                <button type="submit" class="btn btn-primary">{{ 'PROFILE.update' | translate }}</button>
+                                <span></span>
+                                <button type="button" class="btn btn-default"
+                                    (click)="initializeFormData();">{{ 'PROFILE.cancel' | translate }}</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <h3>{{ 'PROFILE.updateProfile' | translate }}</h3>
-                <form class="form-horizontal" [formGroup]="profileUpdateForm" (submit)="updateProfile();">
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">{{ 'PROFILE.name' | translate }}</label>
-                        <div class="col-lg-8">
-                            <input class="form-control" type="text"
-                                   formControlName="firstname">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">{{ 'PROFILE.lastname' | translate }}</label>
-                        <div class="col-lg-8">
-                            <input class="form-control" type="text"
-                                   formControlName="lastname">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">{{ 'PROFILE.email' | translate }}</label>
-                        <div class="col-lg-8">
-                            <input class="form-control" type="text"
-                                   formControlName="email" >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label"></label>
-                        <div class="col-md-8">
-                            <button type="submit" class="btn btn-primary">{{ 'PROFILE.update' | translate }}</button>
-                            <span></span>
-                            <button type="button" class="btn btn-default"
-                                (click)="initializeFormData();">{{ 'PROFILE.cancel' | translate }}</button>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
