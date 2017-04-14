@@ -2,6 +2,30 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 
 Meteor.methods({
+    createNewUser: function (user: any) {
+        // validate the user input
+        check(user, {
+            username: String,
+            email: String,
+            password: String
+        });
+        // inputs seems ok for now.
+        if (Meteor.isServer) {
+            // we are now on server. Create the user.
+            // create the user
+            let userId = Accounts.createUser({
+                username: user.username,
+                email: user.email,
+                password: user.password,
+                profile: {
+                    firstname: '',
+                    lastname: ''
+                }
+            });
+            // this is user right ?
+            Roles.addUsersToRoles( userId, [ 'user' ] );
+        }
+    },
     updateProfile: function (profileInfo: any) {
         // validate the user input
         check(profileInfo, {

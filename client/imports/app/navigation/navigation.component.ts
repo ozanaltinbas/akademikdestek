@@ -19,7 +19,7 @@ export class NavigationComponent {
     }
 
     ngAfterViewInit(): void {
-        
+
     }
 
     changeLanguage($event) {

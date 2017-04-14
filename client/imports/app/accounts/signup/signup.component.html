@@ -2,7 +2,7 @@
     <div class="int-box">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col col-md-6 col-md-offset-3">
                     <div class="at-form wow fadeIn hoverable">
                         <div class="at-title">
                             <h3>{{ 'ACCOUNTS.SIGNUP.create_account' | translate }}</h3>
@@ -42,6 +42,7 @@
                                                placeholder="{{ 'ACCOUNTS.USERNAME' | translate }}"
                                                autocapitalize="none"
                                                autocorrect="off"
+                                               autocomplete="on"
                                                formControlName="username">
                                         <span class="help-block hide"></span>
                                     </div>
@@ -56,6 +57,7 @@
                                                placeholder="{{ 'ACCOUNTS.SIGNUP.email' | translate }}"
                                                autocapitalize="none"
                                                autocorrect="off"
+                                               autocomplete="true"
                                                formControlName="email">
                                         <span class="help-block hide"></span>
                                     </div>
@@ -70,6 +72,7 @@
                                                placeholder="{{ 'ACCOUNTS.SIGNUP.password' | translate }}"
                                                autocapitalize="none"
                                                autocorrect="off"
+                                               autocomplete="off"
                                                formControlName="password">
                                         <span class="help-block hide"></span>
                                     </div>
@@ -84,6 +87,7 @@
                                                placeholder="{{ 'ACCOUNTS.SIGNUP.password_again' | translate }}"
                                                autocapitalize="none"
                                                autocorrect="off"
+                                               autocomplete="off"
                                                formControlName="passwordAgain">
                                         <span class="help-block hide"></span>
                                     </div>
