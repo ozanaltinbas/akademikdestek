@@ -3,31 +3,30 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MeteorObservable } from 'meteor-rxjs';
 import { AccountsService } from '../../../services/accounts.service';
 
-import template from './recover.component.html';
+import template from './verify.component.html';
 import style from '../accounts.scss';
 
 @Component({
-    selector: 'recover',
+    selector: 'verify',
     template,
     styles: [ style ]
 })
-export class RecoverComponent implements OnInit {
+export class VerifyComponent implements OnInit {
 
-    recoverForm: FormGroup;
+    verifyEmailForm: FormGroup;
     error: string = '';
     success: string = '';
     onProgress: boolean;
 
-    // dependency injections
     constructor(private formBuilder: FormBuilder,
                 private accountsService: AccountsService) {}
 
     ngOnInit() {
         // initialize the form
-        this.initializeRecoverForm();
+        this.initializeVerifyEmailForm();
     }
 
-    recover(): void {
+    verifyEmail(): void {
         // initialize the error message
         this.error = '';
         // initialize the success message
@@ -35,9 +34,9 @@ export class RecoverComponent implements OnInit {
         // service error message holder
         let serviceErrorMessage = '';
         // if all fields are filled
-        if (this.recoverForm.valid) {
+        if (this.verifyEmailForm.valid) {
             // lets validate the form
-            serviceErrorMessage = this.accountsService.validateRecoverForm(this.recoverForm);
+            serviceErrorMessage = this.accountsService.validateVerifyEmailForm(this.verifyEmailForm);
             // if there is an error,
             if (serviceErrorMessage && serviceErrorMessage.length > 0) {
                 // update the error message
@@ -51,14 +50,14 @@ export class RecoverComponent implements OnInit {
                 this.onProgress = true;
                 // create the user object
                 const user = {
-                    usernameOrEmail: this.recoverForm.value.usernameOrEmail
+                    usernameOrEmail: this.verifyEmailForm.value.usernameOrEmail
                 };
-                // time to send reset password email link
-                MeteorObservable.call('sendResetPasswordEmailLink', user).subscribe(() => {
+                // time to login
+                MeteorObservable.call('sendVerificationEmailLink', user).subscribe(() => {
                     // done. set as success.
-                    this.success = this.accountsService.generateMessageText('success', 'reset-password-link-sent');
+                    this.success = this.accountsService.generateMessageText('success', 'verify-link-sent');
                     // initialize the form
-                    this.initializeRecoverForm();
+                    this.initializeVerifyEmailForm();
                 }, (err) => {
                     // error occured. print it out.
                     this.error = this.accountsService.generateMessageText('error', err.reason);
@@ -73,9 +72,9 @@ export class RecoverComponent implements OnInit {
         }
     }
 
-    initializeRecoverForm(): void {
-        // initialize recover form
-        this.recoverForm = this.formBuilder.group({
+    initializeVerifyEmailForm(): void {
+        // initialize verify1 email form
+        this.verifyEmailForm = this.formBuilder.group({
             usernameOrEmail: ['', Validators.required]
         });
         // set on progress as false

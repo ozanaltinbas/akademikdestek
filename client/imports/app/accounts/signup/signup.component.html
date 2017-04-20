@@ -7,20 +7,7 @@
                         <div class="at-title">
                             <h3>{{ 'ACCOUNTS.SIGNUP.create_account' | translate }}</h3>
                         </div>
-                        <div class="at-oauth">
-                            <button class="btn at-social-btn" id="at-facebook" name="facebook"
-                                    (click)="loginWithFacebook();">
-                                <i class="fa fa-facebook"></i> {{ 'ACCOUNTS.SIGNUP.register_with_facebook' | translate }}
-                            </button>
-                            <button class="btn at-social-btn" id="at-twitter" name="twitter"
-                                    (click)="loginWithTwitter();">
-                                <i class="fa fa-twitter"></i> {{ 'ACCOUNTS.SIGNUP.register_with_twitter' | translate }}
-                            </button>
-                            <button class="btn at-social-btn" id="at-google" name="google"
-                                    (click)="loginWithGoogle();">
-                                <i class="fa fa-google"></i> {{ 'ACCOUNTS.SIGNUP.register_with_google' | translate }}
-                            </button>
-                        </div>
+                        <social-login></social-login>
                         <div class="at-sep">
                             <strong>{{ 'ACCOUNTS.SIGNUP.OR' | translate }}</strong>
                         </div>
@@ -62,6 +49,36 @@
                                         <span class="help-block hide"></span>
                                     </div>
                                     <div class="at-input form-group has-feedback">
+                                        <label class="control-label" for="at-field-firstname">
+                                            {{ 'ACCOUNTS.FIRSTNAME' | translate }}
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="at-field-firstname"
+                                               name="at-field-firstname"
+                                               placeholder="{{ 'ACCOUNTS.FIRSTNAME' | translate }}"
+                                               autocapitalize="none"
+                                               autocorrect="off"
+                                               autocomplete="on"
+                                               formControlName="firstname">
+                                        <span class="help-block hide"></span>
+                                    </div>
+                                    <div class="at-input form-group has-feedback">
+                                        <label class="control-label" for="at-field-lastname">
+                                            {{ 'ACCOUNTS.LASTNAME' | translate }}
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="at-field-lastname"
+                                               name="at-field-lastname"
+                                               placeholder="{{ 'ACCOUNTS.LASTNAME' | translate }}"
+                                               autocapitalize="none"
+                                               autocorrect="off"
+                                               autocomplete="on"
+                                               formControlName="lastname">
+                                        <span class="help-block hide"></span>
+                                    </div>
+                                    <div class="at-input form-group has-feedback">
                                         <label class="control-label" for="at-field-password">
                                             {{ 'ACCOUNTS.SIGNUP.password' | translate }}
                                         </label>
@@ -98,11 +115,7 @@
                             </form>
                         </div>
                         <div class="at-signin-link">
-                            <p>
-                                {{ 'ACCOUNTS.SIGNUP.already_have_an_account' | translate }}
-                                <a routerLink="/login" id="at-signIn" class="at-link at-signin">
-                                    {{ 'ACCOUNTS.SIGNUP.login' | translate }}</a>
-                            </p>
+                            <redirect-login></redirect-login>
                         </div>
                     </div>
                 </div>

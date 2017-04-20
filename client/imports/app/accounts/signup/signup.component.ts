@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MeteorObservable } from 'meteor-rxjs';
-import { Router } from '@angular/router';
-import { Accounts } from 'meteor/accounts-base';
 import { AccountsService } from '../../../services/accounts.service';
 
 import template from './signup.component.html';
@@ -18,8 +16,7 @@ export class SignupComponent implements OnInit {
     signupForm: FormGroup;
     error: string;
 
-    constructor(private router: Router,
-                private formBuilder: FormBuilder,
+    constructor(private formBuilder: FormBuilder,
                 private accountsService: AccountsService) {}
 
     ngOnInit() {
@@ -32,6 +29,8 @@ export class SignupComponent implements OnInit {
         this.signupForm = this.formBuilder.group({
             username: ['', Validators.required],
             email: ['', Validators.required],
+            firstname: ['', Validators.required],
+            lastname: ['', Validators.required],
             password: ['', Validators.required],
             passwordAgain: ['', Validators.required]
         });
@@ -40,6 +39,8 @@ export class SignupComponent implements OnInit {
     }
 
     signup() : void {
+        // initialize error
+        this.error = '';
         // service error message holder
         let serviceErrorMessage = '';
         // if all fields are filled
@@ -57,11 +58,21 @@ export class SignupComponent implements OnInit {
             const user = {
                 username: this.signupForm.value.username,
                 email: this.signupForm.value.email,
+                firstname: this.signupForm.value.firstname,
+                lastname: this.signupForm.value.lastname,
                 password: this.signupForm.value.password
             };
             // time to create
-            MeteorObservable.call('createNewUser', user).subscribe(() => {
-                this.router.navigate(['/blog']);
+            MeteorObservable.call('createNewUser', user).subscribe((response) => {
+                // if the user created successfully
+                if (response) {
+                    // send verification e mail to the customer.
+                    MeteorObservable.call('sendVerificationLink', response).subscribe(() => {});
+                    // give user created message
+                    $('#user-created').modal();
+                    // initailze the form
+                    this.initializeSignupForm();
+                }
             }, (err) => {
                 this.error = "ACCOUNTS.ERROR." + err.reason;
             });

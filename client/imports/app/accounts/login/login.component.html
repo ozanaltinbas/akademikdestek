@@ -7,20 +7,7 @@
                         <div class="at-title">
                             <h3>{{ 'ACCOUNTS.LOGIN.login' | translate }}</h3>
                         </div>
-                        <div class="at-oauth">
-                            <button class="btn at-social-btn" id="at-facebook" name="facebook"
-                                    (click)="loginWithFacebook();">
-                                <i class="fa fa-facebook"></i> {{ 'ACCOUNTS.LOGIN.login_with_facebook' | translate }}
-                            </button>
-                            <button class="btn at-social-btn" id="at-twitter" name="twitter"
-                                    (click)="loginWithTwitter();">
-                                <i class="fa fa-twitter"></i> {{ 'ACCOUNTS.LOGIN.login_with_twitter' | translate }}
-                            </button>
-                            <button class="btn at-social-btn" id="at-google" name="google"
-                                    (click)="loginWithGoogle();">
-                                <i class="fa fa-google"></i> {{ 'ACCOUNTS.LOGIN.login_with_google' | translate }}
-                            </button>
-                        </div>
+                        <social-login></social-login>
                         <div class="at-sep">
                             <strong>{{ 'ACCOUNTS.LOGIN.OR' | translate }}</strong>
                         </div>
@@ -33,14 +20,14 @@
                                 <fieldset>
                                     <div class="at-input form-group has-feedback">
                                         <label class="control-label" for="at-field-email">
-                                            {{ 'ACCOUNTS.LOGIN.email' | translate }}
+                                            {{ 'ACCOUNTS.LOGIN.usernameOrEmail' | translate }}
                                         </label>
                                         <input type="email"
                                                class="form-control"
                                                id="at-field-email"
                                                name="at-field-email"
-                                               placeholder="{{ 'ACCOUNTS.LOGIN.email' | translate }}"
-                                               formControlName="email">
+                                               placeholder="{{ 'ACCOUNTS.LOGIN.usernameOrEmail' | translate }}"
+                                               formControlName="usernameOrEmail">
                                         <span class="help-block hide"></span>
                                     </div>
                                     <div class="at-input form-group has-feedback">
@@ -56,9 +43,7 @@
                                         <span class="help-block hide"></span>
                                     </div>
                                     <div class="at-pwd-link">
-                                        <p>
-                                            <a routerLink="/recover" id="at-forgotPwd" class="at-link at-pwd">{{ 'ACCOUNTS.LOGIN.forgot_your_password' | translate }}</a>
-                                        </p>
+                                        <redirect-recover></redirect-recover>
                                     </div>
                                     <button type="submit" class="at-btn submit btn btn-lg btn-block btn-default" id="at-btn">
                                         {{ 'ACCOUNTS.LOGIN.login' | translate }}
@@ -67,10 +52,8 @@
                             </form>
                         </div>
                         <div class="at-signin-link">
-                            <p>
-                                {{ 'ACCOUNTS.LOGIN.no_account_yet' | translate }}
-                                <a routerLink="/signup" id="at-signUp" class="at-link at-signup">{{ 'ACCOUNTS.LOGIN.register' | translate }}</a>
-                            </p>
+                            <redirect-verify-email></redirect-verify-email>
+                            <redirect-signup></redirect-signup>
                         </div>
                     </div>
                 </div>

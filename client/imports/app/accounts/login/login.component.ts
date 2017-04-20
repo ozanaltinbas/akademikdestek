@@ -1,7 +1,8 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Meteor } from 'meteor/meteor';
+import { MeteorObservable } from 'meteor-rxjs';
 import { AccountsService } from '../../../services/accounts.service';
 
 import template from './login.component.html';
@@ -13,24 +14,26 @@ import style from '../accounts.scss';
     styles: [ style ]
 })
 export class LoginComponent implements OnInit {
+    
     loginForm: FormGroup;
     error: string;
 
     constructor(private router: Router,
-                private zone: NgZone,
                 private formBuilder: FormBuilder,
                 private accountsService: AccountsService) {}
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
-            email: ['', Validators.required],
+            usernameOrEmail: ['', Validators.required],
             password: ['', Validators.required]
         });
 
         this.error = '';
     }
 
-    login() {
+    login(): void {
+        // initialize error
+        this.error = '';
         // service error message holder
         let serviceErrorMessage = '';
         // if all fields are filled
@@ -39,49 +42,37 @@ export class LoginComponent implements OnInit {
             serviceErrorMessage = this.accountsService.validateLoginForm(this.loginForm);
             // if there is an error,
             if (serviceErrorMessage && serviceErrorMessage.length > 0) {
-                // lets update the error message
-                this.zone.run(() => {
-                    // update the error message
-                    this.error = serviceErrorMessage;
-                });
+                // update the error message
+                this.error = serviceErrorMessage;
                 // stop going forward
                 return;
             }
-            Meteor.loginWithPassword(this.loginForm.value.email, this.loginForm.value.password, (err) => {
-                this.zone.run(() => {
+            // create the user object
+            const user = {
+                usernameOrEmail: this.loginForm.value.usernameOrEmail,
+                password: this.loginForm.value.password
+            };
+            // time to login
+            MeteorObservable.call('loginUserValidate', user).subscribe(() => {
+                // login now.
+                Meteor.loginWithPassword(user.usernameOrEmail, user.password, (err) => {
+                    // if error occurs
                     if (err) {
-                        console.log(err);
+                        // print it out
                         this.error = "ACCOUNTS.ERROR." + err.reason;
                     } else {
+                        // redirect to blog page
                         this.router.navigate(['/blog']);
                     }
                 });
+            }, (err) => {
+                // prints out the error message
+                this.error = "ACCOUNTS.ERROR." + err.reason;
             });
         } else {
-            this.zone.run(() => {
-                this.error = "ACCOUNTS.ERROR.all_fields_required";
-            });
+            // all fields are required
+            this.error = "ACCOUNTS.ERROR.all_fields_required";
         }
-    }
-
-    loginWithFacebook() : void {
-        Meteor.loginWithFacebook({requestPermissions: ['public_profile', 'email']}, function(err){
-            if (err) {
-                console.log('Handle errors here: ', err);
-            }
-        });
-    }
-
-    loginWithTwitter() : void {
-        Meteor.loginWithTwitter({requestPermissions: ['public_profile', 'email']}, function(err){
-            if (err) {
-                console.log('Handle errors here: ', err);
-            }
-        });
-    }
-
-    loginWithGoogle() : void {
-        Meteor.loginWithGoogle();
     }
 
 }

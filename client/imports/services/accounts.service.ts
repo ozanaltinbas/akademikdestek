@@ -18,22 +18,22 @@ export class AccountsService {
             // if length becomes 0 after replacing
             if (usernameTrimmed.length === 0) {
                 // user must enter valid characters
-                error = 'ACCOUNTS.ERROR.username_valid_character';
+                error = 'accounts.error.username-invalid-character';
             } // it's ok for now. Validate the length
             else {
                 // Username must at least 3 characters long
                 if (usernameTrimmed.length < 3) {
                     // give the error
-                    error = 'ACCOUNTS.ERROR.username_min_length';
+                    error = 'accounts.error.username-min-length';
                 } // if username is more than 64 characters long
                 else if (usernameTrimmed.length > 64) {
                     // give the error
-                    error = 'ACCOUNTS.ERROR.username_max_length';
+                    error = 'accounts.error.username-max-length';
                 }
             }
         } // if no username entered
         else {
-            error = 'ACCOUNTS.ERROR.username_required';
+            error = 'accounts.error.username-required';
         }
         // return the error message
         return error;
@@ -47,11 +47,73 @@ export class AccountsService {
             // email entered. Lets validate it.
             if (! /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
                 // email is not valid.
-                error = "ACCOUNTS.ERROR.email_not_valid";
+                error = "accounts.error.email-invalid-character";
             }
         } // no email entered
         else {
-            error = "ACCOUNTS.ERROR.email_required";
+            error = "accounts.error.email-required";
+        }
+        // return the error message
+        return error;
+    }
+
+    validateFirstname(firstname: string) : string {
+        // error message handler
+        let error: string = '';
+        // if firstname entered
+        if (firstname && firstname.length > 0) {
+            // firstname entered. Trim all user input.
+            let firstnameTrimmed = firstname.replace(/ /g, '');
+            // if length becomes 0 after replacing
+            if (firstnameTrimmed.length === 0) {
+                // user must enter valid characters
+                error = 'accounts.error.firstname-valid-character';
+            } // it's ok for now. Validate the length
+            else {
+                // firstname must at least 2 characters long
+                if (firstnameTrimmed.length < 2) {
+                    // give the error
+                    error = 'accounts.error.firstname_min_length';
+                } // if firstname is more than 64 characters long
+                else if (firstnameTrimmed.length > 64) {
+                    // give the error
+                    error = 'accounts.error.firstname-max-length';
+                }
+            }
+        } // if no username entered
+        else {
+            error = 'accounts.error.firstname-required';
+        }
+        // return the error message
+        return error;
+    }
+
+    validateLastname(lastname: string) : string {
+        // error message handler
+        let error: string = '';
+        // if lastname entered
+        if (lastname && lastname.length > 0) {
+            // lastname entered. Trim all user input.
+            let lastnameTrimmed = lastname.replace(/ /g, '');
+            // if length becomes 0 after replacing
+            if (lastnameTrimmed.length === 0) {
+                // user must enter valid characters
+                error = 'accounts.error.lastname-valid-character';
+            } // it's ok for now. Validate the length
+            else {
+                // lastname must at least 3 characters long
+                if (lastnameTrimmed.length < 2) {
+                    // give the error
+                    error = 'accounts.error.lastname-min-length';
+                } // if lastname is more than 64 characters long
+                else if (lastnameTrimmed.length > 64) {
+                    // give the error
+                    error = 'accounts.error.lastname-max-length';
+                }
+            }
+        } // if no username entered
+        else {
+            error = 'accounts.error.lastname-required';
         }
         // return the error message
         return error;
@@ -67,22 +129,22 @@ export class AccountsService {
             // if length becomes 0 after replacing
             if (passwordTrimmed.length === 0) {
                 // user must enter valid characters
-                error = 'ACCOUNTS.ERROR.password_valid_character';
+                error = 'accounts.error.password-invalid-character';
             } // it's ok for now. Validate the length
             else {
                 // Password must at least 6 characters long
                 if (passwordTrimmed.length < 6) {
                     // give the error
-                    error = 'ACCOUNTS.ERROR.password_min_length';
+                    error = 'accounts.error.password-min-length';
                 } // if username is more than 64 characters long
                 else if (passwordTrimmed.length > 256) {
                     // give the error
-                    error = 'ACCOUNTS.ERROR.password_max_length';
+                    error = 'accounts.error.password-max-length';
                 }
             }
         } // if no password entered
         else {
-            error = "ACCOUNTS.ERROR.password_required";
+            error = "accounts.error.password-required";
         }
         // return the error message
         return error;
@@ -98,18 +160,18 @@ export class AccountsService {
             // if length becomes 0 after replacing
             if (passwordAgainTrimmed.length === 0) {
                 // user must enter valid characters
-                error = 'ACCOUNTS.ERROR.passwordAgain_valid_character';
+                error = 'accounts.error.passwordAgain-invalid-character';
             } // it's ok for now. Validate equation
             else {
                 // if passwords not equal
                 if (passwordAgain !== password) {
                     // passwords not equal
-                    error = 'ACCOUNTS.ERROR.passwords_not_equal';
+                    error = 'accounts.error.passwords-not-equal';
                 }
             }
         }  // if no passwordAgain entered
         else {
-            error = "ACCOUNTS.ERROR.passwordAgain_required";
+            error = "accounts.error.password-again-required";
         }
         // return the error message
         return error;
@@ -123,50 +185,126 @@ export class AccountsService {
             // sounds good. initial validation passed.
             // username validation starts.
             result = this.validateUsername(signupForm.value.username);
-            // if result is not empty.
+            // if result is empty.
             if (!result) {
                 // if no error. go on more.
                 result = this.validateEmail(signupForm.value.email);
             }
-            // if result is not empty.
+            // if result is empty.
+            if (!result) {
+                // if no error. go on more.
+                result = this.validateFirstname(signupForm.value.firstname);
+            }
+            // if result is empty.
             if (!result) {
                 // if no error. go on more.
                 result = this.validatePassword(signupForm.value.password);
             }
-            // if result is not empty.
+            // if result is empty.
             if (!result) {
                 // if no error. go on more.
                 result = this.validatePasswordAgain(signupForm.value.passwordAgain, signupForm.value.password);
             }
         } // form is not valid.
         else {
-            result = 'ACCOUNTS.ERROR.all_fields_required';
+            result = 'accounts.error.all-fields-required';
         }
         // return the error message
         return result;
     }
 
     validateLoginForm(loginForm: FormGroup) : string {
-        let result = '';
-        result = this.validatePassword(loginForm.value.password);
-        if (result && result.length > 0) {
-            return result;
+        // Start validating the signup form
+        let result: string = '';
+        // result handler is created. first of all lets check the form object
+        if (loginForm.valid) {
+            // sounds good. initial validation passed.
+            // email validation starts.
+            result = this.validateEmail(loginForm.value.usernameOrEmail);
+            // if it is not an email check if it is username
+            if (result && result.length > 0) {
+                // username validation
+                result = this.validateUsername(loginForm.value.usernameOrEmail);
+            }
+            // validate the password
+            if (!result) {
+                // password validation
+                result = this.validatePassword(loginForm.value.password);
+            }
+        } // form is not valid.
+        else {
+            result = 'accounts.error.all-fields-required';
         }
+        // return the error message
+        return result;
+    }
+
+    validateVerifyEmailForm(verifyEmailForm: FormGroup) : string {
+        // Start validating the signup form
+        let result: string = '';
+        // result handler is created. first of all lets check the form object
+        if (verifyEmailForm.valid) {
+            // email validation starts.
+            result = this.validateEmail(verifyEmailForm.value.usernameOrEmail);
+            // if it is not an email check if it is username
+            if (result && result.length > 0) {
+                // username validation
+                result = this.validateUsername(verifyEmailForm.value.usernameOrEmail);
+            }
+        }
+        // return the error message
         return result;
     }
 
     validateRecoverForm(recoverForm: FormGroup) : string {
-        let result = '';
-        result = this.validateEmail(recoverForm.value.email);
-        if (result && result.length > 0) {
-            return result;
+        // Start validating the signup form
+        let result: string = '';
+        // result handler is created. first of all lets check the form object
+        if (recoverForm.valid) {
+            // email validation starts.
+            result = this.validateEmail(recoverForm.value.usernameOrEmail);
+            // if it is not an email check if it is username
+            if (result && result.length > 0) {
+                // username validation
+                result = this.validateUsername(recoverForm.value.usernameOrEmail);
+            }
         }
+        // return the error message
+        return result;
+    }
+
+    validateResetPasswordForm(resetPasswordForm: FormGroup) : string {
+        // Start validating the signup form
+        let result: string = '';
+        // result handler is created. first of all lets check the form object
+        if (resetPasswordForm.valid) {
+            // password validation starts.
+            result = this.validatePassword(resetPasswordForm.value.password);
+            // if result is empty.
+            if (!result) {
+                // if no error. go on more.
+                result = this.validatePasswordAgain(resetPasswordForm.value.passwordValidate, resetPasswordForm.value.password);
+            }
+        }
+        // return the error message
         return result;
     }
 
     logout() : void {
         Meteor.logout();
         this.router.navigate(['/']);
+    }
+
+    generateMessageText(type: string, text: string) : string {
+        // initialize the result handler
+        let result = '';
+        // if there is an error
+        if (text && text.length > 0) {
+            // there is an error. Generate it
+            result = 'accounts.' + type + '.' + text;
+        }
+        // return the generated text
+        return result;
     }
 
 }

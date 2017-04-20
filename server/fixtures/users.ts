@@ -1,8 +1,9 @@
 import { Accounts } from 'meteor/accounts-base';
+import { Roles } from 'meteor/alanning:roles';
 
 export function loadUsers() {
     if (Meteor.users.find({}).count() === 0) {
-        const users: any[] = [{
+        const users: any[] = [/*{
             username: 'ozanaltinbas',
             email: 'ozan.altinbas@ymail.com',
             profile: {
@@ -11,8 +12,7 @@ export function loadUsers() {
             },
             password: 'OZan54335433',
             public: true
-        }];
-
+        }*/];
         users.forEach(createAdminUsers);
     }
 }

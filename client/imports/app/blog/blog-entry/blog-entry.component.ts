@@ -56,6 +56,7 @@ export class BlogEntryComponent implements OnInit, OnDestroy {
                 this.initializeBlogEntryForm();
                 this.onProgress = false;
             }, (error) => {
+                console.log(error);
                 this.onProgress = false;
             });
         }

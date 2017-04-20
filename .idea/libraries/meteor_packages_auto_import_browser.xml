@@ -49,6 +49,10 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/froala_editor/2.5.1/web.browser/assets/js/froala_editor.min.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/froala_editor/2.5.1/web.browser/assets/css/froala_editor.min.css" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/fortawesome_fontawesome/4.4.0_1/web.browser/upstream/css/font-awesome.css" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/alanning_roles/1.2.16/web.browser/client/subscriptions.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/alanning_roles/1.2.16/web.browser/client/uiHelpers.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/alanning_roles/1.2.16/web.browser/roles_common.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/alanning_roles/1.2.16/web.browser/client/debug.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/retries.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/callback-hook/1.0.10/web.browser/hook.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/diffs.js" />
@@ -498,6 +502,10 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/froala_editor/2.5.1/web.browser/assets/js/froala_editor.min.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/froala_editor/2.5.1/web.browser/assets/css/froala_editor.min.css" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/fortawesome_fontawesome/4.4.0_1/web.browser/upstream/css/font-awesome.css" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/alanning_roles/1.2.16/web.browser/client/subscriptions.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/alanning_roles/1.2.16/web.browser/client/uiHelpers.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/alanning_roles/1.2.16/web.browser/roles_common.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/alanning_roles/1.2.16/web.browser/client/debug.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/retries.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/callback-hook/1.0.10/web.browser/hook.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/diffs.js" />
