@@ -1,5 +1,9 @@
 <div class="ext-box">
     <div class="int-box">
-        <profile-update></profile-update>
+        <div class="container">
+            <blog-entry *ngIf="displayBlogEntry()"></blog-entry>
+            <profile-update></profile-update>
+        </div>
     </div>
 </div>
+<div class="fill-remaining-space"></div>

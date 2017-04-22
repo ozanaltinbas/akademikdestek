@@ -1,13 +1,15 @@
 html, body {
   min-height: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   padding-top: 50px;
 }
 
-.color{
+.color {
   color: #fcac45;
 }
 
@@ -137,4 +139,8 @@ a:focus{
 .int-box {
   display: table-cell;
   vertical-align: middle;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
 }

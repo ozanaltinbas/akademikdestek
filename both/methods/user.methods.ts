@@ -58,7 +58,7 @@ Meteor.methods({
                 // check email verification
                 if(!userObject.emails[0].verified) {
                     // throw error
-                    throw new Meteor.Error("email_not_verified", "email_not_verified");
+                    throw new Meteor.Error("email-not-verified", "email-not-verified");
                 }
             }
         }

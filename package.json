@@ -37,6 +37,7 @@
     "babel-runtime": "^6.18.0",
     "bcrypt": "^1.0.2",
     "jquery": "2.2.4",
+    "materialize-css": "^0.98.2",
     "meteor-rxjs": "0.4.7",
     "modulus": "^6.5.0",
     "ng2-pagination": "^2.0.1",

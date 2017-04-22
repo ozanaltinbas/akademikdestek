@@ -1,3 +1,4 @@
+<loader *ngIf="onProgress"></loader>
 <div class="ext-box">
     <div class="int-box">
         <div class="container">
@@ -5,88 +6,90 @@
                 <div class="col col-md-6 col-md-offset-3">
                     <div class="at-form wow fadeIn hoverable">
                         <div class="at-title">
-                            <h3>{{ 'ACCOUNTS.SIGNUP.create_account' | translate }}</h3>
+                            <h3>{{ 'accounts.signup.title' | translate }}</h3>
                         </div>
                         <social-login></social-login>
                         <div class="at-sep">
-                            <strong>{{ 'ACCOUNTS.SIGNUP.OR' | translate }}</strong>
+                            <strong>{{ 'accounts.common.or' | translate }}</strong>
                         </div>
                         <div class="at-error alert alert-danger" *ngIf="error">
                             <p>{{ error | translate }}</p>
                         </div>
+                        <div class="at-error alert alert-success" *ngIf="success">
+                            <p>{{ success | translate }}</p>
+                        </div>
                         <div class="at-pwd-form">
-                            <form id="at-pwd-form" [formGroup]="signupForm" (ngSubmit)="signup()"
+                            <form id="signup-form" [formGroup]="signupForm" (ngSubmit)="signup()"
                                   novalidate>
                                 <fieldset>
                                     <div class="at-input form-group has-feedback">
-                                        <label class="control-label" for="at-field-username">
-                                            {{ 'ACCOUNTS.USERNAME' | translate }}
+                                        <label class="control-label" for="username">
+                                            {{ 'accounts.common.username' | translate }}
                                         </label>
                                         <input type="text"
                                                class="form-control"
-                                               id="at-field-username"
-                                               name="at-field-username"
-                                               placeholder="{{ 'ACCOUNTS.USERNAME' | translate }}"
+                                               id="username"
+                                               name="username"
+                                               placeholder="{{ 'accounts.common.username' | translate }}"
                                                autocapitalize="none"
                                                autocorrect="off"
-                                               autocomplete="on"
+                                               autocomplete="off"
                                                formControlName="username">
                                         <span class="help-block hide"></span>
                                     </div>
                                     <div class="at-input form-group has-feedback">
-                                        <label class="control-label" for="at-field-email">
-                                            {{ 'ACCOUNTS.SIGNUP.email' | translate }}
+                                        <label class="control-label" for="email">
+                                            {{ 'accounts.common.email' | translate }}
                                         </label>
                                         <input type="email"
                                                class="form-control"
-                                               id="at-field-email"
-                                               name="at-field-email"
-                                               placeholder="{{ 'ACCOUNTS.SIGNUP.email' | translate }}"
+                                               id="email"
+                                               name="email"
+                                               placeholder="{{ 'accounts.common.email' | translate }}"
                                                autocapitalize="none"
                                                autocorrect="off"
-                                               autocomplete="true"
+                                               autocomplete="off"
                                                formControlName="email">
                                         <span class="help-block hide"></span>
                                     </div>
                                     <div class="at-input form-group has-feedback">
-                                        <label class="control-label" for="at-field-firstname">
-                                            {{ 'ACCOUNTS.FIRSTNAME' | translate }}
+                                        <label class="control-label" for="firstname">
+                                            {{ 'accounts.common.firstname' | translate }}
                                         </label>
                                         <input type="text"
                                                class="form-control"
-                                               id="at-field-firstname"
-                                               name="at-field-firstname"
-                                               placeholder="{{ 'ACCOUNTS.FIRSTNAME' | translate }}"
+                                               id="firstname"
+                                               name="firstname"
+                                               placeholder="{{ 'accounts.common.firstname' | translate }}"
                                                autocapitalize="none"
                                                autocorrect="off"
-                                               autocomplete="on"
+                                               autocomplete="off"
                                                formControlName="firstname">
                                         <span class="help-block hide"></span>
                                     </div>
                                     <div class="at-input form-group has-feedback">
-                                        <label class="control-label" for="at-field-lastname">
-                                            {{ 'ACCOUNTS.LASTNAME' | translate }}
+                                        <label class="control-label" for="lastname">
+                                            {{ 'accounts.common.lastname' | translate }}
                                         </label>
                                         <input type="text"
                                                class="form-control"
-                                               id="at-field-lastname"
-                                               name="at-field-lastname"
-                                               placeholder="{{ 'ACCOUNTS.LASTNAME' | translate }}"
+                                               id="lastname"
+                                               name="lastname"
+                                               placeholder="{{ 'accounts.common.lastname' | translate }}"
                                                autocapitalize="none"
                                                autocorrect="off"
-                                               autocomplete="on"
+                                               autocomplete="off"
                                                formControlName="lastname">
                                         <span class="help-block hide"></span>
                                     </div>
                                     <div class="at-input form-group has-feedback">
-                                        <label class="control-label" for="at-field-password">
-                                            {{ 'ACCOUNTS.SIGNUP.password' | translate }}
+                                        <label class="control-label" for="password">
+                                            {{ 'accounts.common.password' | translate }}
                                         </label>
                                         <input type="password"
                                                class="form-control"
-                                               id="at-field-password"
-                                               name="at-field-password"
-                                               placeholder="{{ 'ACCOUNTS.SIGNUP.password' | translate }}"
+                                               id="password"
+                                               name="password"
                                                autocapitalize="none"
                                                autocorrect="off"
                                                autocomplete="off"
@@ -94,14 +97,13 @@
                                         <span class="help-block hide"></span>
                                     </div>
                                     <div class="at-input form-group has-feedback">
-                                        <label class="control-label" for="at-field-password_again">
-                                            {{ 'ACCOUNTS.SIGNUP.password_again' | translate }}
+                                        <label class="control-label" for="password-again">
+                                            {{ 'accounts.common.password-again' | translate }}
                                         </label>
                                         <input type="password"
                                                class="form-control"
-                                               id="at-field-password_again"
-                                               name="at-field-password_again"
-                                               placeholder="{{ 'ACCOUNTS.SIGNUP.password_again' | translate }}"
+                                               id="password-again"
+                                               name="password-again"
                                                autocapitalize="none"
                                                autocorrect="off"
                                                autocomplete="off"
@@ -109,7 +111,7 @@
                                         <span class="help-block hide"></span>
                                     </div>
                                     <button type="submit" class="at-btn submit btn btn-lg btn-block btn-default" id="at-btn">
-                                        {{ 'ACCOUNTS.SIGNUP.register' | translate }}
+                                        {{ 'accounts.common.signup' | translate }}
                                     </button>
                                 </fieldset>
                             </form>

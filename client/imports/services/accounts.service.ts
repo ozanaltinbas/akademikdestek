@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Meteor } from 'meteor/meteor';
 import { Router } from '@angular/router';
+import { MeteorObservable } from 'meteor-rxjs';
 
 @Injectable()
 export class AccountsService {
@@ -291,7 +292,9 @@ export class AccountsService {
     }
 
     logout() : void {
+        // logout all clients
         Meteor.logout();
+        // the redirect to home
         this.router.navigate(['/']);
     }
 
@@ -305,6 +308,30 @@ export class AccountsService {
         }
         // return the generated text
         return result;
+    }
+
+    autoRedirect(type: string) : void {
+        // after login
+        MeteorObservable.autorun().subscribe(() => {
+            // if type exists
+            if (type && type.length > 0) {
+                // if we login
+                if (type === 'login') {
+                    // there is a user logged in
+                    if (Meteor.userId() && Meteor.userId().length > 0) {
+                        // redirect to blog page.
+                        this.router.navigate(['/blog']);
+                    }
+                } // if we logout
+                else if (type === 'logout') {
+                    // there is no user logged in
+                    if (Meteor.userId() === null) {
+                        // redirect to blog page.
+                        this.router.navigate(['/']);
+                    }
+                }
+            }
+        });
     }
 
 }

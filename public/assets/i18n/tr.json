@@ -111,87 +111,6 @@
     "SEND_SUCCESS": "Mesajınız başarılı bir şekilde gönderilmiştir. Size en kısa sürede dönüş yapıyor olucaz.",
     "SEND_FAIL": "Mesajınızın gönderimi sırasında hata ile karşılaşıldı. Lütfen daha sonra tekrar deneyin."
   },
-  "ACCOUNTS" : {
-    "USERNAME": "Kullanıcı Adı",
-    "FIRSTNAME": "Adınız",
-    "LASTNAME": "Soyadınız",
-    "SIGNUP" : {
-      "create_account" : "Yeni Hesap Oluştur",
-      "register_with_facebook" : "Facebook ile Kaydol",
-      "register_with_twitter" : "Twitter ile Kaydol",
-      "register_with_google" : "Google ile Kaydol",
-      "OR" : "ya da",
-      "email" : "E-Posta",
-      "password" : "Şifre",
-      "password_again" : "Şifre (Tekrar)",
-      "register" : "Kaydol",
-      "already_have_an_account" : "Zaten bir hesabın mı var ?",
-      "login" : "Giriş yap.",
-      "user_created": "Kullanıcınız başarılı bir şekilde yaratılmıştır. Hesabınızın aktive olması için mail adresinize gönderilen aktivasyon linkine tıklamanız gerekmektedir."
-    },
-    "LOGIN" : {
-      "login" : "Giriş Yap",
-      "login_with_facebook" : "Facebook ile Giriş Yap",
-      "login_with_twitter" : "Twitter ile Giriş Yap",
-      "login_with_google" : "Google ile Giriş Yap",
-      "OR" : "ya da",
-      "email" : "E-Posta",
-      "password" : "Şifre",
-      "forgot_your_password" : "Şifreni mi unuttun ?",
-      "no_account_yet" : "Henüz bir hesabın mı yok ?",
-      "register" : "Kaydol.",
-      "usernameOrEmail": "Kullanıcı Adı ya da E-Posta Adresi",
-      "no_verified_yet": "Henüz hesabın mı doğrulanmadı ?",
-      "verify_your_email": "Hesabını doğrula."
-    },
-    "RECOVER" : {
-      "reset_password" : "Şifreni Yenile",
-      "email" : "E-Posta",
-      "email_reset_link" : "Şifre Yenileme Linkini Gönder",
-      "no_account_yet" : "Henüz bir hesabın mı yok ?",
-      "register" : "Kaydol."
-    },
-    "VERIFY_EMAIL" : {
-      "verify_email" : "Hesabını Doğrula",
-      "email" : "E-Posta",
-      "verify_link" : "Onay Linkini Gönder",
-      "usernameOrEmail": "Kullanıcı Adı ya da E-Posta Adresi",
-      "verify_email_message_send": "Onay Maili Tekrar Gönderilmiştir. Lütfen E-Postalarınızı Kontrol Edin.",
-      "Verify email link expired": "E-Posta Onay Linki Geçerliliği Sona Ermiş. Lütfen Onay Linkini Tekrar Gönderin.",
-      "email_verified": "E-Posta Adresiniz Onaylandı."
-    },
-    "ERROR" : {
-      "username_required": "Kullanıcı Adı Girmeniz Gerekmektedir.",
-      "username_valid_character": "Geçerli Bir Kullanıcı Adı Girmeniz Gerekmektedir.",
-      "username_min_length": "Girdiğiniz Kullanıcı Adı En Az 3 Karater Uzunluğunda Olmalıdır.",
-      "username_max_length": "Girdiğiniz Kullanıcı Adı En Fazla 64 Karakter Uzunluğunda Olmalıdır.",
-      "email_required": "E-Posta Adresi Girmeniz Gerekmektedir.",
-      "email_not_valid": "Geçerli Bir E-Posta Adresi Girmeniz Gerekmektedir",
-      "firstname_required": "Adınızı Girmeniz Gerekmektedir.",
-      "firstname_valid_character": "Geçerli Bir Ad Girmeniz Gerekmektedir.",
-      "firstname_min_length": "Girdiğiniz Ad En Az 2 Karater Uzunluğunda Olmalıdır.",
-      "firstname_max_length": "Girdiğiniz Ad En Fazla 64 Karakter Uzunluğunda Olmalıdır.",
-      "lastname_required": "Adınızı Girmeniz Gerekmektedir.",
-      "lastname_valid_character": "Geçerli Bir Ad Girmeniz Gerekmektedir.",
-      "lastname_min_length": "Girdiğiniz Soyad En Az 2 Karater Uzunluğunda Olmalıdır.",
-      "lastname_max_length": "Girdiğiniz Soyad En Fazla 64 Karakter Uzunluğunda Olmalıdır.",
-      "password_required": "Şifre Girmeniz Gerekmektedir.",
-      "password_valid_character": "Geçerli Bir Şifre Girmeniz Gerekmektedir.",
-      "password_min_length": "Girdiğiniz Şifre En Az 6 Karater Uzunluğunda Olmalıdır.",
-      "password_max_length": "Girdiğiniz Şifre En Fazla 256 Karater Uzunluğunda Olmalıdır.",
-      "passwordAgain_required": "Şifre Tekrarını Girmeniz Gerekmektedir.",
-      "passwordAgain_valid_character": "Geçerli Bir Şifre Tekrarı Girmeniz Gerekmektedir.",
-      "passwords_not_equal": "Girdiğiniz Şifrelerin Aynı Olması Gerekmektedir.",
-      "all_fields_required" : "Tüm Alanları Girmeniz Gerekmektedir.",
-      "Email already exists." : "Girdiğiniz E-Posta adresi daha önceden alınmış.",
-      "User not found" : "Böyle Bir Kullanıcı Bulunamadı.",
-      "Incorrect password" : "Yanlış Şifre Girdiniz.",
-      "Username already exists." : "Bu kullanıcı adı daha önceden alınmış.",
-      "email_not_verified": "E-Posta Adresinizi Doğrulamanız Gerekmektedir. Size Gönderilmiş Olan Mailimizi Kontrol Edin.",
-      "email_verified": "E-Posta Adresiniz Zaten Onaylanmış.",
-      "not_a_user": "Bu E-Posta Adresi ya Kullanıcı Adı Henüz Alınmamış."
-    }
-  },
   "PROFILE" : {
     "title" : "Akademik Destek Platfomu Profiliniz",
     "message" : "<strong>Profilinize </strong> ait detayları aşağıda bulabilirsiniz. Güncellemek istediğiniz bilgilerinizi değiştirip, <strong>Güncelle </strong> butonuna basınız.",
@@ -241,11 +160,25 @@
       "forgot-your-password" : "Şifreni mi unuttun?",
       "no-account-yet" : "Henüz hesabın mı yok?",
       "verify-your-email" : "Hesabını doğrula",
+      "username" : "Kullanıcı Adı",
+      "email" : "E-Posta Adresi",
+      "firstname" : "İsim",
+      "lastname" : "Soyisim",
       "password" : "Şifre",
       "password-again" : "Şifre (Tekrar)",
       "username-or-email" : "Kullanıcı Adı ya da E-Posta Adresi",
       "already-have-an-account" : "Zaten bir hesabın mı var?",
-      "not-verified-yet" : "Henüz hesabın mı doğrulanmadı?"
+      "not-verified-yet" : "Henüz hesabın mı doğrulanmadı?",
+      "or" : "ya da",
+      "login-with-facebook" : "Facebook ile Giriş Yap",
+      "login-with-google" : "Google ile Giriş Yap",
+      "login-with-twitter" : "Twitter ile Giriş Yap"
+    },
+    "login" : {
+      "title" : "Giriş Yap"
+    },
+    "signup" : {
+      "title" : "Kaydol"
     },
     "verify" : {
       "title" : "Hesabını Doğrula",
@@ -286,11 +219,17 @@
       "password-again-required" : "Tekrar şifresini girmeniz gerekmektedir.",
       "password-again-invalid-character" : "Geçerli bir tekrar şifresi girmeniz gerekmektedir.",
       "passwords-not-equal" : "Girdiğiniz şifrelerin aynı olması gerekmektedir.",
-      "email-verified" : "E-Posta adresiniz daha önceden onaylanmış."
+      "email-verified" : "E-Posta adresiniz daha önceden onaylanmış.",
+      "email-not-verified": "E-Posta adresinizi doğrulamanız gerekmektedir. Size gönderilmiş olan mailimizi kontrol edin.",
+      "User not found" : "Böyle bir kullanıcı bulunamadı.",
+      "Username already exists." : "Bu kullanıcı adı daha önceden alınmış.",
+      "Email already exists." : "Girdiğiniz E-Posta adresi daha önceden alınmış.",
+      "Incorrect password" : "Girdiğiniz şifre hatalı."
     },
     "success" : {
       "reset-password-link-sent" : "Şifre yenileme linki başarılı bir şekilde gönderilmiştir. Lütfen E-Posta adresinizi kontrol edin.",
-      "verify-link-sent" : "Hesap onaylama linki başarılı bir şekilde gönderilmiştir. Lütfen E-Posta adresinizi kontrol edin."
+      "verify-link-sent" : "Hesap onaylama linki başarılı bir şekilde gönderilmiştir. Lütfen E-Posta adresinizi kontrol edin.",
+      "user-created" : "Kullanıcı başarılı bir şekilde yaratılmıştır. Hesabınızın aktive edilebilmesi için size göndermiş olduğumuz onay linkini tıklayın."
     }
   }
 }

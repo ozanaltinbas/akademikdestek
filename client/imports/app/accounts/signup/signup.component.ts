@@ -14,7 +14,9 @@ import style from '../accounts.scss';
 export class SignupComponent implements OnInit {
 
     signupForm: FormGroup;
-    error: string;
+    error: string = '';
+    success: string = '';
+    onProgress: boolean;
 
     constructor(private formBuilder: FormBuilder,
                 private accountsService: AccountsService) {}
@@ -22,25 +24,15 @@ export class SignupComponent implements OnInit {
     ngOnInit() {
         // initialize the form
         this.initializeSignupForm();
-    }
-
-    initializeSignupForm(): void {
-        // initialize signup form
-        this.signupForm = this.formBuilder.group({
-            username: ['', Validators.required],
-            email: ['', Validators.required],
-            firstname: ['', Validators.required],
-            lastname: ['', Validators.required],
-            password: ['', Validators.required],
-            passwordAgain: ['', Validators.required]
-        });
-        // also initialize the error message given
-        this.error = '';
+        // redirect on login
+        this.accountsService.autoRedirect('login');
     }
 
     signup() : void {
         // initialize error
         this.error = '';
+        // initialize the success message
+        this.success = '';
         // service error message holder
         let serviceErrorMessage = '';
         // if all fields are filled
@@ -54,52 +46,56 @@ export class SignupComponent implements OnInit {
                 // stop going forward
                 return;
             }
-            // create the user object
-            const user = {
-                username: this.signupForm.value.username,
-                email: this.signupForm.value.email,
-                firstname: this.signupForm.value.firstname,
-                lastname: this.signupForm.value.lastname,
-                password: this.signupForm.value.password
-            };
-            // time to create
-            MeteorObservable.call('createNewUser', user).subscribe((response) => {
-                // if the user created successfully
-                if (response) {
-                    // send verification e mail to the customer.
-                    MeteorObservable.call('sendVerificationLink', response).subscribe(() => {});
-                    // give user created message
-                    $('#user-created').modal();
-                    // initailze the form
-                    this.initializeSignupForm();
-                }
-            }, (err) => {
-                this.error = "ACCOUNTS.ERROR." + err.reason;
-            });
+            // if we are not progressing
+            if (this.onProgress === false) {
+                // set as on progress
+                this.onProgress = true;
+                // create the user object
+                const user = {
+                    username: this.signupForm.value.username,
+                    email: this.signupForm.value.email,
+                    firstname: this.signupForm.value.firstname,
+                    lastname: this.signupForm.value.lastname,
+                    password: this.signupForm.value.password
+                };
+                // time to create
+                MeteorObservable.call('createNewUser', user).subscribe((response) => {
+                    // if the user created successfully
+                    if (response) {
+                        // send verification e mail to the customer.
+                        MeteorObservable.call('sendVerificationLink', response).subscribe(() => {});
+                        // give user created message
+                        this.success = this.accountsService.generateMessageText('success', 'user-created');
+                        // initailze the form
+                        this.initializeSignupForm();
+                    }
+                }, (err) => {
+                    // print the error out
+                    this.error = this.accountsService.generateMessageText('error', err.reason);
+                    // set on progress as false
+                    this.onProgress = false;
+                });
+            }
         } // form is not valid.
         else {
-            this.error = "ACCOUNTS.ERROR.all_fields_required";
+            // print the error out
+            this.error = this.accountsService.generateMessageText('error', 'All fields required');
+            // set on progress as false
+            this.onProgress = false;
         }
     }
 
-    loginWithFacebook() : void {
-        Meteor.loginWithFacebook({requestPermissions: ['public_profile', 'email']}, function(err){
-            if (err) {
-                console.log('Handle errors here: ', err);
-            }
+    initializeSignupForm() : void {
+        // initialize signup form
+        this.signupForm = this.formBuilder.group({
+            username: ['', Validators.required],
+            email: ['', Validators.required],
+            firstname: ['', Validators.required],
+            lastname: ['', Validators.required],
+            password: ['', Validators.required],
+            passwordAgain: ['', Validators.required]
         });
+        // set on progress as false
+        this.onProgress = false;
     }
-
-    loginWithTwitter() : void {
-        Meteor.loginWithTwitter({requestPermissions: ['public_profile', 'email']}, function(err){
-            if (err) {
-                console.log('Handle errors here: ', err);
-            }
-        });
-    }
-
-    loginWithGoogle() : void {
-        Meteor.loginWithGoogle();
-    }
-
 }

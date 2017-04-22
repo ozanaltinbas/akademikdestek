@@ -51,6 +51,8 @@ export class VerifyEmailComponent implements OnInit {
                     }
                 });
             });
+        // redirect on login
+        this.accountsService.autoRedirect('login');
     }
 
     redirectToVerifyEmail() : void {

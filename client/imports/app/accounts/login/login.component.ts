@@ -16,19 +16,18 @@ import style from '../accounts.scss';
 export class LoginComponent implements OnInit {
     
     loginForm: FormGroup;
-    error: string;
+    error: string = '';
+    onProgress: boolean;
 
     constructor(private router: Router,
                 private formBuilder: FormBuilder,
                 private accountsService: AccountsService) {}
 
     ngOnInit() {
-        this.loginForm = this.formBuilder.group({
-            usernameOrEmail: ['', Validators.required],
-            password: ['', Validators.required]
-        });
-
-        this.error = '';
+        // initialize login form
+        this.initializeLoginForm();
+        // redirect on login
+        this.accountsService.autoRedirect('login');
     }
 
     login(): void {
@@ -47,32 +46,52 @@ export class LoginComponent implements OnInit {
                 // stop going forward
                 return;
             }
-            // create the user object
-            const user = {
-                usernameOrEmail: this.loginForm.value.usernameOrEmail,
-                password: this.loginForm.value.password
-            };
-            // time to login
-            MeteorObservable.call('loginUserValidate', user).subscribe(() => {
-                // login now.
-                Meteor.loginWithPassword(user.usernameOrEmail, user.password, (err) => {
-                    // if error occurs
-                    if (err) {
-                        // print it out
-                        this.error = "ACCOUNTS.ERROR." + err.reason;
-                    } else {
-                        // redirect to blog page
-                        this.router.navigate(['/blog']);
-                    }
+            // if we are not progressing
+            if (this.onProgress === false) {
+                // set as on progress
+                this.onProgress = true;
+                // create the user object
+                const user = {
+                    usernameOrEmail: this.loginForm.value.usernameOrEmail,
+                    password: this.loginForm.value.password
+                };
+                // time to login
+                MeteorObservable.call('loginUserValidate', user).subscribe(() => {
+                    // login now.
+                    Meteor.loginWithPassword(user.usernameOrEmail, user.password, (err) => {
+                        // if error occurs
+                        if (err) {
+                            // print it out
+                            this.error = this.accountsService.generateMessageText('error', err.reason);
+                            // set on progress as false
+                            this.onProgress = false;
+                        } else {
+                            // redirect to blog page
+                            this.router.navigate(['/blog']);
+                        }
+                    });
+                }, (err) => {
+                    // prints out the error message
+                    this.error = this.accountsService.generateMessageText('error', err.reason);
+                    // set on progress as false
+                    this.onProgress = false;
                 });
-            }, (err) => {
-                // prints out the error message
-                this.error = "ACCOUNTS.ERROR." + err.reason;
-            });
-        } else {
+            }
+        } // if form is not valid.
+        else {
             // all fields are required
-            this.error = "ACCOUNTS.ERROR.all_fields_required";
+            this.error = this.accountsService.generateMessageText('error', 'All fields required');
         }
+    }
+
+    initializeLoginForm() : void {
+        // initialize login form
+        this.loginForm = this.formBuilder.group({
+            usernameOrEmail: ['', Validators.required],
+            password: ['', Validators.required]
+        });
+        // set on progress as false
+        this.onProgress = false;
     }
 
 }
