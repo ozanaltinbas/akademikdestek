@@ -1,10 +1,4 @@
-<ul id="first" class="collapsible" data-collapsible="accordion">
-    <li>
-        <div class="collapsible-header"><i class="mdi-maps-place"></i>Second really long title that should overlap on most screens that aren't incredibly big and wide. Second really long title that should overlap on most screens that aren't incredibly big and wide. Second really long title that should overlap on most screens that aren't incredibly big and wide.</div>
-        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-    </li>
-    <li>
-        <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Second</div>
-        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-    </li>
-</ul>
+<div class="container">
+    <post-entry *ngIf="user"></post-entry>
+    <posts-list></posts-list>
+</div>

@@ -1,0 +1,22 @@
+<loader *ngIf="!posts"></loader>
+<div class="posts-list-container">
+    <div class="posts-list">
+        <ul class="collection hoverable">
+            <div *ngFor="let post of posts | async">
+                <li class="collection-item avatar">
+                    <img src="img/icons/account_circle.png" alt="" class="circle">
+                    <span class="title truncate clickable" [routerLink]="['/post', post._id]">{{ post.title }}</span>
+                    <p class="truncate clickable" [routerLink]="['/post', post._id]">
+                        {{ post.owner | displayName }}
+                    </p>
+                    <p class="truncate clickable" [routerLink]="['/post', post._id]">
+                        {{ post.content }}
+                    </p>
+                    <a href="javascript:void(0);" class="secondary-content" (click)="deletePost(post)">
+                        <i class="material-icons">delete</i></a>
+                </li>
+            </div>
+        </ul>
+        <pagination-controls class="pagination" (pageChange)="onPageChanged($event)"></pagination-controls>
+    </div>
+</div>

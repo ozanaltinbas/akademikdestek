@@ -1,0 +1,34 @@
+<loader *ngIf="onProgress"></loader>
+<ul class="collapsible" data-collapsible="accordion">
+    <li>
+        <div class="collapsible-header"><i class="material-icons">note_add</i>{{ 'posts.post-entry.title' | translate }}</div>
+        <div class="collapsible-body">
+            <form (ngSubmit)="insertPost($event);" [formGroup]="postEntryForm">
+                <div class="form-group">
+                    <label for="title">{{ 'posts.post-entry.post-title' | translate }}</label>
+                    <input type="text"
+                           class="form-control"
+                           id="title"
+                           formControlName="title">
+                </div>
+                <div class="form-group">
+                    <label for="content">{{ 'posts.post-entry.post-content' | translate }}</label>
+                    <input type="text"
+                           class="form-control"
+                           id="content"
+                           formControlName="content">
+                </div>
+                <button type="submit" class="btn btn-default">{{ 'posts.post-entry.share' | translate }}</button>
+                <button type="button" class="btn btn-default" (click)="clear();">{{ 'posts.post-entry.clear' | translate }}</button>
+            </form>
+        </div>
+    </li>
+</ul>
+<div class="at-error alert alert-success alert-dismissable" *ngIf="success">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <p>{{ success | translate }}</p>
+</div>
+<div class="at-error alert alert-danger alert-dismissable" *ngIf="error">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <p>{{ error | translate }}</p>
+</div>

@@ -8,6 +8,7 @@ import { RecoverComponent } from './accounts/recover/recover.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
+import { PostDetailComponent } from './posts/posts-list/post-detail/post-detail.component';
 import { VerifyComponent } from './accounts/verify/verify.component';
 import { VerifyEmailComponent } from './accounts/verify-email/verify-email.component';
 import { ResetPasswordComponent } from './accounts/reset-password/reset-password.component';
@@ -58,6 +59,10 @@ export const Routes: Route[] = [
     path: 'profile',
     component: ProfileComponent,
     canActivate: [LoggedInGuard]
+  },
+  {
+    path: 'post/:postId',
+    component: PostDetailComponent
   },
   {
     path: 'posts',

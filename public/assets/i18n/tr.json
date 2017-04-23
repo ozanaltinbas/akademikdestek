@@ -143,16 +143,20 @@
     "next": "Sonraki",
     "previous": "Önceki"
   },
-  "POSTS": {
-    "UNAVAILABLE": "EN KISA SÜREDE SİZİN DE GÖNDERİLERİNİZİ PAYLAŞIYOR OLUCAZ"
+
+
+
+
+  "posts": {
+    "post-entry": {
+      "title" : "Gönderinizi Paylaşın",
+      "post-title" : "Konu",
+      "post-content" : "İçerik",
+      "share" : "Paylaş",
+      "clear" : "Temizle",
+      "success" : "Gönderiniz başarılı bir şekilde paylaşılmıştır."
+    }
   },
-
-
-
-
-
-
-
   "accounts" : {
     "common" : {
       "login" : "Giriş yap",
