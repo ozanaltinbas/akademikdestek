@@ -24,8 +24,6 @@ export class SignupComponent implements OnInit {
     ngOnInit() {
         // initialize the form
         this.initializeSignupForm();
-        // redirect on login
-        this.accountsService.autoRedirect('login');
     }
 
     signup() : void {

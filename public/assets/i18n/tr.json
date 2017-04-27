@@ -147,6 +147,8 @@
 
 
 
+
+
   "posts": {
     "post-entry": {
       "title" : "Gönderinizi Paylaşın",
@@ -155,6 +157,14 @@
       "share" : "Paylaş",
       "clear" : "Temizle",
       "success" : "Gönderiniz başarılı bir şekilde paylaşılmıştır."
+    },
+    "posts-list" : {
+      "post-detail" : {
+        "post-comment-entry" : {
+          "send" : "Gönder",
+          "leave-a-comment" : "Yorum Bırakın"
+        }
+      }
     }
   },
   "accounts" : {

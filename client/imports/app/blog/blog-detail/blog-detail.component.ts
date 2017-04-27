@@ -34,14 +34,14 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
             .map(params => params['blogId'])
             .subscribe(blogId => {
                 this.blogId = blogId;
+                this.blog = Blogs.findOne(this.blogId);
+                if (!this.blog) {
+                    this.router.navigate(['/blog']);
+                }
 
                 this.blogSub = MeteorObservable.subscribe('blog-detail', this.blogId).subscribe(() => {
                     MeteorObservable.autorun().subscribe(() => {
                         this.blog = Blogs.findOne(this.blogId);
-
-                        if (this.blog === undefined) {
-                            this.router.navigate(['/blog']);
-                        }
                     });
                 });
             });

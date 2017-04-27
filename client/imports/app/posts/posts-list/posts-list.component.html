@@ -12,7 +12,8 @@
                     <p class="truncate clickable" [routerLink]="['/post', post._id]">
                         {{ post.content }}
                     </p>
-                    <a href="javascript:void(0);" class="secondary-content" (click)="deletePost(post)">
+                    <a href="javascript:void(0);" class="secondary-content" *ngIf="isCurrentUser(post.owner)"
+                       (click)="deletePost(post)">
                         <i class="material-icons">delete</i></a>
                 </li>
             </div>

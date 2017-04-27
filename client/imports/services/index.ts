@@ -1,9 +1,7 @@
 import { AccountsService } from './accounts.service';
-import { LoggedInGuard } from './logged-in-guard';
-import { LoggedOutGuard } from './logged-out-guard';
+import { CurrentUser } from './currentUser.service';
 
 export const SERVICES_DECLARATIONS: any[] = [
     AccountsService,
-    LoggedInGuard,
-    LoggedOutGuard
-];
+    CurrentUser
+]

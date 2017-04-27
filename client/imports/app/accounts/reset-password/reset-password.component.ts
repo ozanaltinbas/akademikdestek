@@ -29,8 +29,6 @@ export class ResetPasswordComponent implements OnInit {
     ngOnInit() {
         // initialize the form
         this.initializeResetPasswordForm();
-        // redirect on login
-        this.accountsService.autoRedirect('login');
     }
 
     resetPassword(): void {

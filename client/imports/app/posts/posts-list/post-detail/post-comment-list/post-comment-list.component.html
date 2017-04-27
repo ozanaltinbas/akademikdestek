@@ -1,0 +1,18 @@
+<div class="media" *ngFor="let postComment of postComments | async">
+    <a class="pull-left" href="#">
+        <img class="media-object" src="http://placehold.it/64x64" alt="">
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading">{{ postComment.owner | displayName }}
+            <small>{{ postComment.createdAt | amTimeAgo }}</small>
+        </h4>
+        <p (click)="deletePostComment(postComment._id, postComment.owner);">delete</p>
+        <p>{{ postComment.content }}</p>
+    </div>
+</div>
+<hr>
+<pagination-controls
+        class="pagination"
+        (pageChange)="onPageChanged($event)"
+        previousLabel="{{ 'PAGINATION.previous' | translate }}"
+        nextLabel="{{ 'PAGINATION.next' | translate }}"></pagination-controls>

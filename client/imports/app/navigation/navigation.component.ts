@@ -17,11 +17,7 @@ export class NavigationComponent {
     constructor(private translate: TranslateService,
                 private accountsService: AccountsService) {
     }
-
-    ngAfterViewInit(): void {
-
-    }
-
+    
     changeLanguage($event) {
         // prevent default action
         $event.preventDefault();

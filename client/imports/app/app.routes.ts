@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Route } from '@angular/router';
 
 import { BlogComponent } from './blog/blog.component';
@@ -13,53 +14,7 @@ import { VerifyComponent } from './accounts/verify/verify.component';
 import { VerifyEmailComponent } from './accounts/verify-email/verify-email.component';
 import { ResetPasswordComponent } from './accounts/reset-password/reset-password.component';
 
-import { LoggedInGuard } from '../services/logged-in-guard';
-import { LoggedOutGuard } from '../services/logged-out-guard';
-
 export const Routes: Route[] = [
-  {
-    path: 'blog',
-    component: BlogComponent
-  },
-  {
-    path: 'blog/:blogId',
-    component: BlogDetailComponent
-  },
-  {
-    path: 'reset-password/:token',
-    component: ResetPasswordComponent,
-    canActivate: [LoggedOutGuard]
-  },
-  {
-    path: 'verify-email/:token',
-    component: VerifyEmailComponent,
-    canActivate: [LoggedOutGuard]
-  },
-  {
-    path: 'verify',
-    component: VerifyComponent,
-    canActivate: [LoggedOutGuard]
-  },
-  {
-    path: 'signup',
-    component: SignupComponent,
-    canActivate: [LoggedOutGuard]
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    canActivate: [LoggedOutGuard]
-  },
-  {
-    path: 'recover',
-    component: RecoverComponent,
-    canActivate: [LoggedOutGuard]
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [LoggedInGuard]
-  },
   {
     path: 'post/:postId',
     component: PostDetailComponent
@@ -68,12 +23,54 @@ export const Routes: Route[] = [
     path: 'posts',
     component: PostsComponent
   },
+  {
+    path: 'blog/:blogId',
+    component: BlogDetailComponent
+  },
+  {
+    path: 'blog',
+    component: BlogComponent
+  },
+  {
+    path: 'reset-password/:token',
+    component: ResetPasswordComponent
+  },
+  {
+    path: 'verify-email/:token',
+    component: VerifyEmailComponent
+  },
+  {
+    path: 'verify',
+    component: VerifyComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'recover',
+    component: RecoverComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: ['canActivateForLoggedIn']
+  },
   { path: '',
     component: HomeComponent
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: '/',
     pathMatch: 'full'
   }
 ];
+
+export const ROUTES_PROVIDERS = [{
+  provide: 'canActivateForLoggedIn',
+  useValue: () => !! Meteor.userId()
+}];

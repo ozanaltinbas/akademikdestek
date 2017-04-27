@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { MeteorObservable } from 'meteor-rxjs';
 import { PaginationService } from 'ng2-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
+import { Options } from '../../../../both/models/options.model';
 
 import 'rxjs/add/operator/combineLatest';
 
@@ -13,15 +14,6 @@ import { Blogs } from '../../../../both/collections/blogs.collection';
 
 import template from './blog.component.html';
 import style from './blog.component.scss';
-
-interface Pagination {
-    limit: number;
-    skip: number;
-}
-
-interface Options extends Pagination {
-    [key: string]: any
-}
 
 @Component({
     selector: 'blog',
@@ -43,7 +35,6 @@ export class BlogComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-
         this.optionsSub = Observable.combineLatest(
             this.pageSize,
             this.curPage

@@ -8,7 +8,7 @@ import { AccountsModule } from 'angular2-meteor-accounts-ui';
 import { Ng2PaginationModule } from 'ng2-pagination';
 import { MomentModule } from 'angular2-moment';
 
-import { Routes } from './app.routes';
+import { Routes, ROUTES_PROVIDERS } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { LoaderComponent } from './loader/loader.component';
@@ -52,6 +52,7 @@ import { PIPE_DECLARATIONS } from '../pipes/index';
     ...PIPE_DECLARATIONS
   ],
   providers: [
+    ...ROUTES_PROVIDERS,
     ...SERVICES_DECLARATIONS
   ],
   bootstrap: [

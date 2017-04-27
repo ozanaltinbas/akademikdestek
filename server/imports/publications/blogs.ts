@@ -1,11 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { Counts } from 'meteor/tmeasday:publish-counts';
+import { Options } from '../../../both/models/options.model';
 
 import { Blogs } from '../../../both/collections/blogs.collection';
-
-interface Options {
-  [key: string]: any;
-}
 
 Meteor.publishComposite('blog-detail', function(blogId: string) {
   return {

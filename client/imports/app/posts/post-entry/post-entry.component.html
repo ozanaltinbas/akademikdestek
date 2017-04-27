@@ -25,10 +25,12 @@
     </li>
 </ul>
 <div class="at-error alert alert-success alert-dismissable" *ngIf="success">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <a href="javascript:void(0);" class="close" aria-label="close"
+       (click)="dismiss('success');">&times;</a>
     <p>{{ success | translate }}</p>
 </div>
 <div class="at-error alert alert-danger alert-dismissable" *ngIf="error">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <a href="javascript:void(0);" class="close" aria-label="close"
+        (click)="dismiss('error');">&times;</a>
     <p>{{ error | translate }}</p>
 </div>

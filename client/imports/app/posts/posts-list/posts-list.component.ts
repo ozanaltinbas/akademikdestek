@@ -6,6 +6,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { MeteorObservable } from 'meteor-rxjs';
 import { PaginationService } from 'ng2-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
+import { Options } from '../../../../../both/models/options.model';
+import { CurrentUser } from '../../../services/currentUser.service';
 
 import 'rxjs/add/operator/combineLatest';
 import '../../../../../both/methods/post.methods.ts';
@@ -16,15 +18,6 @@ import { Posts } from '../../../../../both/collections/posts.collection';
 import template from './posts-list.component.html';
 import style from './posts-list.component.scss';
 import style_posts from '../posts.component.scss';
-
-interface Pagination {
-    limit: number;
-    skip: number;
-}
-
-interface Options extends Pagination {
-    [key: string]: any
-}
 
 @Component({
     selector: 'posts-list',
@@ -41,7 +34,8 @@ export class PostsListComponent implements OnInit, OnDestroy {
     postsSize: number = 0;
     autorunSub: Subscription;
 
-    constructor(private paginationService: PaginationService) {}
+    constructor(private paginationService: PaginationService,
+                private currentUser: CurrentUser) {}
 
     ngOnInit() {
         // if combineLatest exists
@@ -118,6 +112,10 @@ export class PostsListComponent implements OnInit, OnDestroy {
 
             });
         }
+    }
+
+    isCurrentUser(owner: String) {
+        return this.currentUser.isCurrentUser(owner);
     }
 
     ngOnDestroy() {

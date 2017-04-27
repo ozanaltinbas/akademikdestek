@@ -3,6 +3,7 @@ import { MeteorObservable } from 'meteor-rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Meteor } from 'meteor/meteor';
 import { TranslateService } from 'ng2-translate';
+import { InjectUser } from "angular2-meteor-accounts-ui";
 
 import '../../../../../node_modules/materialize-css/js/collapsible.js';
 import '../../../../../both/methods/post.methods.ts';
@@ -16,6 +17,7 @@ import style_posts from '../posts.component.scss';
     template,
     styles: [ style, style_posts ]
 })
+@InjectUser('user')
 export class PostEntryComponent implements OnInit {
 
     postEntryForm: FormGroup;
@@ -51,7 +53,7 @@ export class PostEntryComponent implements OnInit {
                 const post = {
                     'title' : this.postEntryForm.value.title,
                     'content' : this.postEntryForm.value.content,
-                    'owner' : Meteor.userId()
+                    'owner' : this.user._id
                 };
                 // insert it now
                 MeteorObservable.call('insertPost', post).subscribe(() => {
@@ -74,6 +76,7 @@ export class PostEntryComponent implements OnInit {
         else {
             // set the error message
             this.translateService.get('accounts.error.All fields required').subscribe((res: string) => {
+                // print the error message
                 this.error = res;
             });
         }
@@ -87,6 +90,21 @@ export class PostEntryComponent implements OnInit {
         });
         // set on progress as false
         this.onProgress = false;
+    }
+
+    dismiss(type: string) : void {
+        // if input is sent
+        if (type && type.length > 0) {
+            // type must be success or error
+            if (type === 'error') {
+                // initialize error message
+                this.error = '';
+            } // if it is success
+            else if (type = 'success') {
+                // initialize success message
+                this.success = '';
+            }
+        }
     }
 
     clear() : void {

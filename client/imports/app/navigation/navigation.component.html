@@ -11,8 +11,8 @@
         </div>
         <div class="collapse navbar-collapse" id="navigation-bar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a routerLink="/blog" [routerLinkActive]="['active']">{{ 'NAVIGATION.BLOG' | translate }}</a></li>
-                <li><a routerLink="/posts" [routerLinkActive]="['active']">{{ 'NAVIGATION.POSTS' | translate }}</a></li>
+                <li><a routerLink="/blog">{{ 'NAVIGATION.BLOG' | translate }}</a></li>
+                <li><a routerLink="/posts">{{ 'NAVIGATION.POSTS' | translate }}</a></li>
                 <li *ngIf="!user"><a routerLink="/signup" [routerLinkActive]="['active']">{{ 'NAVIGATION.REGISTER' | translate }}</a></li>
                 <li *ngIf="!user"><a routerLink="/login" [routerLinkActive]="['active']">{{ 'NAVIGATION.LOGIN' | translate }}</a></li>
                 <li *ngIf="user"><a routerLink="/profile" [routerLinkActive]="['active']">{{ 'NAVIGATION.PROFILE' | translate }}</a></li>

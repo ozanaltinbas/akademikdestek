@@ -52,7 +52,7 @@ export class VerifyEmailComponent implements OnInit {
                 });
             });
         // redirect on login
-        this.accountsService.autoRedirect('login');
+        this.router.navigate(['/login']);
     }
 
     redirectToVerifyEmail() : void {

@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Component } from '@angular/core';
 import { InjectUser } from "angular2-meteor-accounts-ui";
 
@@ -11,6 +12,8 @@ import style from './posts.component.scss';
 })
 @InjectUser("user")
 export class PostsComponent {
+
+    user: Meteor.User;
 
     constructor() {
 

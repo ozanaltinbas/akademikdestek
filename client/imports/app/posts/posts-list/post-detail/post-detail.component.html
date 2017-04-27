@@ -1,12 +1,15 @@
+<loader *ngIf="!post"></loader>
 <div class="row" *ngIf="post">
-    <div class="col s12">
-        <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card -title">{{ post.title }}</span>
-                <p>
-                    {{ post.content }}
-                </p>
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="collection hoverable">
+            <div class="post-heading">
+                <h1>{{ post.title }}</h1>
+                <h2 class="subheading">{{ post.content }}</h2>
+                <span class="meta">{{ post.owner | displayName }}</span>
             </div>
-        </div>
+        </ul>
+        <post-comment-entry *ngIf="user"
+                [postId]="post._id"></post-comment-entry>
+        <post-comment-list [postId]="post._id"></post-comment-list>
     </div>
 </div>
