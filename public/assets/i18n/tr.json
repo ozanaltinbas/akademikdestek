@@ -148,21 +148,25 @@
 
 
 
-
-  "posts": {
+  "pagination" : {
+    "previous" : "Önceki",
+    "next" : "Sonraki"
+  },
+  "posts" : {
     "post-entry": {
       "title" : "Gönderinizi Paylaşın",
       "post-title" : "Konu",
       "post-content" : "İçerik",
       "share" : "Paylaş",
       "clear" : "Temizle",
-      "success" : "Gönderiniz başarılı bir şekilde paylaşılmıştır."
+      "success" : "Gönderiniz başarılı bir şekilde paylaşılmıştır.",
+      "login-to-post" : "Gönderinizi paylaşabilmeniz için giriş yapmanız gerekmektedir."
     },
     "posts-list" : {
       "post-detail" : {
         "post-comment-entry" : {
           "send" : "Gönder",
-          "leave-a-comment" : "Yorum Bırakın"
+          "leave-a-comment" : "Yorumunuzu Bırakın"
         }
       }
     }

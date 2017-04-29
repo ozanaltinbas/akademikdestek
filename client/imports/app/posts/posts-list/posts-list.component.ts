@@ -106,7 +106,7 @@ export class PostsListComponent implements OnInit, OnDestroy {
         // if there is a post to be deleted
         if (post) {
             // delete it
-            MeteorObservable.call('deletePost', post._id, Meteor.userId()).subscribe(() => {
+            MeteorObservable.call('deletePost', post._id, post.owner).subscribe(() => {
 
             }, (err) => {
 
@@ -114,7 +114,7 @@ export class PostsListComponent implements OnInit, OnDestroy {
         }
     }
 
-    isCurrentUser(owner: String) {
+    isCurrentUser(owner: string) {
         return this.currentUser.isCurrentUser(owner);
     }
 

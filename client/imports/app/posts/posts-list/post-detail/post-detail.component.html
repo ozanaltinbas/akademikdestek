@@ -1,15 +1,59 @@
 <loader *ngIf="!post"></loader>
-<div class="row" *ngIf="post">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="collection hoverable">
-            <div class="post-heading">
-                <h1>{{ post.title }}</h1>
-                <h2 class="subheading">{{ post.content }}</h2>
-                <span class="meta">{{ post.owner | displayName }}</span>
+<div class="container">
+    <div class="row" *ngIf="post" style="margin-top: 10px;">
+        <div class="col-sm-12">
+            <div class="panel panel-white post panel-shadow">
+                <div class="post-heading">
+                    <div class="pull-left image">
+                        <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                    </div>
+                    <div class="pull-left meta">
+                        <div class="title h5">
+                            <b>{{ post.owner | displayName }}</b></a>
+                        </div>
+                        <h6 class="text-muted time">{{ post.createdAt | amTimeAgo }}</h6>
+                    </div>
+                </div>
+                <div class="post-description">
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.content }}</p>
+                </div>
+                <div class="post-footer">
+                    <form [formGroup]="postCommentForm" (ngSubmit)="insertPostComment($event);">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="{{ 'posts.posts-list.post-detail.post-comment-entry.leave-a-comment' | translate }}"
+                                   type="text" formControlName="content">
+                            <span class="input-group-addon">
+                            <a href="javascript:void(0);" (click)="insertPostComment($event);"><i class="fa fa-edit"></i></a>
+                        </span>
+                        </div>
+                    </form>
+                    <ul class="comments-list">
+                        <li class="comment" *ngFor="let postComment of postComments | async">
+                            <div class="pull-right" *ngIf="isCurrentUser(postComment.owner)">
+                                <img src="img/icons/delete.svg" alt="delete"
+                                     class="delete clickable" (click)="deletePostComment(postComment);">
+                            </div>
+                            <a class="pull-left" href="javascript:void(0);">
+                                <img class="avatar" src="http://bootdey.com/img/Content/user_1.jpg" alt="avatar">
+                            </a>
+                            <div class="comment-body">
+                                <div class="comment-heading">
+                                    <h4 class="user">{{ postComment.owner | displayName }}</h4>
+                                    <h5 class="time">{{ postComment.createdAt | amTimeAgo }}</h5>
+                                </div>
+                                <p>{{ postComment.content }}</p>
+                            </div>
+                        </li>
+                        <hr>
+                    </ul>
+                    <pagination-controls
+                            class="pagination"
+                            (pageChange)="onPageChanged($event)"
+                            previousLabel="{{ 'pagination.previous' | translate }}"
+                            nextLabel="{{ 'pagination.next' | translate }}"></pagination-controls>
+                </div>
             </div>
-        </ul>
-        <post-comment-entry *ngIf="user"
-                [postId]="post._id"></post-comment-entry>
-        <post-comment-list [postId]="post._id"></post-comment-list>
+        </div>
     </div>
 </div>

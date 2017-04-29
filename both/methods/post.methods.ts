@@ -2,6 +2,7 @@ import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 import { Post } from '../models/post.model';
 import { Posts } from '../collections/posts.collection';
+import { PostComments } from '../collections/post-comments.collection';
 
 Meteor.methods({
     insertPost: function (post: any) {
@@ -38,6 +39,8 @@ Meteor.methods({
             if (Meteor.isServer) {
                 // delete it
                 Posts.remove(postId);
+                // also delete related post comments
+                PostComments.remove({ postId : postId });
             }
         }
     }

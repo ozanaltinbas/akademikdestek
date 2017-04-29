@@ -1,23 +1,28 @@
-<loader *ngIf="!posts"></loader>
-<div class="posts-list-container">
-    <div class="posts-list">
-        <ul class="collection hoverable">
-            <div *ngFor="let post of posts | async">
-                <li class="collection-item avatar">
-                    <img src="img/icons/account_circle.png" alt="" class="circle">
-                    <span class="title truncate clickable" [routerLink]="['/post', post._id]">{{ post.title }}</span>
-                    <p class="truncate clickable" [routerLink]="['/post', post._id]">
-                        {{ post.owner | displayName }}
-                    </p>
-                    <p class="truncate clickable" [routerLink]="['/post', post._id]">
-                        {{ post.content }}
-                    </p>
-                    <a href="javascript:void(0);" class="secondary-content" *ngIf="isCurrentUser(post.owner)"
-                       (click)="deletePost(post)">
-                        <i class="material-icons">delete</i></a>
-                </li>
+<div class="col-sm-12">
+    <div class="panel panel-white post panel-shadow" *ngFor="let post of posts | async">
+        <div class="post-heading">
+            <div class="pull-left image">
+                <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
             </div>
-        </ul>
-        <pagination-controls class="pagination" (pageChange)="onPageChanged($event)"></pagination-controls>
+            <div class="pull-right" *ngIf="isCurrentUser(post.owner)">
+                <img src="img/icons/delete.svg" alt="delete"
+                     class="delete clickable" (click)="deletePost(post);">
+            </div>
+            <div class="pull-left meta clickable" [routerLink]="['/post', post._id ]">
+                <div class="title h5">
+                    <b>{{ post.owner | displayName }}</b>
+                </div>
+                <h6 class="text-muted time">{{ post.createdAt | amTimeAgo }}</h6>
+            </div>
+        </div>
+        <div class="post-description clickable" [routerLink]="['/post', post._id ]">
+            <p>{{ post.title }}</p>
+        </div>
     </div>
+    <pagination-controls
+            class="pagination"
+            (pageChange)="onPageChanged($event)"
+            previousLabel="{{ 'pagination.previous' | translate }}"
+            nextLabel="{{ 'pagination.next' | translate }}">
+    </pagination-controls>
 </div>

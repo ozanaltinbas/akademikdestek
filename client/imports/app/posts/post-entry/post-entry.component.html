@@ -1,29 +1,23 @@
 <loader *ngIf="onProgress"></loader>
-<ul class="collapsible" data-collapsible="accordion">
-    <li>
-        <div class="collapsible-header"><i class="material-icons">note_add</i>{{ 'posts.post-entry.title' | translate }}</div>
-        <div class="collapsible-body">
-            <form (ngSubmit)="insertPost($event);" [formGroup]="postEntryForm">
-                <div class="form-group">
-                    <label for="title">{{ 'posts.post-entry.post-title' | translate }}</label>
-                    <input type="text"
-                           class="form-control"
-                           id="title"
-                           formControlName="title">
-                </div>
-                <div class="form-group">
-                    <label for="content">{{ 'posts.post-entry.post-content' | translate }}</label>
-                    <input type="text"
-                           class="form-control"
-                           id="content"
-                           formControlName="content">
-                </div>
-                <button type="submit" class="btn btn-default">{{ 'posts.post-entry.share' | translate }}</button>
-                <button type="button" class="btn btn-default" (click)="clear();">{{ 'posts.post-entry.clear' | translate }}</button>
-            </form>
-        </div>
-    </li>
-</ul>
+<div class="panel panel-default" style="margin-top: 10px;" *ngIf="user">
+    <div class="panel-heading">{{ 'posts.post-entry.title' | translate }}</div>
+    <div class="panel-body">
+        <form (ngSubmit)="insertPost($event);" [formGroup]="postEntryForm">
+            <div class="form-group">
+                <label for="title">{{ 'posts.post-entry.post-title' | translate }}</label>
+                <input type="text" class="form-control" id="title"
+                       formControlName="title" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="content">{{ 'posts.post-entry.post-content' | translate }}</label>
+                <input type="text" class="form-control" id="content"
+                       formControlName="content" autocomplete="off">
+            </div>
+            <button type="submit" class="btn btn-default">{{ 'posts.post-entry.share' | translate }}</button>
+            <button type="button" class="btn btn-default" (click)="clear();">{{ 'posts.post-entry.clear' | translate }}</button>
+        </form>
+    </div>
+</div>
 <div class="at-error alert alert-success alert-dismissable" *ngIf="success">
     <a href="javascript:void(0);" class="close" aria-label="close"
        (click)="dismiss('success');">&times;</a>
@@ -31,6 +25,13 @@
 </div>
 <div class="at-error alert alert-danger alert-dismissable" *ngIf="error">
     <a href="javascript:void(0);" class="close" aria-label="close"
-        (click)="dismiss('error');">&times;</a>
+       (click)="dismiss('error');">&times;</a>
     <p>{{ error | translate }}</p>
+</div>
+<div class="posts-home" *ngIf="!user">
+    <div class="posts-home-intro">
+        <h3 class="posts-home-intro-tagline">{{ 'posts.post-entry.login-to-post' | translate }}</h3>
+        <button class="posts-home-intro-button btn btn-primary" type="button"
+                routerLink="/login">{{ 'accounts.common.login' | translate }}</button>
+    </div>
 </div>

@@ -1,0 +1,19 @@
+.posts-home-intro {
+  padding: 20px 30px;
+  border-top: 1px dashed #bbb6c8;
+  border-bottom: 1px dashed #bbb6c8;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #E2DCED
+}
+.posts-home-intro-tagline {
+  margin: 0 10px 0 0
+}
+
+.posts-home-intro-button, .btn-register:hover, .btn-register:focus{
+  font-size: 16px;
+  background-color: rgba(252, 172, 69, 0.91);
+  color: #fff;
+}

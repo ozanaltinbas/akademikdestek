@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 
 import template from './home.component.html';
 import style from './home.component.scss';
@@ -8,17 +8,9 @@ import style from './home.component.scss';
     template,
     styles: [ style ]
 })
-export class HomeComponent implements OnDestroy {
+export class HomeComponent {
 
     constructor() {
-
-    }
-
-    ngAfterViewInit(): void {
-
-    }
-
-    ngOnDestroy(): void {
 
     }
 

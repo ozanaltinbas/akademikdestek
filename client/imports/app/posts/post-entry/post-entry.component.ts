@@ -10,12 +10,11 @@ import '../../../../../both/methods/post.methods.ts';
 
 import template from './post-entry.component.html';
 import style from './post-entry.component.scss';
-import style_posts from '../posts.component.scss';
 
 @Component({
     selector: 'post-entry',
     template,
-    styles: [ style, style_posts ]
+    styles: [ style ]
 })
 @InjectUser('user')
 export class PostEntryComponent implements OnInit {
