@@ -1,30 +1,60 @@
 <loader *ngIf="!blog"></loader>
-<div *ngIf="blog">
-    <header class="intro-header" style="background-image: url('img/blog/blog_default.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>{{ blog.title }}</h1>
-                        <h2 class="subheading">{{ blog.subtitle }}</h2>
-                        <span class="meta">{{ blog.owner | displayName }}</span>
+<div class="container">
+    <div class="row" *ngIf="blog" style="margin-top: 10px;">
+        <div class="col-sm-12">
+            <div class="panel panel-white post panel-shadow">
+                <div class="post-heading">
+                    <div class="pull-left image">
+                        <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                    </div>
+                    <div class="pull-left meta">
+                        <div class="title h5">
+                            <b>{{ blog.owner | displayName }}</b></a>
+                        </div>
+                        <h6 class="text-muted time">{{ blog.createdAt | amTimeAgo }}</h6>
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                <div class="post-description">
+                    <h3>{{ blog.title }}</h3>
+                    <h3>{{ blog.subtitle }}</h3>
                     <p [innerHTML]="blog.content"></p>
                 </div>
-                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-                    <blog-comment-entry [blogId]="blog._id"></blog-comment-entry>
-                    <blog-comment-list [blogId]="blog._id"></blog-comment-list>
+                <div class="post-footer">
+                    <form [formGroup]="blogCommentForm" (ngSubmit)="insertBlogComment($event);">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="{{ 'posts.posts-list.post-detail.post-comment-entry.leave-a-comment' | translate }}"
+                                   type="text" formControlName="content">
+                            <span class="input-group-addon">
+                            <a href="javascript:void(0);" (click)="insertBlogComment($event);"><i class="fa fa-edit"></i></a>
+                        </span>
+                        </div>
+                    </form>
+                    <ul class="comments-list">
+                        <li class="comment" *ngFor="let blogComment of blogComments | async">
+                            <div class="pull-right" *ngIf="isCurrentUser(blogComment.owner)">
+                                <img src="img/icons/delete.svg" alt="delete"
+                                     class="delete clickable" (click)="deleteBlogComment(blogComment);">
+                            </div>
+                            <a class="pull-left" href="javascript:void(0);">
+                                <img class="avatar" src="http://bootdey.com/img/Content/user_1.jpg" alt="avatar">
+                            </a>
+                            <div class="comment-body">
+                                <div class="comment-heading">
+                                    <h4 class="user">{{ blogComment.owner | displayName }}</h4>
+                                    <h5 class="time">{{ blogComment.createdAt | amTimeAgo }}</h5>
+                                </div>
+                                <p>{{ blogComment.content }}</p>
+                            </div>
+                        </li>
+                        <hr>
+                    </ul>
+                    <pagination-controls
+                            class="pagination"
+                            (pageChange)="onPageChanged($event)"
+                            previousLabel="{{ 'pagination.previous' | translate }}"
+                            nextLabel="{{ 'pagination.next' | translate }}"></pagination-controls>
                 </div>
             </div>
         </div>
-    </article>
-    <hr>
+    </div>
 </div>
