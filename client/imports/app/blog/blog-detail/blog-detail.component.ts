@@ -23,11 +23,12 @@ import { BlogComment } from '../../../../../both/models/blog-comment.model';
 
 import template from './blog-detail.component.html';
 import style from './blog-detail.component.scss';
+import blog_style from '../blog.component.scss';
 
 @Component({
     selector: 'blog-detail',
     template,
-    styles: [ style ]
+    styles: [ style, blog_style ]
 })
 @InjectUser('user')
 export class BlogDetailComponent implements OnInit, OnDestroy {

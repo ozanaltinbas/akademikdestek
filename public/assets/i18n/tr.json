@@ -139,15 +139,16 @@
     "POSTED_BY": "{{author}} tarafından {{createdAt}} paylaşıldı."
   },
   "CLOSE": "Kapat",
-  "PAGINATION": {
-    "next": "Sonraki",
-    "previous": "Önceki"
+  "profile" : {
+    "update" : "Profil Bilgilerini Güncelle",
+    "cancel" : "Vazgeç",
+    "change-password" : "Şifreni Değiştir",
+    "current-password" : "Şimdiki Şifreniz",
+    "new-password" : "Yeni Şifreniz",
+    "new-password-again" : "Yeni Şifrenizi Tekrar Girin",
+    "change-password" : "Şifreni Güncelle",
+    "clear" : "Temizle"
   },
-
-
-
-
-
   "pagination" : {
     "previous" : "Önceki",
     "next" : "Sonraki"
@@ -242,12 +243,14 @@
       "User not found" : "Böyle bir kullanıcı bulunamadı.",
       "Username already exists." : "Bu kullanıcı adı daha önceden alınmış.",
       "Email already exists." : "Girdiğiniz E-Posta adresi daha önceden alınmış.",
-      "Incorrect password" : "Girdiğiniz şifre hatalı."
+      "Incorrect password" : "Girdiğiniz şifre hatalı.",
+      "current-user-Incorrect password" : "Eski şifreniz hatalı."
     },
     "success" : {
       "reset-password-link-sent" : "Şifre yenileme linki başarılı bir şekilde gönderilmiştir. Lütfen E-Posta adresinizi kontrol edin.",
       "verify-link-sent" : "Hesap onaylama linki başarılı bir şekilde gönderilmiştir. Lütfen E-Posta adresinizi kontrol edin.",
-      "user-created" : "Kullanıcı başarılı bir şekilde yaratılmıştır. Hesabınızın aktive edilebilmesi için size göndermiş olduğumuz onay linkini tıklayın."
+      "user-created" : "Kullanıcı başarılı bir şekilde yaratılmıştır. Hesabınızın aktive edilebilmesi için size göndermiş olduğumuz onay linkini tıklayın.",
+      "password-change-success" : "Şifreniz başarılı bir şekilde değiştirilmiştir."
     }
   }
 }

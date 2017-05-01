@@ -2,8 +2,15 @@
     <div class="int-box">
         <div class="container">
             <blog-entry *ngIf="displayBlogEntry()"></blog-entry>
-            <profile-update></profile-update>
+            <div class="wow fadeIn">
+                <div class="container">
+                    <div class="row">
+                        <h3>{{ 'PROFILE.title' | translate }}</h3>
+                        <hr>
+                        <profile-update></profile-update>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="fill-remaining-space"></div>

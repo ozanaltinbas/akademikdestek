@@ -290,6 +290,32 @@ export class AccountsService {
         return result;
     }
 
+    validatePasswordUpdateForm(passwordUpdateForm: FormGroup) : string {
+        // Start validating the password update form
+        let result: string = '';
+        // result handler is created. first of all lets check the form object
+        if (passwordUpdateForm.valid) {
+            // sounds good. initial validation passed.
+            // current password validation starts.
+            result = this.validatePassword(passwordUpdateForm.value.currentPassword);
+            // if it is not an email check if it is username
+            if (result && result.length > 0) {
+                // new password validation
+                result = this.validatePassword(passwordUpdateForm.value.newPassword);
+            }
+            // validate the password
+            if (!result) {
+                // password validation
+                result = this.validatePassword(passwordUpdateForm.value.newPasswordAgain);
+            }
+        } // form is not valid.
+        else {
+            result = 'accounts.error.all-fields-required';
+        }
+        // return the error message
+        return result;
+    }
+
     logout() : void {
         // logout all clients
         Meteor.logout();

@@ -15,10 +15,13 @@ import style from './profile-update.component.scss';
 })
 export class ProfileUpdateComponent implements OnInit, OnDestroy {
 
+    error: string = '';
+    success: string = '';
     currentUser: User;
     profileUpdateForm: FormGroup;
     notLoaded: boolean = true;
     autorunSub: Subscription;
+    showChangePassword: boolean = false;
 
     constructor(private formBuilder: FormBuilder) {
 
@@ -56,6 +59,10 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
     }
 
     updateProfile(): void {
+        // initiazlie error message
+        this.error = '';
+        // initialize success message
+        this.success = '';
         // if our form is valid.
         if (this.profileUpdateForm.valid) {
             // our form is valid.
@@ -67,12 +74,18 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
             };
             // update the user profile.
             MeteorObservable.call('updateProfile', profileInfo).subscribe(() => {
-                    $('#profile-update-success').modal();
+                    // update success message
+                    this.success = 'PROFILE.profile_update_success';
                 }, (error) => {
-                    $('#profile-update-fail').modal();
-                    console.log(error);
+                    this.error = 'PROFILE.profile_update_fail';
             });
         }
+    }
+
+    displayChangePassword() : void {
+        console.log("triggered");
+        // toggle it
+        this.showChangePassword = !this.showChangePassword;
     }
 
     ngOnDestroy() {

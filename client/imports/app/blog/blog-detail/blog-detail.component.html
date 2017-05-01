@@ -1,58 +1,75 @@
 <loader *ngIf="!blog"></loader>
-<div class="container">
-    <div class="row" *ngIf="blog" style="margin-top: 10px;">
-        <div class="col-sm-12">
-            <div class="panel panel-white post panel-shadow">
-                <div class="post-heading">
-                    <div class="pull-left image">
-                        <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
-                    </div>
-                    <div class="pull-left meta">
-                        <div class="title h5">
-                            <b>{{ blog.owner | displayName }}</b></a>
+<div *ngIf="blog">
+    <div class="wow fadeIn">
+        <header class="intro-header" style="background-image: url('img/blog/blog_default.jpg'); ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="site-heading">
+                            <h1>{{ blog.title }}</h1>
+                            <hr class="small">
+                            <span class="subheading">{{ blog.subtitle }}</span>
                         </div>
-                        <h6 class="text-muted time">{{ blog.createdAt | amTimeAgo }}</h6>
                     </div>
                 </div>
-                <div class="post-description">
-                    <h3>{{ blog.title }}</h3>
-                    <h3>{{ blog.subtitle }}</h3>
-                    <p [innerHTML]="blog.content"></p>
-                </div>
-                <div class="post-footer">
-                    <form [formGroup]="blogCommentForm" (ngSubmit)="insertBlogComment($event);">
-                        <div class="input-group">
-                            <input class="form-control" placeholder="{{ 'posts.posts-list.post-detail.post-comment-entry.leave-a-comment' | translate }}"
-                                   type="text" formControlName="content">
-                            <span class="input-group-addon">
-                            <a href="javascript:void(0);" (click)="insertBlogComment($event);"><i class="fa fa-edit"></i></a>
-                        </span>
-                        </div>
-                    </form>
-                    <ul class="comments-list">
-                        <li class="comment" *ngFor="let blogComment of blogComments | async">
-                            <div class="pull-right" *ngIf="isCurrentUser(blogComment.owner)">
-                                <img src="img/icons/delete.svg" alt="delete"
-                                     class="delete clickable" (click)="deleteBlogComment(blogComment);">
+            </div>
+        </header>
+        <div class="container">
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-sm-12">
+                    <div class="panel panel-white post panel-shadow">
+                        <div class="post-heading">
+                            <div class="pull-left image">
+                                <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
                             </div>
-                            <a class="pull-left" href="javascript:void(0);">
-                                <img class="avatar" src="http://bootdey.com/img/Content/user_1.jpg" alt="avatar">
-                            </a>
-                            <div class="comment-body">
-                                <div class="comment-heading">
-                                    <h4 class="user">{{ blogComment.owner | displayName }}</h4>
-                                    <h5 class="time">{{ blogComment.createdAt | amTimeAgo }}</h5>
+                            <div class="pull-left meta">
+                                <div class="title h5">
+                                    <b>{{ blog.owner | displayName }}</b></a>
                                 </div>
-                                <p>{{ blogComment.content }}</p>
+                                <h6 class="text-muted time">{{ blog.createdAt | amTimeAgo }}</h6>
                             </div>
-                        </li>
-                        <hr>
-                    </ul>
-                    <pagination-controls
-                            class="pagination"
-                            (pageChange)="onPageChanged($event)"
-                            previousLabel="{{ 'pagination.previous' | translate }}"
-                            nextLabel="{{ 'pagination.next' | translate }}"></pagination-controls>
+                        </div>
+                        <div class="post-description post-preview">
+                            <p class="post-subtitle"
+                                [innerHTML]="blog.content">
+                            </p>
+                        </div>
+                        <div class="post-footer">
+                            <form [formGroup]="blogCommentForm" (ngSubmit)="insertBlogComment($event);">
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="{{ 'posts.posts-list.post-detail.post-comment-entry.leave-a-comment' | translate }}"
+                                           type="text" formControlName="content">
+                                <span class="input-group-addon">
+                                <a href="javascript:void(0);" (click)="insertBlogComment($event);"><i class="fa fa-edit"></i></a>
+                            </span>
+                                </div>
+                            </form>
+                            <ul class="comments-list">
+                                <li class="comment" *ngFor="let blogComment of blogComments | async">
+                                    <div class="pull-right" *ngIf="isCurrentUser(blogComment.owner)">
+                                        <img src="img/icons/delete.svg" alt="delete"
+                                             class="delete clickable" (click)="deleteBlogComment(blogComment);">
+                                    </div>
+                                    <a class="pull-left" href="javascript:void(0);">
+                                        <img class="avatar" src="http://bootdey.com/img/Content/user_1.jpg" alt="avatar">
+                                    </a>
+                                    <div class="comment-body">
+                                        <div class="comment-heading">
+                                            <h4 class="user">{{ blogComment.owner | displayName }}</h4>
+                                            <h5 class="time">{{ blogComment.createdAt | amTimeAgo }}</h5>
+                                        </div>
+                                        <p  style="margin-top: 0px;">{{ blogComment.content }}</p>
+                                    </div>
+                                </li>
+                                <hr>
+                            </ul>
+                            <pagination-controls
+                                    class="pagination"
+                                    (pageChange)="onPageChanged($event)"
+                                    previousLabel="{{ 'pagination.previous' | translate }}"
+                                    nextLabel="{{ 'pagination.next' | translate }}"></pagination-controls>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
