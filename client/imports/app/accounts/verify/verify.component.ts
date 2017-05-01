@@ -24,6 +24,8 @@ export class VerifyComponent implements OnInit {
     ngOnInit() {
         // initialize the form
         this.initializeVerifyEmailForm();
+        // redirect if user gets logged in
+        this.accountsService.autoRedirect('login');
     }
 
     verifyEmail(): void {

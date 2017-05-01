@@ -25,6 +25,8 @@ export class RecoverComponent implements OnInit {
     ngOnInit() {
         // initialize the form
         this.initializeRecoverForm();
+        // redirect if user gets logged in
+        this.accountsService.autoRedirect('login');
     }
 
     recover(): void {

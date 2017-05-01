@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Meteor } from 'meteor/meteor';
 import { Router } from '@angular/router';
+import { MeteorObservable } from 'meteor-rxjs';
 
 @Injectable()
 export class AccountsService {
@@ -333,6 +334,33 @@ export class AccountsService {
         }
         // return the generated text
         return result;
+    }
+
+    autoRedirect(type: string): void {
+        // input type must be sent
+        if (type && type.length > 0) {
+            // if logout action is needed
+            if (type === 'logout') {
+                // detect changes
+                MeteorObservable.autorun().subscribe(() => {
+                    // if user is logged off
+                    if (Meteor.userId() === undefined || Meteor.userId() === null) {
+                        // redirect to home page
+                        this.router.navigate(['/']);
+                    }
+                });
+            } // if login action is needed
+            else if (type === 'login') {
+                // detect changes
+                MeteorObservable.autorun().subscribe(() => {
+                    // if user is logged in
+                    if (Meteor.userId() && Meteor.userId().length > 0) {
+                        // redirect to blog page
+                        this.router.navigate(['/blog']);
+                    }
+                });
+            }
+        }
     }
 
 }

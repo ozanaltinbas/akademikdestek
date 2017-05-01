@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
         // initialize login form
         this.initializeLoginForm();
+        // redirect if user gets logged in
+        this.accountsService.autoRedirect('login');
     }
 
     login(): void {

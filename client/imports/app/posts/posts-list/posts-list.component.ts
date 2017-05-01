@@ -1,4 +1,3 @@
-import { Meteor } from 'meteor/meteor';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
