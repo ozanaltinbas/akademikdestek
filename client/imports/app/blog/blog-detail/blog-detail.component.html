@@ -35,7 +35,7 @@
                             </p>
                         </div>
                         <div class="post-footer">
-                            <form [formGroup]="blogCommentForm" (ngSubmit)="insertBlogComment($event);">
+                            <form [formGroup]="blogCommentForm" (ngSubmit)="insertBlogComment($event);" *ngIf="user">
                                 <div class="input-group">
                                     <input class="form-control" placeholder="{{ 'posts.posts-list.post-detail.post-comment-entry.leave-a-comment' | translate }}"
                                            type="text" formControlName="content">

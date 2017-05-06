@@ -118,6 +118,7 @@
     "name" : "Ad :",
     "lastname" : "Soyad : ",
     "email" : "Mail : ",
+    "gender" : "Cinsiyet",
     "password" : "Şifre  : ",
     "confirmPassword" : "Şifre Tekrar : ",
     "username" : "Kullanıcı Adı : ",
@@ -147,7 +148,10 @@
     "new-password" : "Yeni Şifreniz",
     "new-password-again" : "Yeni Şifrenizi Tekrar Girin",
     "change-password" : "Şifreni Güncelle",
-    "clear" : "Temizle"
+    "clear" : "Temizle",
+    "male" : "Erkek",
+    "female" : "Kadın",
+    "none" : "Hiçbiri"
   },
   "pagination" : {
     "previous" : "Önceki",

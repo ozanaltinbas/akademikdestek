@@ -19,7 +19,7 @@
                     <p>{{ post.content }}</p>
                 </div>
                 <div class="post-footer">
-                    <form [formGroup]="postCommentForm" (ngSubmit)="insertPostComment($event);">
+                    <form [formGroup]="postCommentForm" (ngSubmit)="insertPostComment($event);" *ngIf="user">
                         <div class="input-group">
                             <input class="form-control" placeholder="{{ 'posts.posts-list.post-detail.post-comment-entry.leave-a-comment' | translate }}"
                                    type="text" formControlName="content">

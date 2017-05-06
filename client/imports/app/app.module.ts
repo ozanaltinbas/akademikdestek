@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AccountsModule } from 'angular2-meteor-accounts-ui';
 import { Ng2PaginationModule } from 'ng2-pagination';
 import { MomentModule } from 'angular2-moment';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 import { Routes, ROUTES_PROVIDERS } from './app.routes';
 
@@ -53,7 +54,8 @@ import { PIPE_DECLARATIONS } from '../pipes/index';
   ],
   providers: [
     ...ROUTES_PROVIDERS,
-    ...SERVICES_DECLARATIONS
+    ...SERVICES_DECLARATIONS,
+    CookieService
   ],
   bootstrap: [
     AppComponent

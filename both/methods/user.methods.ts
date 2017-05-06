@@ -129,7 +129,8 @@ Meteor.methods({
             userId: String,
             firstname: String,
             lastname: String,
-            email: String
+            email: String,
+            gender: Match.Optional(String)
         });
         // if we run on the server
         if (Meteor.isServer) {
@@ -141,6 +142,7 @@ Meteor.methods({
                     {$set: {
                         "profile.firstname": profileInfo.firstname,
                         "profile.lastname" : profileInfo.lastname,
+                        "profile.gender" : profileInfo.gender,
                         "emails[0].address": profileInfo.email}});
                 // updated.
             } else {

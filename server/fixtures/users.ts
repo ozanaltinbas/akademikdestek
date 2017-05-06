@@ -8,7 +8,8 @@ export function loadUsers() {
             email: 'ozan.altinbas@ymail.com',
             profile: {
                 firstname: 'Ozan',
-                lastname: 'Altınbaş'
+                lastname: 'Altınbaş',
+                gender: 'M'
             },
             password: 'OZan54335433',
             public: true

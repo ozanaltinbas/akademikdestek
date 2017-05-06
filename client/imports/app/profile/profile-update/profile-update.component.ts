@@ -22,6 +22,7 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
     notLoaded: boolean = true;
     autorunSub: Subscription;
     showChangePassword: boolean = false;
+    genders: any[];
 
     constructor(private formBuilder: FormBuilder) {
 
@@ -47,6 +48,8 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
                 this.notLoaded = false;
             }
         });
+        // also initialize gender
+        this.initializeGenderData();
     }
 
     initializeFormData(): void {
@@ -54,7 +57,8 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
         this.profileUpdateForm = this.formBuilder.group({
             firstname: [this.currentUser.profile.firstname, Validators.required],
             lastname: [this.currentUser.profile.lastname, Validators.required],
-            email: [this.currentUser.emails[0].address, Validators.required]
+            email: [this.currentUser.emails[0].address, Validators.required],
+            gender: [this.currentUser.profile.gender]
         });
     }
 
@@ -70,7 +74,8 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
                 'userId': this.currentUser._id,
                 'firstname': this.profileUpdateForm.value.firstname,
                 'lastname': this.profileUpdateForm.value.lastname,
-                'email': this.profileUpdateForm.value.email
+                'email': this.profileUpdateForm.value.email,
+                'gender': this.profileUpdateForm.value.gender
             };
             // update the user profile.
             MeteorObservable.call('updateProfile', profileInfo).subscribe(() => {
@@ -83,9 +88,17 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
     }
 
     displayChangePassword() : void {
-        console.log("triggered");
         // toggle it
         this.showChangePassword = !this.showChangePassword;
+    }
+
+    initializeGenderData(): void {
+        // initialize gender data
+        this.genders = [
+            {value : '', description : 'profile.none'},
+            {value : 'M', description : 'profile.male'},
+            {value: 'F', description : 'profile.female'}
+        ];
     }
 
     ngOnDestroy() {

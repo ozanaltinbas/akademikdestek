@@ -21,7 +21,7 @@ import style_posts from '../posts.component.scss';
 @Component({
     selector: 'posts-list',
     template,
-    styles: [ style, style_posts ]
+    styles: [ style ]
 })
 export class PostsListComponent implements OnInit, OnDestroy {
 
