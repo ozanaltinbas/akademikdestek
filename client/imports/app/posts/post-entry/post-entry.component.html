@@ -28,7 +28,7 @@
        (click)="dismiss('error');">&times;</a>
     <p>{{ error | translate }}</p>
 </div>
-<div class="posts-home" *ngIf="!user">
+<div class="posts-home" *ngIf="!user" style="margin-top: 10px;">
     <div class="posts-home-intro">
         <h3 class="posts-home-intro-tagline">{{ 'posts.post-entry.login-to-post' | translate }}</h3>
         <button class="posts-home-intro-button btn btn-primary" type="button"

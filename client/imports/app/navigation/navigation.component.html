@@ -11,6 +11,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navigation-bar-collapse">
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="javascript:void(0);" (click)="changeLanguage($event);">{{ 'NAVIGATION.LANGUAGE' | translate }}</a></li>
                 <li><a routerLink="/blog" [routerLinkActive]="['active']">{{ 'NAVIGATION.BLOG' | translate }}</a></li>
                 <li><a routerLink="/posts" [routerLinkActive]="['active']">{{ 'NAVIGATION.POSTS' | translate }}</a></li>
                 <li *ngIf="!user"><a routerLink="/signup" [routerLinkActive]="['active']">{{ 'NAVIGATION.REGISTER' | translate }}</a></li>

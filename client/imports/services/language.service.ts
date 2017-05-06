@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
 import { CookieService } from 'angular2-cookie/core';
 
+import * as moment from 'moment';
 import 'moment/locale/tr.js';
 import 'moment/locale/en-gb.js';
-
-import * as moment from 'moment/min/moment.min.js';
 
 @Injectable()
 export class LanguageService {
@@ -56,6 +55,8 @@ export class LanguageService {
         this.translateService.use(browserLang.match(/tr/) ? 'tr' : 'en-gb');
         // set cookie lang parameter as whatever it is
         this.cookieService.put('lang', this.translateService.currentLang);
+        // change the current language as Turkish
+        moment.locale(this.translateService.currentLang);
     }
 
 }
