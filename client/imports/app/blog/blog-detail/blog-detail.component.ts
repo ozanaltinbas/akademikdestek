@@ -49,6 +49,7 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
     optionsSub: Subscription;
     blogCommentsSize: number = 0;
     autorunSub: Subscription;
+    imagesSubs: Subscription;
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
@@ -79,6 +80,8 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
                         this.blog = Blogs.findOne(this.blogId);
                     });
                 });
+
+                this.imagesSubs = MeteorObservable.subscribe('images').subscribe();
 
                 this.optionsSub = Observable.combineLatest(
                     this.pageSize,
@@ -187,6 +190,7 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
         this.blogCommentsSub.unsubscribe();
         this.optionsSub.unsubscribe();
         this.autorunSub.unsubscribe();
+        this.imagesSubs.unsubscribe();
     }
 
 }

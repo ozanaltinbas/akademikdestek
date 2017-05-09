@@ -12,6 +12,8 @@ import style from './profile.component.scss';
 })
 export class ProfileComponent implements OnInit{
 
+    images: string[] = [];
+
     constructor(private accountsService: AccountsService) {}
 
     ngOnInit() {
@@ -21,6 +23,10 @@ export class ProfileComponent implements OnInit{
 
     displayBlogEntry() : boolean {
         return Roles.userIsInRole(Meteor.userId(), 'admin');
+    }
+
+    onImage(imageId: string) {
+        this.images.push(imageId);
     }
     
 }

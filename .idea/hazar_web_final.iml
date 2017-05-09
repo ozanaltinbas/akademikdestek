@@ -8,6 +8,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="hazar_web_final node_modules" level="project" />
     <orderEntry type="library" name="meteor-packages-auto-import-npm" level="project" />
+    <orderEntry type="library" name="meteor-packages-auto-import-npm" level="project" />
     <orderEntry type="library" name="meteor-packages-auto-import-browser" level="project" />
   </component>
 </module>

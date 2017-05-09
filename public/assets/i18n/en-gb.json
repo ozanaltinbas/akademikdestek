@@ -114,7 +114,7 @@
     },
   "PROFILE" : {
     "title" : "Your Academic Support Profile",
-    "message" : "You can find details about <strong>your profile</strong> below. If you want to change your information, refill form and press <strong>Update</strong>.",
+    "message" : "You can find details about <strong>your profile</strong> below. If you want to change your information, refill form and press <strong>update</strong>.",
     "updateProfile" : "Update Profile",
     "name" : "Name :",
     "lastname" : "Surname : ",

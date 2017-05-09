@@ -8,6 +8,7 @@ import { AccountsModule } from 'angular2-meteor-accounts-ui';
 import { Ng2PaginationModule } from 'ng2-pagination';
 import { MomentModule } from 'angular2-moment';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { FileDropModule } from "angular2-file-drop";
 
 import { Routes, ROUTES_PROVIDERS } from './app.routes';
 
@@ -38,7 +39,8 @@ import { PIPE_DECLARATIONS } from '../pipes/index';
       deps: [Http]
     }),
     Ng2PaginationModule,
-    MomentModule
+    MomentModule,
+    FileDropModule
   ],
   declarations: [
     AppComponent,

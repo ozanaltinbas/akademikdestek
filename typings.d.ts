@@ -3,6 +3,7 @@
 /// <reference types="@types/jquery" />
 /// <reference types="@types/chai" />
 /// <reference types="@types/mocha" />
+/// <reference types="@types/node" />
 
 declare module "*.html" {
   const template: string;
@@ -144,4 +145,18 @@ declare module "meteor/alanning:roles" {
     function userIsInRole(id?: any,value?: any): boolean{}
     function addUsersToRoles(id?: any,value?: any): boolean{}
   }
+}
+
+declare const WOW: any;
+
+declare module "meteor/jalik:ufs" {
+  interface Uploader {
+    start: () => void;
+  }
+
+  interface UploadFS {
+    Uploader: (options: any) => Uploader;
+  }
+
+  export var UploadFS;
 }

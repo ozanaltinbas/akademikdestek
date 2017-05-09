@@ -4,8 +4,9 @@ import './imports/publications/blog-comments.ts';
 import './imports/publications/posts.ts';
 import './imports/publications/post-comments.ts';
 import './imports/publications/users.ts';
-import { loadUsers } from './fixtures/users';
+import './imports/publications/images';
 
+import { loadUsers } from './fixtures/users';
 import { startServiceConfiguration } from './imports/service-configuration';
 import { startSmtpConfiguration } from './imports/smtp';
 

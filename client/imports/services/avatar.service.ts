@@ -9,7 +9,7 @@ export class AvatarService {
 
     getAvatarsByGender(gender: string): any[] {
         // define avatar list
-        let avatarList: any[];
+        let avatarList: string[];
         // gender must be sent
         if (gender && gender.length > 0) {
             // control gender value
@@ -20,14 +20,18 @@ export class AvatarService {
                 // return female avatars
                 avatarList = this.getFemaleAvatars();
             }
+        } // if no gender sent
+        else {
+            // get all avatars
+            avatarList = this.getMaleAvatars().concat(this.getFemaleAvatars());
         }
         // return avatar list
         return avatarList;
     }
 
-    getFemaleAvatars(): any[] {
+    getFemaleAvatars(): string[] {
         // get all list
-        const avatars: any[] = [
+        const avatars: string[] = [
             'FA01','FA02','FA03','FA04','FA05',
             'FB01','FB02','FB03','FB04','FB05',
             'FC01','FC02','FC03','FC04','FC05',
@@ -37,13 +41,16 @@ export class AvatarService {
             'FH01','FH02','FH03','FH04','FH05',
             'FI01','FI02','FI03','FI04','FI05'
         ];
+        for (let i = 0; i < avatars.length; i++) {
+            avatars[i] = 'females/' + avatars[i];
+        }
         // return aliases
         return avatars;
     }
 
-    getMaleAvatars(): any[] {
+    getMaleAvatars(): string[] {
         // get all list
-        const avatars: any[] = [
+        const avatars: string[] = [
             'A01','A02','A03','A04','A05',
             'B01','B02','B03','B04','B05',
             'C01','C02','C03','C04','C05',
@@ -60,6 +67,9 @@ export class AvatarService {
             'N01','N02','N03','N04','N05',
             'O01','O02','O03','O04','O05'
         ];
+        for (let i = 0; i < avatars.length; i++) {
+            avatars[i] = 'males/' + avatars[i];
+        }
         // return aliases
         return avatars;
     }
