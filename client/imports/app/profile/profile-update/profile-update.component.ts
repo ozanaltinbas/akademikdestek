@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MeteorObservable } from 'meteor-rxjs';
 import { Subscription } from 'rxjs/Subscription';
 import { User } from '../../../../../both/models/user.model';
+import { AccountsService } from '../../../services/accounts.service';
 
 import template from './profile-update.component.html';
 import style from './profile-update.component.scss';
@@ -24,9 +25,8 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
     showChangePassword: boolean = false;
     genders: any[];
 
-    constructor(private formBuilder: FormBuilder) {
-
-    }
+    constructor(private formBuilder: FormBuilder,
+                private accountsService: AccountsService) {}
 
     ngOnInit() {
         // assign the user to current user.
@@ -84,6 +84,10 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
                 }, (error) => {
                     this.error = 'PROFILE.profile_update_fail';
             });
+        } // if form is not valid.
+        else {
+            // all fields are required
+            this.error = this.accountsService.generateMessageText('error', 'All fields required');
         }
     }
 
@@ -99,6 +103,21 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
             {value : 'M', description : 'profile.male'},
             {value: 'F', description : 'profile.female'}
         ];
+    }
+
+    dismiss(type: string) : void {
+        // if input is sent
+        if (type && type.length > 0) {
+            // type must be success or error
+            if (type === 'error') {
+                // initialize error message
+                this.error = '';
+            } // if it is success
+            else if (type = 'success') {
+                // initialize success message
+                this.success = '';
+            }
+        }
     }
 
     ngOnDestroy() {

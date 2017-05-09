@@ -14,10 +14,14 @@
         </div>
         <h3>{{ 'PROFILE.updateProfile' | translate }}</h3>
         <form class="form-horizontal" [formGroup]="profileUpdateForm" (submit)="updateProfile();">
-            <div class="at-error alert alert-danger" *ngIf="error">
+            <div class="at-error alert alert-danger alert-dismissable" *ngIf="error">
+                <a href="javascript:void(0);" class="close" aria-label="close"
+                   (click)="dismiss('error');">&times;</a>
                 {{ 'PROFILE.profile_update_fail' | translate }}
             </div>
-            <div class="at-error alert alert-success" *ngIf="success">
+            <div class="at-error alert alert-success alert-dismissable" *ngIf="success">
+                <a href="javascript:void(0);" class="close" aria-label="close"
+                   (click)="dismiss('success');">&times;</a>
                 {{ 'PROFILE.profile_update_success' | translate }}
             </div>
             <div class="form-group">
@@ -63,4 +67,4 @@
         </form>
         <password-update *ngIf="showChangePassword"></password-update>
     </div>
-</div>l>
+</div>

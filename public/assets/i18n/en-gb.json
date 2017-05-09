@@ -1,167 +1,261 @@
 {
   "NAVIGATION": {
-    "BRAND": "<span class='color'>AKADEMİK</span>DESTEK",
+    "BRAND": "<span class='color'>ACADEMIC</span>SUPPORT",
+    "HOME": "HOMEPAGE",
     "BLOG": "BLOG",
+    "POSTS": "POSTS",
     "REGISTER": "REGISTER",
     "LOGIN": "LOGIN",
-    "LOGOUT": "LOGOUT",
+    "LOGOUT": "LOG OUT",
     "PROFILE" : "MY PROFILE",
     "LANGUAGE": "TÜRKÇE"
   },
   "INTRO": {
-    "GREETING": "WELCOME ON <span class='color'>AKADEMİK</span>DESTEK",
-    "DESCRIPTION": "We make <strong>much stronger</strong> your academic career with academic support",
+    "GREETING": "WELCOME TO <span class='color'>ACADEMICSUPPORT</span>",
+    "DESCRIPTION": "We strengthen your academic career with our academic support",
     "START_USING": "Start Using"
   },
   "ABOUT": {
-    "SOME_WORDS": "SOME WORDS <strong>ABOUT US</strong>",
-    "DESCRIPTION": "Akademik kadromuz sizlere, çeşitli uzmanlık alanlarında ihtiyaç duyduğunuz birçok destek ve hizmeti vermek için burada. Hizmetlerimizle ilgili bilgilere <a href='#services' class='page-scroll'><strong>buradan</strong></a> ulaşabilirsiniz.",
-    "CONTACT": "Sitemizdeki bağlantılardan e-posta ve sosyal medya hesaplarımız aracılığıyla bizlere ulaşabilirsiniz.",
-    "REPLY": "İsteğinize en kısa sürede yanıt verilecektir."
+    "SOME_WORDS": "A FEW WORDS <strong>ABOUT US</strong>",
+    "DESCRIPTION": "Our academic staff is here to support and give service to you for your requirements. You can see our services from <a href='#services' class='page-scroll'><strong>here</strong></a>.",
+    "CONTACT": "You can reach us via e-mail or social networks presented in our web site",
+    "REPLY": "We'll respond as soon as possible."
   },
   "TEAM": {
-    "MEET_OUR_TEAM": "<strong>EKİBİMİZLE</strong> TANIŞIN",
-    "DETAIL": "Detaylı Bilgi",
-    "EXPERTNESS": "Uzmanlık Alanları",
-    "TOOLS": "Kullandığı Araçlar",
+    "MEET_OUR_TEAM": "MEET WITH <strong>OUR TEAM</strong>",
+    "DETAIL": "Details",
+    "EXPERTNESS": "Expertise Areas",
+    "TOOLS": "Tools used",
     "TAYFUN": {
-      "NAME": "TAYFUN BİŞKİN",
-      "POSITION": "Uzman Mühendis / Araştırmacı",
-      "DESCRIPTION": "Elektrik-elektronik mühendisliği lisans, yüksek lisans eğitiminin ardından doktora eğitimine devam etmektedir. Çeşitli üniversitelerde akademik deneyime sahiptir. CERN’de araştırmacı olarak bulunmuştur.",
-      "EXPERT_1": "Görüntü ve Sinyal İşleme",
-      "EXPERT_2": "Radar Sinyal İşleme",
-      "EXPERT_3": "Olasılık Optimizasyon",
-      "EXPERT_4": "Evrimsel Algoritmalar",
-      "EXPERT_5": "Yapay Sinir Ağları"
+      "NAME": "OSMAN TAYFUN BİŞKİN",
+      "POSITION": "Expert Engineer / Researher",
+      "DESCRIPTION": "After his undergraduate and graduate education in electrical and electronics engineering he is continuing his Ph.D. education now. He has academic experience in various universities. He was a guest researcher at CERN.",
+      "EXPERT_1": "Signal and Image Processing",
+      "EXPERT_2": "Radar Signal Processing",
+      "EXPERT_3": "Probability, Random and Stochastic Processes",
+      "EXPERT_4": "Linear Programming and Optimization",
+      "EXPERT_5": "Genetic Algorithms",
+      "EXPERT_6": "Artificial Neural Networks "
     },
     "HAZAR": {
       "NAME": "HAZAR ALTINBAŞ",
-      "POSITION": "Mühendis / Uzman Finansçı / Araştırmacı",
-      "DESCRIPTION": "Endüstri mühendisliği lisans, finansman yüksek lisans eğitiminin ardından, endüstri mühendisliği yüksek lisans, işletme doktora eğitimine devam etmektedir. 6 yıllık akademik deneyime sahiptir. Yurt dışından akademisyenlerle çalışmalarda bulunmaktadır.",
-      "EXPERT_1": "Envanter Rotalama",
-      "EXPERT_2": "Simülasyon ",
-      "EXPERT_3": "İstatistiksel ve Makine Öğrenme",
-      "EXPERT_4": "Veri Madenciliği",
-      "EXPERT_5": "Meta-Sezgisel Algoritmalar",
-      "EXPERT_6": "Finansal Piyalasar Analizi",
-      "EXPERT_7": "Risk Değerlendirme ve Derecelendirme",
-      "EXPERT_8": "Ekonometrik modeller",
-      "TOOL_1": "Arena Simülasyon Programı",
+      "POSITION": "Engineer / Finance Expert / Researcher",
+      "DESCRIPTION": "PhD. candidate in Business Administration. Bachelor degree at Industrial Engineering, master degree at finance, onging master at industrial engineer. He has 6 years of experience. He has studies with international researchers.",
+      "EXPERT_1": "Inventory Routing",
+      "EXPERT_2": "Simulation",
+      "EXPERT_3": "Statistical and Machine Learning",
+      "EXPERT_4": "Data Mining",
+      "EXPERT_5": "Meta Heuristic Algorihms",
+      "EXPERT_6": "Financial Markets Analysis",
+      "EXPERT_7": "Risk Assessment and Scoring",
+      "EXPERT_8": "Econometric Models",
+      "TOOL_1": "Arena Simulation Software",
       "TOOL_2": "M.S. Excel, Word, Project",
-      "TOOL_3": "C, C++, M.S. Excel VBA, Pascal Algoritma Geliştirme Dilleri",
-      "TOOL_4": "R İstatistiksel Öğrenme Yazılımı"
+      "TOOL_3": "C, C++, M.S. Excel VBA, Pascal",
+      "TOOL_4": "R Statistical Learning Software"
     },
     "BURAK": {
       "NAME": "BURAK ÖÇLÜ",
-      "POSITION": "Tedarik Zinciri Yönetimi Uzmanı / Araştırmacı",
-      "DESCRIPTION": "İşletme bilim dalında lisans eğitimini ve tedarik zinciri yönetimi alanında yüksek lisans eğitimini tamamlamıştır. 1 yıl süresince Almanya’da işletme alanında çalışmalarda bulunmuştur. E-ticaret sitesi oluşturma, sipariş yönetimi ve dijital pazarlama alanında internet sitesi girişimlerinde yer almıştır.",
-      "EXPERT_1": "Yeşil Tedarik Zinciri Yönetimi",
-      "EXPERT_2": "Tersine Lojistik ",
-      "EXPERT_3": "Nöro-Pazarlama",
-      "EXPERT_4": "Tüketici Davranışları",
-      "EXPERT_5": "İşletmelerde Çevreci Yaklaşımlar",
+      "POSITION": "Supply Chain Management Expert / Researcher",
+      "DESCRIPTION": "He got his bechalor degree in Business Administration, Marmara University and his master degree in Supply Chain Management, Istanbul University. In Business Administration, he had been applied many studies for 1 years in Germany. He is interested in E-commerce activities. He created many e-business websites in order to stock management, order management, and logistics activities.",
+      "EXPERT_1": "Green Supply Chain Management",
+      "EXPERT_2": "Reverse Logistics ",
+      "EXPERT_3": "Neuro-Marketing",
+      "EXPERT_4": "Customer Behaviour",
+      "EXPERT_5": "Environmental Studies in Business",
       "TOOL_1": "SPSS",
       "TOOL_2": "M.S. Excel, Word, Project",
       "TOOL_3": "Opencart, Wordpress"
     }
   },
   "SERVICES": {
-    "OUR_SERVICES":"<strong>hizmetlerimize</strong> göz atın",
+    "OUR_SERVICES":"TAKE A LOOK TO <strong>OUR SERVICES</strong>",
     "SERVICE_ONE": {
-      "TITLE": "TEZ YAYIN DÜZENLEME",
-      "DESCRIPTION": "Yazdığınız makale, tez, kitap vb. çalışmalarınızın, kılavuzlara uygun olarak yeniden düzenlenmesi, içindekiler - şekiller - tablolar vs. dizinlerinin oluşturulması, referansların ve kaynakçanın oluşturulması, sayfa numaralandırma ve biçimlendirmelerini yapıyoruz. Aynı zamanda yayınlanma süreçlerinizin takibi konusunda da destek alabilirsiniz."
+      "TITLE": "Editing Thesis",
+      "DESCRIPTION": "Reeditting your thesis, paper, book, etc. according to guidelines, table of contents- figures- tables creation, adding references and bibliography, page numbering and formatting İn M.S. WORD, LATEX or any word processing software. You can also refer us for tracing of your submission processes."
     },
     "SERVICE_TWO": {
-      "TITLE": "VERİ DÜZENLEME / ANALİZ",
-      "DESCRIPTION": "Excel’de özet tablolar ve formüller ile verilerinize kolay ulaşım ve SPSS, R, VBA Makro ve MATLAB programlarında istatiksel analizlerin yapılması, raporlanması ve dosyalara yazdırılması için bize başvurabilirsiniz."
+      "TITLE": "Data Editing/ Analysis",
+      "DESCRIPTION": "Excel Pivot Table creation and formulations and statistical analyses in SPSS, R, VBA Makro and MATLAB softwares along with reports and exporting to other file extensitons."
     },
     "SERVICE_THREE": {
-      "TITLE": "ALGORİTMA OLUŞTURMA, MATEMATİKSEL HESAPLAMA, OPTİMİZASYON",
-      "DESCRIPTION": "Analizlerinizde kullanılmak üzere algoritmalar oluşturma, mevcut algoritmalarınızın iyileştirilmesi, matematiksel ve olasılık optimizasyon, evrimsel ve meta- sezgisel algoritmalar ile karmaşık problemlere uygulanabilir çözümler geliştirmenize yardımcı oluyoruz."
+      "TITLE": "Algorithm Construction, Mathematical Calculation, Optimization",
+      "DESCRIPTION": "Algortihm designs for your analyses, improving/correcting your algorithms, mathematicla and probabilistic optimization, approaches to complex and NP_Hard problems with evalutionary and meta-heuristic algorithms."
     },
     "SERVICE_FOUR": {
-      "TITLE": "E-TİCARET SİTESİ OLUŞTURMA / YÖNETİMİ",
-      "DESCRIPTION": ""
-    },
-    "SERVICE_FIVE": {
-      "TITLE": "İNTERNET ÜZERİNDEN VERİ TOPLAMA / ANKET UYGULAMALARI",
-      "DESCRIPTION": ""
+      "TITLE": "Building E-Commerce Web Sites and Management",
+      "DESCRIPTION": "İnternet üzerinden veri toplama, anket uygulamaları"
     },
     "SERVICE_SIX": {
-      "TITLE": "SİMÜLASYON ÇALIŞMALARI",
-      "DESCRIPTION": "Gerçek dünya problemlerinin simülasyon ortamında yeniden oluşturulması, dizayn ve geliştirme çalışmaları ile optimizasyonun sağlanmasına yönelik program ve algoritmalar ile destek sağlıyoruz."
+      "TITLE": "Simulation Studies",
+      "DESCRIPTION": "Simulation of real world porblems, searching for optimization with design and development studies."
     },
     "SERVICE_SEVEN": {
-      "TITLE": "TüRKÇE - İNGİLİZCE METİN KONTROL",
-      "DESCRIPTION": "Yazmış olduğunuz metinlerin son kontrollerini yaptırmak üzere bize başvurabilirsiniz."
+      "TITLE": "Turkish- English Text Checks",
+      "DESCRIPTION": "You can rely us for last checks of your texts."
     }
   },
   "FOOTER": {
-    "ALL_RIGHTS_RESERVED": "Tüm Hakları Saklıdır."
+    "ALL_RIGHTS_RESERVED": "All Rights Reserved"
   },
   "CONTACT": {
-    "FEEL_FREE_TO_CONTACT": "<strong>BİZE ULAŞMAK</strong> İÇİN KENDİNİZİ RAHAT HİSSEDİN",
-    "CONTACT_DESCRIPTION": "Bizimle istediğiniz zaman iletişime geçebilirsiniz. En kısa sürede sorularınıza ve taleplerinize yanıt veriyor olucaz.",
-    "EMAIL": "E-Posta Adresi",
-    "ENTER_EMAIL": "E-Posta girin",
-    "ENTER_SUBJECT": "Konu girin",
-    "ENTER_MESSAGE": "Mesaj girin",
-    "SUBJECT": "Konu",
-    "MESSAGE": "Mesaj",
-    "SEND": "Gönder",
-    "SEND_SUCCESS": "Mesajınız başarılı bir şekilde gönderilmiştir. Size en kısa sürede dönüş yapıyor olucaz.",
-    "SEND_FAIL": "Mesajınızın gönderimi sırasında hata ile karşılaşıldı. Lütfen daha sonra tekrar deneyin."
+    "FEEL_FREE_TO_CONTACT": "<strong>FEEL FREE</strong> TO CONTACT US",
+    "CONTACT_DESCRIPTION": "You can contact us whenever you want. We will respond you as soon as possible.",
+    "EMAIL": "E-Mail",
+    "ENTER_EMAIL": "Enter E-Mail",
+    "ENTER_SUBJECT": "Enter Subject",
+    "ENTER_MESSAGE": "Enter Message",
+    "SUBJECT": "Subject",
+    "MESSAGE": "Message",
+    "SEND": "Send",
+    "RESET": "Reset",
+    "SEND_SUCCESS": "Your message is recieved successfully. We are going to resond as soon as possible.",
+    "SEND_FAIL": "We encountered with an error. Please try again later."
+    },
+  "PROFILE" : {
+    "title" : "Your Academic Support Profile",
+    "message" : "You can find details about <strong>your profile</strong> below. If you want to change your information, refill form and press <strong>Update</strong>.",
+    "updateProfile" : "Update Profile",
+    "name" : "Name :",
+    "lastname" : "Surname : ",
+    "email" : "E-mail : ",
+    "gender" : "Gender",
+    "password" : "Password  : ",
+    "confirmPassword" : "Repeat Password : ",
+    "username" : "Username: ",
+    "update" : "Update",
+    "cancel" : "Cancel",
+    "profile_update_success" : "Your Profile updated",
+    "profile_update_fail" : "Encountered with an error while updating"
+    },
+  "BLOG": {
+    "TITLE": "BLOG",
+    "SUBTITLE": "Words from Academic Life",
+    "LEAVE_A_COMMENT": "Leave a Comment",
+    "SUBMIT": "Send",
+    "BLOG_ENTRY": {
+    "TITLE": "TITLE",
+    "SUBTITLE": "SUBTITLE",
+    "CONTENT": "CONTENT"
+    },
+    "POSTED_BY": "Shared by {{author}} {{createdAt}}"
   },
-  "ACCOUNTS" : {
-    "SIGNUP" : {
-      "create_account" : "Yeni Hesap Oluştur",
-      "register_with_facebook" : "Facebook ile Kaydol",
-      "register_with_twitter" : "Twitter ile Kaydol",
-      "register_with_google" : "Google ile Kaydol",
-      "OR" : "ya da",
-      "email" : "E-Posta",
-      "password" : "Şifre",
-      "password_again" : "Şifre (Tekrar)",
-      "register" : "Kaydol",
-      "already_have_an_account" : "Zaten bir hesabın mı var ?",
-      "login" : "Giriş yap."
+  "CLOSE": "Close",
+  "profile" : {
+    "update" : "Update Profile",
+    "cancel" : "Cancel",
+    "change-password" : "Change Password",
+    "current-password" : "Current Password",
+    "new-password" : "New Password",
+    "new-password-again" : "New Password Again",
+    "change-password" : "Update Password",
+    "clear" : "Clear",
+    "male" : "Male",
+    "female" : "Female",
+    "none" : "Other than Male or Female"
+  },
+    "pagination" : {
+    "previous" : "Previous",
+    "next" : "Next"
+  },
+  "posts" : {
+    "post-entry": {
+      "title" : "Share your Post",
+      "post-title" : "Subject",
+      "post-content" : "Content",
+      "share" : "Share",
+      "clear" : "Clear",
+      "success" : "Your post is shared successfuly.",
+      "login-to-post" : "You have to log in."
     },
-    "LOGIN" : {
-      "login" : "Giriş Yap",
-      "login_with_facebook" : "Facebook ile Giriş Yap",
-      "login_with_twitter" : "Twitter ile Giriş Yap",
-      "login_with_google" : "Google ile Giriş Yap",
-      "OR" : "ya da",
-      "email" : "E-Posta",
-      "password" : "Şifre",
-      "forgot_your_password" : "Şifreni mi unuttun ?",
-      "no_account_yet" : "Henüz bir hesabın mı yok ?",
-      "register" : "Kaydol."
-    },
-    "RECOVER" : {
-      "reset_password" : "Şifreni Yenile",
-      "email" : "E-Posta",
-      "email_reset_link" : "Şifre Yenileme Linkini Gönder",
-      "no_account_yet" : "Henüz bir hesabın mı yok ?",
-      "register" : "Kaydol."
-    },
-    "PROFILE" : {
-      "baslik" : "Akademik Destek Platform Profile"
-
-    },
-    "ERROR" : {
-      "all_fields_required" : "Tüm alanları girmeniz gerekmektedir",
-      "email_not_valid" : "Geçerli bir E-Posta adresi girmeniz gerekmektedir",
-      "password_length" : "Girdiğiniz şifre en az 6 karakter uzunluğunda olmalıdır",
-      "password_again_length" : "Girdiğiniz tekrar şifresi en az 6 karakter uzunluğunda olmalıdır",
-      "passwords_not_equal" : "Girdiğiniz şifrelerin aynı olması gerekmektedir",
-      "Email already exists." : "Girdiğiniz E-Posta adresi daha önceden alınmış",
-      "User not found" : "Böyle bir kullanıcı bulunamadı",
-      "Incorrect password" : "Yanlış şifre girdiniz"
+    "posts-list" : {
+      "post-detail" : {
+        "post-comment-entry" : {
+          "send" : "Send",
+          "leave-a-comment" : "Leave a Comment"
+        }
+      }
     }
   },
-  "CLOSE": "Kapat",
-  "BLOG": {
-    "TITLE": "AKADEMİK BLOĞUMUZ"
+  "accounts" : {
+    "common" : {
+    "login" : "Login",
+    "signup" : "Sign Up",
+    "forgot-your-password" : "Forgat Your Password?",
+    "no-account-yet" : "Want to Join Community?",
+    "verify-your-email" : "Verify Your Account",
+    "username" : "Username",
+    "email" : "E-Mail",
+    "firstname" : "Name",
+    "lastname" : "Surname",
+    "password" : "Password",
+    "password-again" : "Password (Again)",
+    "username-or-email" : "Username or E-Mail",
+    "already-have-an-account" : "Already Have an Account?",
+    "not-verified-yet" : "You Account is not Verified Yet",
+    "or" : "or",
+    "login-with-facebook" : "Login with Facebook",
+    "login-with-google" : "Login with Google",
+    "login-with-twitter" : "Login with Twitter"
+  },
+    "login" : {
+    "title" : "Login"
+  },
+    "signup" : {
+    "title" : "Signup"
+  },
+  "verify" : {
+    "title" : "Verify Your Account",
+    "send-verify-link" : "Send Verification Link"
+  },
+  "recover" : {
+    "title" : "Forgot Password",
+    "send-recover-password-link" : "Send Password Reset Link"
+  },
+  "reset-password" : {
+    "title" : "Reset Password",
+    "reset" : "Reset"
+  },
+  "error" : {
+    "Token expired" : "Password verification link has expired. Please requesta new link.",
+    "Verify email link expired" : "E-mail verification link has expired. Please requesta new link.",
+    "All fields required" : "Please fill all fields.",
+    "too-many-requests" : "Too mant requests in a short time. Please try again later.",
+    "not-a-user" : "This username has not yet registered",
+    "username-required" : "Please enter your username",
+    "username-invalid-character" : "Invalid characters in your username.",
+    "username-min-length" : "Your username has to be 3 character long minimum.",
+    "username-max-length" : "Your username has to be 64 character long maximum.",
+    "email-required" : "Please enter your e-mail",
+    "email-invalid-character" : "Please provide a valid e-mail.",
+    "firstname-required" : "Please enter you name",
+    "firstname-invalid-character" : "Invalid characters in your name.",
+    "firstname-min-length" : "Your name has to be 2 character long minimum.",
+    "firstname-max-length" : "Your name has to be 64 character long maximum.",
+    "lastname-required" : "Please enter your surname",
+    "lastname-invalid-character" : "Invalid characters in your surname.",
+    "lastname-min-length" : "Your surname has to be 2 character long minimum.",
+    "lastname-max-length" : "Your surname has to be 64 character long maximum.",
+    "password-required" : "Please enter password.",
+    "password-invalid-character" : "Invalid characters in your password.",
+    "password-min-length" : "Your password has to be 6 character long minimum.",
+    "password-max-length" : "Your password has to be 256 character long maximum.",
+    "password-again-required" : "Please enter your password again.",
+    "password-again-invalid-character" : "Invalid characters in your repeat password.",
+    "passwords-not-equal" : "Your passwords are not matched.",
+    "email-verified" : "This e-mail is verified before.",
+    "email-not-verified": "You need to verifiy your e-mail. Please check your inbox.",
+    "User not found" : "User not-found.",
+    "Username already exists." : "Username already exists.",
+    "Email already exists." : "E-mail already exists.",
+    "Incorrect password" : "Incorrect password.",
+    "current-user-Incorrect password" : "Old password incorrect."
+    },
+    "success" : {
+    "reset-password-link-sent" : "Password reset link successfuly sent. Please check your e-mail.",
+    "verify-link-sent" : "Account verification link successfully sent. Please check your e-mail.",
+    "user-created" : "User created successfully. Please follow the link we sent to your e-mail in order to activate your account.",
+    "password-change-success" : "Password successfully changed."
+    }
   }
 }

@@ -36,6 +36,8 @@ export class LanguageService {
                     moment.locale('tr');
                     // change language as turkish
                     this.translateService.use('tr');
+                    // set cookie
+                    this.cookieService.put('lang', 'tr');
                     // break it !
                     break;
                 // if it is not tr. set as english
@@ -44,6 +46,8 @@ export class LanguageService {
                     moment.locale('en-gb');
                     // change language as english
                     this.translateService.use('en-gb');
+                    // set cookie
+                    this.cookieService.put('lang', 'en-gb');
             }
         }
     }

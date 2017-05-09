@@ -9,7 +9,8 @@ export function loadUsers() {
             profile: {
                 firstname: 'Ozan',
                 lastname: 'Altınbaş',
-                gender: 'M'
+                gender: 'M',
+                url: 'img/icons/account_circle.png'
             },
             password: 'OZan54335433',
             public: true

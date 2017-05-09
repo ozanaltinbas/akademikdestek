@@ -90,6 +90,22 @@ export class PasswordUpdateComponent implements OnInit, OnDestroy {
         }
     }
 
+    dismiss(type: string) : void {
+        console.log(type);
+        // if input is sent
+        if (type && type.length > 0) {
+            // type must be success or error
+            if (type === 'error') {
+                // initialize error message
+                this.error = '';
+            } // if it is success
+            else if (type = 'success') {
+                // initialize success message
+                this.success = '';
+            }
+        }
+    }
+
     ngOnDestroy() {
 
     }
