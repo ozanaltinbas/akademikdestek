@@ -2,7 +2,7 @@
     <div class="panel panel-white post panel-shadow" *ngFor="let post of posts | async">
         <div class="post-heading">
             <div class="pull-left image">
-                <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                <img src="{{ post.owner | userProfileImageUrl }}" class="img-circle avatar" alt="user profile image">
             </div>
             <div class="pull-right" *ngIf="isCurrentUser(post.owner)">
                 <img src="img/icons/delete.svg" alt="delete"

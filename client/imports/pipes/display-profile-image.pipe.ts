@@ -10,7 +10,7 @@ export class DisplayProfileImagePipe implements PipeTransform {
             return;
         }
 
-        let imageUrl: string;
+        let imageUrl: string = 'img/icons/account_circle.png';
 
         const found = Images.findOne(imageId);
 

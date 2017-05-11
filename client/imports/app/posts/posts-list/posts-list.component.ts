@@ -32,11 +32,13 @@ export class PostsListComponent implements OnInit, OnDestroy {
     optionsSub: Subscription;
     postsSize: number = 0;
     autorunSub: Subscription;
+    imagesSubs: Subscription;
 
     constructor(private paginationService: PaginationService,
                 private currentUser: CurrentUser) {}
 
     ngOnInit() {
+        this.imagesSubs = MeteorObservable.subscribe('images').subscribe();
         // if combineLatest exists
         if (this.optionsSub) {
             // unsubscribe it
@@ -122,6 +124,7 @@ export class PostsListComponent implements OnInit, OnDestroy {
         this.postsSub.unsubscribe();
         this.optionsSub.unsubscribe();
         this.autorunSub.unsubscribe();
+        this.imagesSubs.unsubscribe();
     }
 
 }

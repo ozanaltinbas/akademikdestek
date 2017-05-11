@@ -24,11 +24,16 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
     autorunSub: Subscription;
     showChangePassword: boolean = false;
     genders: any[];
+    images: string[];
+    imagesSubs: Subscription;
+
+    profileUrl: string = '';
 
     constructor(private formBuilder: FormBuilder,
                 private accountsService: AccountsService) {}
 
     ngOnInit() {
+        this.imagesSubs = MeteorObservable.subscribe('images').subscribe();
         // assign the user to current user.
         this.currentUser = Meteor.user();
         // if it is subscribed
@@ -40,10 +45,13 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
         this.autorunSub = MeteorObservable.autorun().subscribe(() => {
             // the following will trigger if Meteor.user() changes
             this.currentUser = Meteor.user();
+            console.log("triggered");
             // if it is not null now
             if (this.currentUser) {
                 // initialize the form data
                 this.initializeFormData();
+                // get current url
+                this.profileUrl = this.currentUser.profile.url;
                 // set the page as loaded.
                 this.notLoaded = false;
             }
@@ -78,7 +86,7 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
                 'gender': this.profileUpdateForm.value.gender
             };
             // update the user profile.
-            MeteorObservable.call('updateProfile', profileInfo).subscribe(() => {
+            MeteorObservable.call('updateProfileImageId', profileInfo).subscribe(() => {
                     // update success message
                     this.success = 'PROFILE.profile_update_success';
                 }, (error) => {
@@ -120,8 +128,13 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
         }
     }
 
+    onImage(imageId: string) {
+        this.images.push(imageId);
+    }
+
     ngOnDestroy() {
         this.autorunSub.unsubscribe();
+        this.imagesSubs.unsubscribe();
     }
 
 }

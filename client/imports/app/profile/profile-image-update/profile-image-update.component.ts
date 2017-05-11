@@ -1,8 +1,10 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Subject, Subscription, Observable } from "rxjs";
 import { MeteorObservable } from "meteor-rxjs";
+import { Meteor } from 'meteor/meteor';
 
 import { upload } from '../../../../../both/methods/images.methods';
+import '../../../../../both/methods/user.methods';
 import { Thumb } from "../../../../../both/models/image.model";
 import { Thumbs } from "../../../../../both/collections/images.collection";
 
@@ -22,7 +24,6 @@ export class ProfileImageComponent implements OnInit {
     files: Subject<string[]> = new Subject<string[]>();
     thumbsSubscription: Subscription;
     thumbs: Observable<Thumb[]>;
-    @Output() onFile: EventEmitter<string> = new EventEmitter<string>();
 
     constructor() {}
 
@@ -46,20 +47,26 @@ export class ProfileImageComponent implements OnInit {
         });
     }
 
-
-
     fileOver(fileIsOver: boolean): void {
         this.fileIsOver = fileIsOver;
     }
 
     onFileDrop(file: File): void {
-        alert("aq");
         this.uploading = true;
 
         upload(file)
             .then((result) => {
                 this.uploading = false;
                 this.addFile(result);
+                console.log(result);
+
+                MeteorObservable.call('updateProfileImageId', Meteor.userId(), result._id).subscribe(() => {
+                    // update success message
+                    alert('success');
+                }, (error) => {
+                    alert('error');
+                });
+                
             })
             .catch((error) => {
                 this.uploading = false;
@@ -70,7 +77,6 @@ export class ProfileImageComponent implements OnInit {
     addFile(file) {
         this.filesArray.push(file._id);
         this.files.next(this.filesArray);
-        this.onFile.emit(file._id);
     }
 
     reset() {

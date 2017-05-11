@@ -23,7 +23,7 @@ Meteor.methods({
                 profile: {
                     firstname: user.firstname,
                     lastname: user.lastname,
-                    url: 'https://cdn1.iconfinder.com/data/icons/boy-expression/512/Boy_09-128.png'
+                    url: ''
                 }
             });
             // this is user right ?
@@ -144,6 +144,28 @@ Meteor.methods({
                         "profile.lastname" : profileInfo.lastname,
                         "profile.gender" : profileInfo.gender,
                         "emails[0].address": profileInfo.email}});
+                // updated.
+            } else {
+                throw new Meteor.Error("not-a-current-user", "You cannot update this profile.");
+            }
+        }
+    },
+    updateProfileImageId: function (userId: string, imageId: string) {
+        console.log(userId);
+        console.log(imageId);
+        // validate the user input
+        check(userId, String);
+        check(imageId, String);
+        // if we run on the server
+        if (Meteor.isServer) {
+            // validate if the user input is the same with current user.
+            if (this.userId == userId) {
+                // it is safe now.
+                Meteor.users.update(
+                    { _id: this.userId},
+                    {$set: {
+                        "profile.image.url": imageId
+                    }});
                 // updated.
             } else {
                 throw new Meteor.Error("not-a-current-user", "You cannot update this profile.");
