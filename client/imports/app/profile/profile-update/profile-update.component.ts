@@ -27,12 +27,11 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
     images: string[];
     imagesSubs: Subscription;
 
-    profileUrl: string = '';
-
     constructor(private formBuilder: FormBuilder,
                 private accountsService: AccountsService) {}
 
     ngOnInit() {
+        // subscribe to images
         this.imagesSubs = MeteorObservable.subscribe('images').subscribe();
         // assign the user to current user.
         this.currentUser = Meteor.user();
@@ -49,8 +48,6 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
             if (this.currentUser) {
                 // initialize the form data
                 this.initializeFormData();
-                // get current url
-                this.profileUrl = this.currentUser.profile.url;
                 // set the page as loaded.
                 this.notLoaded = false;
             }
