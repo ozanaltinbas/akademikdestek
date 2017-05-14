@@ -126,8 +126,9 @@
     "update" : "Update",
     "cancel" : "Cancel",
     "profile_update_success" : "Your Profile updated",
-    "profile_update_fail" : "Encountered with an error while updating"
-    },
+    "profile_update_fail" : "Encountered with an error while updating",
+    "drop_image" : "Drop your image to update your profile image."
+  },
   "BLOG": {
     "TITLE": "BLOG",
     "SUBTITLE": "Words from Academic Life",

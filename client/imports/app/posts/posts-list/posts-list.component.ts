@@ -38,6 +38,7 @@ export class PostsListComponent implements OnInit, OnDestroy {
                 private currentUser: CurrentUser) {}
 
     ngOnInit() {
+        // subscribe to images
         this.imagesSubs = MeteorObservable.subscribe('images').subscribe();
         // if combineLatest exists
         if (this.optionsSub) {

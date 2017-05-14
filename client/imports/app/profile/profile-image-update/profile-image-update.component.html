@@ -4,13 +4,7 @@
          (fileOver)="fileOver($event)"
          (onFileDrop)="onFileDrop($event)">
         <p>
-            Drop an image to here
+            {{ 'PROFILE.drop_image' | translate }}
         </p>
-    </div>
-    <div *ngIf="thumbs" class="thumbs">
-        <div *ngFor="let thumb of thumbs | async" class="thumb">
-            <img [src]="thumb.url"/>
-        </div>
-        <div class="clear"></div>
     </div>
 </div>

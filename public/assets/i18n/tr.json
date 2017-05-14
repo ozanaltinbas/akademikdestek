@@ -125,7 +125,8 @@
     "update" : "Güncelle",
     "cancel" : "Vazgeç",
     "profile_update_success" : "Profil Bilgileriniz Güncellendi",
-    "profile_update_fail" : "Profil Bilgilerinizin Güncellenmesi Sırasında Hata İle Karşılaşıldı"
+    "profile_update_fail" : "Profil Bilgilerinizin Güncellenmesi Sırasında Hata İle Karşılaşıldı",
+    "drop_image" : "Profil resminizin güncellenmesi için resminizi buraya sürükleyin."
   },
   "BLOG": {
     "TITLE": "BLOGUMUZ",

@@ -48,6 +48,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
     optionsSub: Subscription;
     postCommentsSize: number = 0;
     autorunSub: Subscription;
+    imagesSubs: Subscription;
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
@@ -57,6 +58,8 @@ export class PostDetailComponent implements OnInit, OnDestroy {
                 private currentUser: CurrentUser) {}
 
     ngOnInit() {
+        // subscribe to images
+        this.imagesSubs = MeteorObservable.subscribe('images').subscribe();
         // initialize post comment entry form
         this.initializePostCommentEntryForm();
         // get the input route param
@@ -186,6 +189,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
         this.postCommentsSub.unsubscribe();
         this.optionsSub.unsubscribe();
         this.autorunSub.unsubscribe();
+        this.imagesSubs.unsubscribe();
     }
 
 }

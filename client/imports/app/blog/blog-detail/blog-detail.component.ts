@@ -59,6 +59,8 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
                 private currentUser: CurrentUser) {}
 
     ngOnInit() {
+        // subscribe to images
+        this.imagesSubs = MeteorObservable.subscribe('images').subscribe();
         // initialize post comment entry form
         this.initializeBlogCommentEntryForm();
         // get the input route param
@@ -80,8 +82,6 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
                         this.blog = Blogs.findOne(this.blogId);
                     });
                 });
-
-                this.imagesSubs = MeteorObservable.subscribe('images').subscribe();
 
                 this.optionsSub = Observable.combineLatest(
                     this.pageSize,

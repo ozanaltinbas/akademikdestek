@@ -32,28 +32,29 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         // subscribe to images
-        this.imagesSubs = MeteorObservable.subscribe('images').subscribe();
-        // assign the user to current user.
-        this.currentUser = Meteor.user();
-        // if it is subscribed
-        if (this.autorunSub) {
-            // unsubscribe it
-            this.autorunSub.unsubscribe();
-        }
-        // detect changes
-        this.autorunSub = MeteorObservable.autorun().subscribe(() => {
-            // the following will trigger if Meteor.user() changes
+        this.imagesSubs = MeteorObservable.subscribe('images').subscribe(() => {
+            // assign the user to current user.
             this.currentUser = Meteor.user();
-            // if it is not null now
-            if (this.currentUser) {
-                // initialize the form data
-                this.initializeFormData();
-                // set the page as loaded.
-                this.notLoaded = false;
+            // if it is subscribed
+            if (this.autorunSub) {
+                // unsubscribe it
+                this.autorunSub.unsubscribe();
             }
+            // detect changes
+            this.autorunSub = MeteorObservable.autorun().subscribe(() => {
+                // the following will trigger if Meteor.user() changes
+                this.currentUser = Meteor.user();
+                // if it is not null now
+                if (this.currentUser) {
+                    // initialize the form data
+                    this.initializeFormData();
+                    // set the page as loaded.
+                    this.notLoaded = false;
+                }
+            });
+            // also initialize gender
+            this.initializeGenderData();
         });
-        // also initialize gender
-        this.initializeGenderData();
     }
 
     initializeFormData(): void {

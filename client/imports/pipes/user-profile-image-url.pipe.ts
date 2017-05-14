@@ -6,6 +6,7 @@ import { Images } from '../../../both/collections/images.collection';
 })
 export class UserProfileImageUrlPipe implements PipeTransform {
     transform(userId: string) {
+        console.log(userId);
         console.log("1");
         // if no usedId is sent
         if (!userId) {

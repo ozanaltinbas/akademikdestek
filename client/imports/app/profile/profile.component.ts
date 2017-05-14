@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Roles } from 'meteor/alanning:roles';
 import { AccountsService } from '../../services/accounts.service';
 
@@ -10,7 +10,7 @@ import style from './profile.component.scss';
     template,
     styles: [ style ]
 })
-export class ProfileComponent implements OnInit{
+export class ProfileComponent implements OnInit, OnDestroy {
     
     constructor(private accountsService: AccountsService) {}
 
@@ -21,6 +21,10 @@ export class ProfileComponent implements OnInit{
 
     displayBlogEntry() : boolean {
         return Roles.userIsInRole(Meteor.userId(), 'admin');
+    }
+
+    ngOnDestroy() {
+
     }
 
 }
