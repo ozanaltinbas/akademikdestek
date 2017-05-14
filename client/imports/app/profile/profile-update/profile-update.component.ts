@@ -45,7 +45,6 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
         this.autorunSub = MeteorObservable.autorun().subscribe(() => {
             // the following will trigger if Meteor.user() changes
             this.currentUser = Meteor.user();
-            console.log("triggered");
             // if it is not null now
             if (this.currentUser) {
                 // initialize the form data

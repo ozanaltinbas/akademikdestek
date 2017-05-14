@@ -151,8 +151,6 @@ Meteor.methods({
         }
     },
     updateProfileImageId: function (userId: string, imageId: string) {
-        console.log(userId);
-        console.log(imageId);
         // validate the user input
         check(userId, String);
         check(imageId, String);
@@ -164,7 +162,7 @@ Meteor.methods({
                 Meteor.users.update(
                     { _id: this.userId},
                     {$set: {
-                        "profile.image.url": imageId
+                        "profile.imageId": imageId
                     }});
                 // updated.
             } else {

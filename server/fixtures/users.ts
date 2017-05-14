@@ -10,7 +10,7 @@ export function loadUsers() {
                 firstname: 'Ozan',
                 lastname: 'Altınbaş',
                 gender: 'M',
-                url: ''
+                imageId: ''
             },
             password: 'OZan54335433',
             public: true

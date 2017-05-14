@@ -5,19 +5,21 @@ import { Images } from '../../../both/collections/images.collection';
     name: 'displayProfileImage'
 })
 export class DisplayProfileImagePipe implements PipeTransform {
+    
     transform(imageId: string) {
-        if (!imageId) {
-            return;
-        }
-
+        // set default imageUrl
         let imageUrl: string = 'img/icons/account_circle.png';
-
-        const found = Images.findOne(imageId);
-
-        if (found) {
-            imageUrl = found.url;
+        // if there is an incoming imageId
+        if (imageId && imageId.length > 0) {
+            // yeah, there is an incoming imageId. get the image object
+            const found = Images.findOne(imageId);
+            // if there is a image with it
+            if (found) {
+                // assign its url to returned value
+                imageUrl = found.url;
+            }
         }
-
+        // after all, return imageUrl
         return imageUrl;
     }
 }

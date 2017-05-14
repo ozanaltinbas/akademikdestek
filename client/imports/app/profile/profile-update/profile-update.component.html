@@ -2,7 +2,7 @@
 <div class="row" *ngIf="currentUser">
     <div class="col-md-3">
         <div class="text-center">
-            <img src="{{ currentUser.profile.image.url | displayProfileImage }}" class="avatar img-circle" alt="avatar">
+            <img src="{{ currentUser.profile.imageId | displayProfileImage }}" class="avatar img-circle" alt="avatar">
             <h5>{{ currentUser.username }}</h5>
         </div>
     </div>

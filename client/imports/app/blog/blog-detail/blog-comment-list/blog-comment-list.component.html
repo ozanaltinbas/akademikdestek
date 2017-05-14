@@ -1,6 +1,6 @@
 <div class="media" *ngFor="let blogComment of blogComments | async">
-    <a class="pull-left" href="#">
-        <img class="media-object" src="http://placehold.it/64x64" alt="">
+    <a class="pull-left" href="javascript:void(0);">
+        <img class="media-object" src="{{ blogComment.owner | userProfileImageUrl }}" alt="">
     </a>
     <div class="media-body">
         <h4 class="media-heading">{{ blogComment.owner | displayName }}
