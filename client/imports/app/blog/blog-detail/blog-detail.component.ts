@@ -11,6 +11,7 @@ import { PaginationService } from 'ng2-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Options } from '../../../../../both/models/options.model';
 import { CurrentUser } from '../../../services/currentUser.service';
+import { AccountsService } from '../../../services/accounts.service';
 
 import 'rxjs/add/operator/map';
 
@@ -50,13 +51,15 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
     blogCommentsSize: number = 0;
     autorunSub: Subscription;
     imagesSubs: Subscription;
+    isAdmin: boolean = false;
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
                 private formBuilder: FormBuilder,
                 private translateService: TranslateService,
                 private paginationService: PaginationService,
-                private currentUser: CurrentUser) {}
+                private currentUser: CurrentUser,
+                private accountsService: AccountsService) {}
 
     ngOnInit() {
         // subscribe to images
@@ -100,6 +103,10 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
                     }
 
                     this.blogCommentsSub = MeteorObservable.subscribe('blog-comments', this.blogId, options).subscribe(() => {
+
+                        // publication finished. check if logged in user is an admin
+                        this.isAdmin = this.accountsService.isAdmin(Meteor.userId());
+
                         this.blogComments = BlogComments.find({}, {
                             sort: {
                                 createdAt: -1
@@ -107,7 +114,7 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
                         }).zone();
                     });
                 });
-
+                // build pagination service
                 this.paginationService.register({
                     id: this.paginationService.defaultId(),
                     itemsPerPage: 5,
@@ -182,6 +189,18 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
 
     isCurrentUser(owner: string) {
         return this.currentUser.isCurrentUser(owner);
+    }
+
+    setBlogCommentPrivate(blogComment: BlogComment): void {
+        // if there is a post to be deleted
+        if (blogComment) {
+            // delete it
+            MeteorObservable.call('setBlogCommentPrivate', blogComment._id, Meteor.userId()).subscribe(() => {
+
+            }, (err) => {
+
+            });
+        }
     }
 
     ngOnDestroy() {

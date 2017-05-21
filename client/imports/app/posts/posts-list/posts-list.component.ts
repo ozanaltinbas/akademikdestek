@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -7,6 +8,7 @@ import { PaginationService } from 'ng2-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Options } from '../../../../../both/models/options.model';
 import { CurrentUser } from '../../../services/currentUser.service';
+import { AccountsService } from '../../../services/accounts.service';
 
 import 'rxjs/add/operator/combineLatest';
 import '../../../../../both/methods/post.methods.ts';
@@ -33,9 +35,11 @@ export class PostsListComponent implements OnInit, OnDestroy {
     postsSize: number = 0;
     autorunSub: Subscription;
     imagesSubs: Subscription;
+    isAdmin: boolean = false;
 
     constructor(private paginationService: PaginationService,
-                private currentUser: CurrentUser) {}
+                private currentUser: CurrentUser,
+                private accountsService: AccountsService) {}
 
     ngOnInit() {
         // subscribe to images
@@ -65,6 +69,8 @@ export class PostsListComponent implements OnInit, OnDestroy {
             }
             // done. subscribe the posts now.
             this.postsSub = MeteorObservable.subscribe('posts', options).subscribe(() => {
+                // publication finished. check if logged in user is an admin
+                this.isAdmin = this.accountsService.isAdmin(Meteor.userId());
                 // get all posts which is public
                 this.posts = Posts.find({
                     public : true
@@ -118,6 +124,18 @@ export class PostsListComponent implements OnInit, OnDestroy {
 
     isCurrentUser(owner: string) {
         return this.currentUser.isCurrentUser(owner);
+    }
+
+    setPostPrivate(post: Post): void {
+        // if there is a post to be deleted
+        if (post) {
+            // delete it
+            MeteorObservable.call('setPostPrivate', post._id, Meteor.userId()).subscribe(() => {
+
+            }, (err) => {
+
+            });
+        }
     }
 
     ngOnDestroy() {

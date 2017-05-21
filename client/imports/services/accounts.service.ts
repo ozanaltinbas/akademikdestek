@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { Meteor } from 'meteor/meteor';
 import { Router } from '@angular/router';
 import { MeteorObservable } from 'meteor-rxjs';
+import { Roles } from 'meteor/alanning:roles';
 
 @Injectable()
 export class AccountsService {
@@ -361,6 +362,22 @@ export class AccountsService {
                 });
             }
         }
+    }
+
+    isAdmin(user: string): boolean {
+        // if user input is sent
+        if (user && user.length > 0) {
+            // input is ok. check it now.
+            if (Meteor.userId() && Meteor.userId() === user) {
+                // user is logged in. Its time to validate now.
+                if (Roles.userIsInRole(user, ['admin'])) {
+                    // return true
+                    return true;
+                }
+            }
+        }
+        // default return false
+        return false;
     }
 
 }

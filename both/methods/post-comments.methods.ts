@@ -2,6 +2,7 @@ import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 import { PostComment } from '../models/post-comment.model';
 import { PostComments } from '../collections/post-comments.collection';
+import { Roles } from 'meteor/alanning:roles';
 
 Meteor.methods({
     /** inserts a new post comment */
@@ -45,6 +46,19 @@ Meteor.methods({
                     // delete it
                     PostComments.remove(postCommentId);
                 }
+            }
+        }
+    },
+    setPostCommentPrivate: function (postCommentId: string, user: string) {
+        // validate user inputs
+        check(postCommentId, String);
+        check(user, String);
+        // if it is current user
+        if (this.userId == user) {
+            // convert action to serve. if the user is an admin
+            if (Roles.userIsInRole(user, ['admin'])) {
+                // Thats it. Post can be set as private
+                PostComments.update(postCommentId, { set: { public : false } })
             }
         }
     }

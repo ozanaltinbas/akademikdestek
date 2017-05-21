@@ -30,6 +30,10 @@
                     </form>
                     <ul class="comments-list">
                         <li class="comment" *ngFor="let postComment of postComments | async">
+                            <div class="pull-right" *ngIf="isAdmin">
+                                <img src="img/icons/stop_screen_share.svg" alt="private"
+                                     class="delete clickable" (click)="setPostCommentPrivate(postComment);">
+                            </div>
                             <div class="pull-right" *ngIf="isCurrentUser(postComment.owner)">
                                 <img src="img/icons/delete.svg" alt="delete"
                                      class="delete clickable" (click)="deletePostComment(postComment);">

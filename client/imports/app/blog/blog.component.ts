@@ -6,8 +6,11 @@ import { MeteorObservable } from 'meteor-rxjs';
 import { PaginationService } from 'ng2-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Options } from '../../../../both/models/options.model';
+import { AccountsService } from '../../services/accounts.service';
 
 import 'rxjs/add/operator/combineLatest';
+
+import '../../../../both/methods/blog.methods.ts';
 
 import { Blog } from '../../../../both/models/blog.model';
 import { Blogs } from '../../../../both/collections/blogs.collection';
@@ -29,8 +32,10 @@ export class BlogComponent implements OnInit, OnDestroy {
     optionsSub: Subscription;
     blogsSize: number = 0;
     autorunSub: Subscription;
+    isAdmin: boolean = false;
 
-    constructor(private paginationService: PaginationService) {
+    constructor(private paginationService: PaginationService,
+                private accountsService: AccountsService) {
 
     }
 
@@ -52,6 +57,10 @@ export class BlogComponent implements OnInit, OnDestroy {
             }
 
             this.blogsSub = MeteorObservable.subscribe('blogs', options).subscribe(() => {
+
+                // publication finished. check if logged in user is an admin
+                this.isAdmin = this.accountsService.isAdmin(Meteor.userId());
+
                 this.blogs = Blogs.find({}, {
                     sort: {
                         createdAt: -1
@@ -59,7 +68,7 @@ export class BlogComponent implements OnInit, OnDestroy {
                 }).zone();
             });
         });
-
+        // build pagination service
         this.paginationService.register({
             id: this.paginationService.defaultId(),
             itemsPerPage: 5,
@@ -78,6 +87,18 @@ export class BlogComponent implements OnInit, OnDestroy {
 
     onPageChanged(page: number): void {
         this.curPage.next(page);
+    }
+
+    deleteBlog(blog: Blog): void {
+        // if there is a post to be deleted
+        if (blog) {
+            // delete it
+            MeteorObservable.call('deleteBlog', blog._id, Meteor.userId()).subscribe(() => {
+
+            }, (err) => {
+
+            });
+        }
     }
 
     ngOnDestroy() {

@@ -46,6 +46,10 @@
                             </form>
                             <ul class="comments-list">
                                 <li class="comment" *ngFor="let blogComment of blogComments | async">
+                                    <div class="pull-right" *ngIf="isAdmin">
+                                        <img src="img/icons/stop_screen_share.svg" alt="private"
+                                             class="delete clickable" (click)="setBlogCommentPrivate(blogComment);">
+                                    </div>
                                     <div class="pull-right" *ngIf="isCurrentUser(blogComment.owner)">
                                         <img src="img/icons/delete.svg" alt="delete"
                                              class="delete clickable" (click)="deleteBlogComment(blogComment);">

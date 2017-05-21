@@ -4,6 +4,10 @@
             <div class="pull-left image">
                 <img src="{{ post.owner | userProfileImageUrl }}" class="img-circle avatar" alt="user profile image">
             </div>
+            <div class="pull-right" *ngIf="isAdmin">
+                <img src="img/icons/stop_screen_share.svg" alt="private"
+                     class="delete clickable" (click)="setPostPrivate(post);">
+            </div>
             <div class="pull-right" *ngIf="isCurrentUser(post.owner)">
                 <img src="img/icons/delete.svg" alt="delete"
                      class="delete clickable" (click)="deletePost(post);">

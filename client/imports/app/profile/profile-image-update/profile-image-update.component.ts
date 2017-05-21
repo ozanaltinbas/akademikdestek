@@ -58,7 +58,6 @@ export class ProfileImageComponent implements OnInit {
             .then((result) => {
                 this.uploading = false;
                 this.addFile(result);
-                console.log(result);
 
                 MeteorObservable.call('updateProfileImageId', Meteor.userId(), result._id).subscribe(() => {
                     // update success message
