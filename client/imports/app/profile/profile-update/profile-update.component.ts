@@ -9,6 +9,8 @@ import { AccountsService } from '../../../services/accounts.service';
 import template from './profile-update.component.html';
 import style from './profile-update.component.scss';
 
+import '../../../../../both/methods/user.methods.ts';
+
 @Component({
     selector: 'profile-update',
     template,
@@ -83,7 +85,7 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
                 'gender': this.profileUpdateForm.value.gender
             };
             // update the user profile.
-            MeteorObservable.call('updateProfileImageId', profileInfo).subscribe(() => {
+            MeteorObservable.call('updateProfile', profileInfo).subscribe(() => {
                     // update success message
                     this.success = 'PROFILE.profile_update_success';
                 }, (error) => {

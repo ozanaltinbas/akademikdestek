@@ -23,7 +23,8 @@ Meteor.methods({
                 profile: {
                     firstname: user.firstname,
                     lastname: user.lastname,
-                    url: ''
+                    url: '',
+                    gender: ''
                 }
             });
             // this is user right ?
