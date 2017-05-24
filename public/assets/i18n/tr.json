@@ -169,6 +169,7 @@
       "login-to-post" : "Gönderinizi paylaşabilmeniz için giriş yapmanız gerekmektedir."
     },
     "posts-list" : {
+      "search" : "Ara",
       "post-detail" : {
         "post-comment-entry" : {
           "send" : "Gönder",

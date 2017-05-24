@@ -21,6 +21,7 @@ Meteor.methods({
                 let postObject: Post = {
                     'title' : post.title,
                     'content': post.content,
+                    'indexTitle' : post.title.replace(/ /g, '').toLowerCase(),
                     'owner': post.owner,
                     'public': true,
                     'createdAt': new Date()

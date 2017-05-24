@@ -20,6 +20,7 @@ Meteor.methods({
                 let postComment: PostComment = {
                     "postId": postId,
                     "content": content,
+                    'indexContent' : content.replace(/ /g, '').toLowerCase(),
                     "owner": owner,
                     "public": true,
                     "createdAt": new Date()

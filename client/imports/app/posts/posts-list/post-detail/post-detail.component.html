@@ -19,6 +19,20 @@
                     <p>{{ post.content }}</p>
                 </div>
                 <div class="post-footer">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="imaginary_container">
+                                <div class="input-group stylish-input-group">
+                                    <input type="text" class="form-control"
+                                           (keyup)="searchText.next($event.target.value)"
+                                           placeholder="{{ 'posts.posts-list.search' | translate }}" >
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <form [formGroup]="postCommentForm" (ngSubmit)="insertPostComment($event);" *ngIf="user">
                         <div class="input-group">
                             <input class="form-control" placeholder="{{ 'posts.posts-list.post-detail.post-comment-entry.leave-a-comment' | translate }}"

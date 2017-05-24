@@ -170,6 +170,7 @@
       "login-to-post" : "You have to log in."
     },
     "posts-list" : {
+      "search" : "Search",
       "post-detail" : {
         "post-comment-entry" : {
           "send" : "Send",

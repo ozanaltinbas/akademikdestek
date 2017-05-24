@@ -4,11 +4,24 @@ import { Options } from '../../../both/models/options.model';
 
 import { PostComments } from '../../../both/collections/post-comments.collection';
 
-Meteor.publishComposite('post-comments', function(postId: string, options: Options) {
+Meteor.publishComposite('post-comments', function(postId: string, options: Options, searchString: string) {
+
+    let selector: any = {
+        postId: postId,
+        public : true
+    };
+
+    if (typeof searchString === 'string' && searchString.length) {
+        selector.indexContent = {
+            $regex: `.*${searchString.replace(/ /g, '').toLowerCase()}.*`,
+            $options : 'i'
+        }
+    }
+
     return {
         find() {
-            Counts.publish(this, 'numberOfPostComments', PostComments.collection.find({ postId: postId, public: true }), { noReady: true });
-            return PostComments.find({ postId: postId, public: true }, options);
+            Counts.publish(this, 'numberOfPostComments', PostComments.collection.find(selector), { noReady: true });
+            return PostComments.find(selector, options);
         },
         children: [
             {

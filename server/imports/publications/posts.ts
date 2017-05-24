@@ -20,11 +20,23 @@ Meteor.publishComposite('post-detail', function(postId: string) {
   };
 });
 
-Meteor.publishComposite('posts', function(options: Options) {
+Meteor.publishComposite('posts', function(options: Options, searchString: string) {
+
+  let selector: any = {
+    public : true
+  };
+
+  if (typeof searchString === 'string' && searchString.length) {
+    selector.indexTitle = {
+        $regex: `.*${searchString.replace(/ /g, '').toLowerCase()}.*`,
+        $options : 'i'
+      }
+  }
+
   return {
     find() {
-      Counts.publish(this, 'numberOfPosts', Posts.collection.find({ public : true }), { noReady: true });
-      return Posts.find({ public : true }, options);
+      Counts.publish(this, 'numberOfPosts', Posts.collection.find(selector), { noReady: true });
+      return Posts.find(selector, options);
     },
     children: [
       {

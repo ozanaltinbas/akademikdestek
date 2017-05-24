@@ -1,12 +1,10 @@
 import { Component, OnInit, OnDestroy,  } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable, Subject, Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
 import { MeteorObservable } from 'meteor-rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { InjectUser } from "angular2-meteor-accounts-ui";
 import { TranslateService } from 'ng2-translate';
-import { Subject } from 'rxjs/Subject';
 import { PaginationService } from 'ng2-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Options } from '../../../../../../both/models/options.model';
@@ -51,6 +49,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
     autorunSub: Subscription;
     imagesSubs: Subscription;
     isAdmin: boolean = false;
+    searchText: Subject<string> = new Subject<string>();
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
@@ -87,8 +86,9 @@ export class PostDetailComponent implements OnInit, OnDestroy {
 
                 this.optionsSub = Observable.combineLatest(
                     this.pageSize,
-                    this.curPage
-                ).subscribe(([pageSize, curPage]) => {
+                    this.curPage,
+                    this.searchText
+                ).subscribe(([pageSize, curPage, searchText]) => {
                     const options: Options = {
                         limit: pageSize as number,
                         skip: ((curPage as number) - 1) * (pageSize as number),
@@ -101,7 +101,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
                         this.postCommentsSub.unsubscribe();
                     }
 
-                    this.postCommentsSub = MeteorObservable.subscribe('post-comments', this.postId, options).subscribe(() => {
+                    this.postCommentsSub = MeteorObservable.subscribe('post-comments', this.postId, options, searchText).subscribe(() => {
 
                         // publication finished. check if logged in user is an admin
                         this.isAdmin = this.accountsService.isAdmin(Meteor.userId());
@@ -123,7 +123,8 @@ export class PostDetailComponent implements OnInit, OnDestroy {
 
                 this.pageSize.next(5);
                 this.curPage.next(1);
-
+                this.searchText.next('');
+                
                 this.autorunSub = MeteorObservable.autorun().subscribe(() => {
                     this.postCommentsSize = Counts.get('numberOfPostComments');
                     this.paginationService.setTotalItems(this.paginationService.defaultId(), this.postCommentsSize);

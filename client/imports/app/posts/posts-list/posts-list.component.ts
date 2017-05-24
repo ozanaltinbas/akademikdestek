@@ -1,8 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable, Subject, Subscription } from 'rxjs';
 import { MeteorObservable } from 'meteor-rxjs';
 import { PaginationService } from 'ng2-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
@@ -18,7 +16,6 @@ import { Posts } from '../../../../../both/collections/posts.collection';
 
 import template from './posts-list.component.html';
 import style from './posts-list.component.scss';
-import style_posts from '../posts.component.scss';
 
 @Component({
     selector: 'posts-list',
@@ -36,10 +33,12 @@ export class PostsListComponent implements OnInit, OnDestroy {
     autorunSub: Subscription;
     imagesSubs: Subscription;
     isAdmin: boolean = false;
+    searchText: Subject<string> = new Subject<string>();
 
     constructor(private paginationService: PaginationService,
                 private currentUser: CurrentUser,
-                private accountsService: AccountsService) {}
+                private accountsService: AccountsService) {
+    }
 
     ngOnInit() {
         // subscribe to images
@@ -52,8 +51,9 @@ export class PostsListComponent implements OnInit, OnDestroy {
         // combine latest for options subscription
         this.optionsSub = Observable.combineLatest(
             this.pageSize,
-            this.curPage
-        ).subscribe(([pageSize, curPage]) => {
+            this.curPage,
+            this.searchText
+        ).subscribe(([pageSize, curPage, searchText]) => {
             // create the options object
             const options: Options = {
                 limit: pageSize as number,
@@ -68,7 +68,7 @@ export class PostsListComponent implements OnInit, OnDestroy {
                 this.postsSub.unsubscribe();
             }
             // done. subscribe the posts now.
-            this.postsSub = MeteorObservable.subscribe('posts', options).subscribe(() => {
+            this.postsSub = MeteorObservable.subscribe('posts', options, searchText).subscribe(() => {
                 // publication finished. check if logged in user is an admin
                 this.isAdmin = this.accountsService.isAdmin(Meteor.userId());
                 // get all posts which is public
@@ -89,9 +89,9 @@ export class PostsListComponent implements OnInit, OnDestroy {
             currentPage: 1,
             totalItems: this.postsSize
         });
-        // initialize settings
         this.pageSize.next(10);
         this.curPage.next(1);
+        this.searchText.next('');
         // unsubscribe autorun if it exists
         if (this.autorunSub) {
             // unsubscribing
