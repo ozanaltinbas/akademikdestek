@@ -52,10 +52,13 @@ Meteor.methods({
         check(user, String);
         // if it is current user
         if (this.userId == user) {
-            // convert action to serve. if the user is an admin
-            if (Roles.userIsInRole(user, ['admin'])) {
-                // Thats it. Post can be set as private
-                Posts.update(postId, { set: { public : false } })
+            // convert action to serve.
+            if (Meteor.isServer) {
+                //  if the user is an admin
+                if (Roles.userIsInRole(user, ['admin'])) {
+                    // Thats it. Post can be set as private
+                    Posts.update(postId, { set: { public : false } })
+                }
             }
         }
     }
