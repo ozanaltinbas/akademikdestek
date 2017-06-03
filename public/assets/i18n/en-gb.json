@@ -198,8 +198,9 @@
     "or" : "or",
     "login-with-facebook" : "Login with Facebook",
     "login-with-google" : "Login with Google",
-    "login-with-twitter" : "Login with Twitter"
-  },
+    "login-with-twitter" : "Login with Twitter",
+    "login-with-instagram" : "Login with Instagram"
+    },
     "login" : {
     "title" : "Login"
   },

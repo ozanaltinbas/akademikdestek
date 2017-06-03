@@ -2,6 +2,10 @@
   <library name="meteor-packages-auto-import-browser" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram_login_button.css" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram_client.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram_configuration.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/promise/0.8.8/web.browser/server.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/promise/0.8.8/web.browser/promise-tests.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/blaze-tools/1.0.10/web.browser/tokens.js" />
@@ -474,6 +478,10 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram_login_button.css" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram_client.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram_configuration.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/promise/0.8.8/web.browser/server.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/promise/0.8.8/web.browser/promise-tests.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/blaze-tools/1.0.10/web.browser/tokens.js" />

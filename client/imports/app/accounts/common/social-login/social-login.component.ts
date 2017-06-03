@@ -29,8 +29,27 @@ export class SocialLoginComponent {
         });
     }
 
+
     loginWithGoogle() : void {
-        Meteor.loginWithGoogle();
+        Meteor.loginWithGoogle(function (err) {
+            if (err) {
+                console.log('login failed', err);
+            } else {
+                console.log('login success', Meteor.user());
+            }
+        });
     }
+
+    loginWithInstagram() : void {
+        Meteor.loginWithInstagram(function (err) {
+            if (err) {
+                console.log('login failed', err);
+            } else {
+                console.log('login success', Meteor.user());
+            }
+        });
+    }
+
+
 
 }

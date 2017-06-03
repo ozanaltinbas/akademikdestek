@@ -102,6 +102,20 @@ button.at-social-btn#at-google:hover {
   background: #CA4C2E
 }
 
+button.at-social-btn#at-instagram {
+  background: #3F729B;
+  color: #fff;
+}
+
+button.at-social-btn#at-instagram.disabled {
+  color: #3F729B;
+  background: #666666;
+}
+
+button.at-social-btn#at-instagram:hover {
+  background: #3f5f9b;
+}
+
 .at-sep {
   text-align: center;
   position: relative;

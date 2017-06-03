@@ -14,6 +14,10 @@ export function startServiceConfiguration() : void {
         service: 'google'
     });
 
+    ServiceConfiguration.configurations.remove({
+        service: 'instagram'
+    });
+
     ServiceConfiguration.configurations.insert({
         service: 'facebook',
         appId: '387943488251569',
@@ -30,6 +34,13 @@ export function startServiceConfiguration() : void {
         service: 'google',
         clientId: '963545687850-0ufu3t53oa076d39u5jsvrkg8hsh0r5b.apps.googleusercontent.com',
         secret: 'GOdLtaPmGsTvbXMbLHkbC0VX'
+    });
+
+    ServiceConfiguration.configurations.insert({
+        service: 'instagram',
+        scope: 'basic',
+        clientId: 'ea6d736d27184361bd2d96c0d67eda4c',
+        secret: 'a0ebf3895f124090b3f6026d5cb03922'
     });
 
 }

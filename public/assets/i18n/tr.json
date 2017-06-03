@@ -197,7 +197,8 @@
       "or" : "ya da",
       "login-with-facebook" : "Facebook ile Giriş Yap",
       "login-with-google" : "Google ile Giriş Yap",
-      "login-with-twitter" : "Twitter ile Giriş Yap"
+      "login-with-twitter" : "Twitter ile Giriş Yap",
+      "login-with-instagram" : "Instagram ile Giriş Yap"
     },
     "login" : {
       "title" : "Giriş Yap"
