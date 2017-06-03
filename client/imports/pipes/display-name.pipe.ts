@@ -19,6 +19,10 @@ export class DisplayNamePipe implements PipeTransform {
       return user.username;
     }
 
+    if (user.profile.name) {
+      return user.profile.name;
+    }
+
     if (user.emails) {
       return user.emails[0].address;
     }
@@ -28,7 +32,7 @@ export class DisplayNamePipe implements PipeTransform {
         return user.services.twitter.screenName;
       }
       if (user.services.facebook) {
-        return user.services.facebook.screenName;
+        return user.services.facebook.name;
       }
       if (user.services.google) {
         return user.services.google.screenName;

@@ -67,14 +67,14 @@
                                 </li>
                                 <hr>
                             </ul>
-                            <pagination-controls
-                                    class="pagination"
-                                    (pageChange)="onPageChanged($event)"
-                                    previousLabel="{{ 'pagination.previous' | translate }}"
-                                    nextLabel="{{ 'pagination.next' | translate }}"></pagination-controls>
                         </div>
                     </div>
                 </div>
+                <pagination-controls
+                        class="pagination"
+                        (pageChange)="onPageChanged($event)"
+                        previousLabel="{{ 'pagination.previous' | translate }}"
+                        nextLabel="{{ 'pagination.next' | translate }}"></pagination-controls>
             </div>
         </div>
     </div>

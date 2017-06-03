@@ -16,7 +16,7 @@
                 <li><a routerLink="/posts" [routerLinkActive]="['active']">{{ 'NAVIGATION.POSTS' | translate }}</a></li>
                 <li *ngIf="!user"><a routerLink="/signup" [routerLinkActive]="['active']">{{ 'NAVIGATION.REGISTER' | translate }}</a></li>
                 <li *ngIf="!user"><a routerLink="/login" [routerLinkActive]="['active']">{{ 'NAVIGATION.LOGIN' | translate }}</a></li>
-                <li *ngIf="user"><a routerLink="/profile" [routerLinkActive]="['active']">{{ 'NAVIGATION.PROFILE' | translate }}</a></li>
+                <li *ngIf="user && user.emails"><a routerLink="/profile" [routerLinkActive]="['active']">{{ 'NAVIGATION.PROFILE' | translate }}</a></li>
                 <li *ngIf="user"><a href="javascript:void(0);" (click)="logout();">{{ 'NAVIGATION.LOGOUT' | translate }}</a></li>
             </ul>
         </div>

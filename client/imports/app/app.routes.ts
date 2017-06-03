@@ -70,7 +70,9 @@ export const Routes: Route[] = [
   }
 ];
 
-export const ROUTES_PROVIDERS = [{
-  provide: 'canActivateForLoggedIn',
-  useValue: () => !! Meteor.userId()
-}];
+export const ROUTES_PROVIDERS = [
+  {
+    provide: 'canActivateForLoggedIn',
+    useValue: () => !! Meteor.userId()
+  }
+];

@@ -66,6 +66,7 @@ export class RecoverComponent implements OnInit {
                     this.error = this.accountsService.generateMessageText('error', err.reason);
                     // set as on progress false.
                     this.onProgress = false;
+                    console.log(err);
                 });
             }
         } // form is not valid.

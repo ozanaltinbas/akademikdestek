@@ -355,7 +355,7 @@ export class AccountsService {
                 // detect changes
                 MeteorObservable.autorun().subscribe(() => {
                     // if user is logged in
-                    if (Meteor.userId() && Meteor.userId().length > 0) {
+                    if (Meteor.userId() && Meteor.userId().length > 0 && !Meteor.user().services) {
                         // redirect to blog page
                         this.router.navigate(['/blog']);
                     }
@@ -378,6 +378,17 @@ export class AccountsService {
         }
         // default return false
         return false;
+    }
+
+    isServiceLogged(): void {
+        // detect changes
+        MeteorObservable.autorun().subscribe(() => {
+            // if user is logged in
+            if (!Meteor.user().emails) {
+                // redirect to blog page
+                this.router.navigate(['/posts']);
+            }
+        });
     }
 
 }

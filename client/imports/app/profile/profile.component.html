@@ -1,4 +1,4 @@
-<div class="ext-box">
+<div class="ext-box" *ngIf="this.user.emails">
     <div class="int-box">
         <div class="container">
             <blog-entry *ngIf="displayBlogEntry()"></blog-entry>
