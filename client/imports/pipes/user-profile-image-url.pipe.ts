@@ -15,9 +15,7 @@ export class UserProfileImageUrlPipe implements PipeTransform {
         const defaultImageUrl: string = 'img/icons/account_circle.png';
         let imageId:string = '';
         // get the user
-        let user = Meteor.users.findOne({_id: userId}, {fields: {"profile": 1, "services.twitter.profile_image_url" : 1,
-            "services.facebook.profile_image_url" : 1, "services.instagram.profile_image_url" : 1,
-            "services.google.profile_image_url" : 1}});
+        let user = Meteor.users.findOne({_id: userId}, {fields: {profile: 1, services: 1 }});
         // if there is a user with profile.image.url
         if (user && user.profile && user.profile.imageId && user.profile.imageId.length > 0) {
             // get the imageId

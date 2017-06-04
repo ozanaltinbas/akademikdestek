@@ -12,7 +12,7 @@ export function loadUsers() {
                 gender: 'M',
                 imageId: ''
             },
-            password: 'OZan54335433',
+            password: 'akademikDestekAdmin!_!',
             public: true
         }];
         users.forEach(createAdminUsers);

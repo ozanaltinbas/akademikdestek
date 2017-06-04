@@ -355,7 +355,7 @@ export class AccountsService {
                 // detect changes
                 MeteorObservable.autorun().subscribe(() => {
                     // if user is logged in
-                    if (Meteor.userId() && Meteor.userId().length > 0 && !Meteor.user().services) {
+                    if (Meteor.userId() && Meteor.userId().length > 0) {
                         // redirect to blog page
                         this.router.navigate(['/blog']);
                     }
