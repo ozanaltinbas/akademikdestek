@@ -9,9 +9,11 @@ import './imports/publications/images';
 import { loadUsers } from './fixtures/users';
 import { startServiceConfiguration } from './imports/service-configuration';
 import { startSmtpConfiguration } from './imports/smtp';
+import { accountsConfig } from './accounts-config';
 
 Meteor.startup(() => {
     startServiceConfiguration();
     startSmtpConfiguration();
     loadUsers();
+    accountsConfig();
 });

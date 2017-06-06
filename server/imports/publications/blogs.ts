@@ -12,7 +12,7 @@ Meteor.publishComposite('blog-detail', function(blogId: string) {
     children: [
       {
         find(blog) {
-          const options = { fields: { username: 1 }};
+          const options = { fields: { username: 1, profile: 1 }};
           return Meteor.users.find({ _id : blog.owner }, options);
         }
       }
@@ -29,8 +29,8 @@ Meteor.publishComposite('blogs', function(options: Options) {
     children: [
       {
         find(blog) {
-          const options = { fields: { username: 1 }};
-          return Meteor.users.find({ _id : blog.owner });
+          const options = { fields: { username: 1, profile: 1 }};
+          return Meteor.users.find({ _id : blog.owner }, options);
         }
       }
     ]

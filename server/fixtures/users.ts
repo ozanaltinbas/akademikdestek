@@ -10,7 +10,8 @@ export function loadUsers() {
                 firstname: 'Ozan',
                 lastname: 'Altınbaş',
                 gender: 'M',
-                imageId: ''
+                imageId: '',
+                imageUrl: ''
             },
             password: 'akademikDestekAdmin!_!',
             public: true

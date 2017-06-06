@@ -24,7 +24,8 @@ Meteor.methods({
                     firstname: user.firstname,
                     lastname: user.lastname,
                     url: '',
-                    gender: ''
+                    gender: '',
+                    imageUrl: ''
                 }
             });
             // this is user right ?

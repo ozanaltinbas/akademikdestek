@@ -13,7 +13,7 @@ Meteor.publishComposite('blog-comments', function(blogId: string, options: Optio
         children: [
             {
                 find(blogComment) {
-                    const options = { fields: { username: 1 }};
+                    const options = { fields: { username: 1, profile: 1 }};
                     return Meteor.users.find({ _id : blogComment.owner }, options);
                 }
             }

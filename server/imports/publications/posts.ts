@@ -12,7 +12,7 @@ Meteor.publishComposite('post-detail', function(postId: string) {
     children: [
       {
         find(post) {
-          const options = { fields: { username: 1 }};
+          const options = { fields: { username: 1, profile: 1 }};
           return Meteor.users.find({ _id : post.owner }, options);
         }
       }
@@ -41,8 +41,8 @@ Meteor.publishComposite('posts', function(options: Options, searchString: string
     children: [
       {
         find(post) {
-          const options = { fields: { username: 1 }};
-          return Meteor.users.find({ _id : post.owner });
+          const options = { fields: { username: 1, profile: 1 }};
+          return Meteor.users.find({ _id : post.owner }, options);
         }
       }
     ]

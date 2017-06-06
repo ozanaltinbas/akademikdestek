@@ -38,9 +38,8 @@ export function startServiceConfiguration() : void {
 
     ServiceConfiguration.configurations.insert({
         service: 'instagram',
-        scope: 'basic',
-        clientId: 'ea6d736d27184361bd2d96c0d67eda4c',
-        secret: 'a0ebf3895f124090b3f6026d5cb03922'
+        clientId: '084cd11383664a8ba7726d7ba6797554',
+        secret: 'df55d3d15c9f440994086d2ecc2668ad'
     });
 
 }

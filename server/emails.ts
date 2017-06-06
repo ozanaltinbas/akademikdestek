@@ -11,7 +11,7 @@ Accounts.emailTemplates.verifyEmail = {
         let emailAddress   = user.emails[0].address,
             urlWithoutHash = url.replace( '#/', '' ),
             supportEmail   = "academikdestek@gmail.com",
-            emailBody      = `Mail adresinizi (${emailAddress}) doğrulamak için \n\n${urlWithoutHash}\n\n linkini tıklanıyınız. Eğer bu onay mailini siz talep etmediyseniz, lütfen bu postayı görmezden gelin. Eğer yanlış gittiğini düşündüğünüz herhangi birşey olursa, lütfen bizimle iletişime geçin: ${supportEmail}.`;
+            emailBody      = `Mail adresinizi (${emailAddress}) doğrulamak için \n\n${urlWithoutHash}\n\nlinkini tıklanıyınız. Eğer bu onay mailini siz talep etmediyseniz, lütfen bu postayı görmezden gelin. Eğer yanlış gittiğini düşündüğünüz herhangi birşey olursa, lütfen bizimle iletişime geçin: ${supportEmail}.`;
 
         return emailBody;
     }
@@ -24,7 +24,7 @@ Accounts.emailTemplates.resetPassword = {
     text( user, url ) {
         let urlWithoutHash = url.replace( '#/', '' ),
             supportEmail   = "academikdestek@gmail.com",
-            emailBody      = `Şifrenizi yenilemek için \n\n${urlWithoutHash}\n\n linkini tıklanıyınız. Eğer bu onay mailini siz talep etmediyseniz, lütfen bu postayı görmezden gelin. Eğer yanlış gittiğini düşündüğünüz herhangi birşey olursa, lütfen bizimle iletişime geçin: ${supportEmail}.`;
+            emailBody      = `Şifrenizi yenilemek için \n\n${urlWithoutHash}\n\nlinkini tıklanıyınız. Eğer bu onay mailini siz talep etmediyseniz, lütfen bu postayı görmezden gelin. Eğer yanlış gittiğini düşündüğünüz herhangi birşey olursa, lütfen bizimle iletişime geçin: ${supportEmail}.`;
 
         return emailBody;
     }
