@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MeteorObservable } from 'meteor-rxjs';
 import { AccountsService } from '../../../services/accounts.service';
 
-import '../../../../../both/methods/user.methods.ts';
-
 import template from './signup.component.html';
 import style from '../accounts.scss';
 

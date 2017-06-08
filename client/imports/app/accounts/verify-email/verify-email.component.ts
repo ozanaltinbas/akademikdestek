@@ -4,8 +4,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AccountsService } from '../../../services/accounts.service';
 
-import '../../../../../both/methods/user.methods.ts';
-
 import template from './verify-email.component.html';
 import style from '../accounts.scss';
 

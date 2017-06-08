@@ -5,8 +5,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { AccountsService } from '../../../services/accounts.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import '../../../../../both/methods/user.methods.ts';
-
 import template from './reset-password.component.html';
 import style from '../accounts.scss';
 
