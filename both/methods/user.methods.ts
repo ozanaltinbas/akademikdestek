@@ -37,8 +37,11 @@ Meteor.methods({
     sendVerificationLink(userId) {
         // validate the userId
         check(userId, String);
-        // send a verification link to the user.
-        Accounts.sendVerificationEmail(userId);
+        // change action to server
+        if (Meteor.isServer) {
+            // send a verification link to the user.
+            Accounts.sendVerificationEmail(userId);
+        }
     },
     loginUserValidate: function (user: any) {
         // validate the user input
@@ -86,7 +89,10 @@ Meteor.methods({
                     // check email verification
                     if(!userObject.emails[0].verified) {
                         // send a verification link to the user.
-                        Accounts.sendVerificationEmail(userObject._id);
+                        if (Meteor.isServer) {
+                            // change action to server
+                            Accounts.sendVerificationEmail(userObject._id);
+                        }
                     } else {
                         // it is already verified
                         throw new Meteor.Error("email-verified", "email-verified");
@@ -116,8 +122,11 @@ Meteor.methods({
                 }
                 // if user found
                 if (userObject) {
-                    // send reset password link
-                    Accounts.sendResetPasswordEmail(userObject._id);
+                    // change action to server
+                    if (Meteor.isServer) {
+                        // send reset password link
+                        Accounts.sendResetPasswordEmail(userObject._id);
+                    }
                 } else {
                     // not a user
                     throw new Meteor.Error("not-a-user", "not-a-user");
