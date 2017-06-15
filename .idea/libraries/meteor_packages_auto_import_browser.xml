@@ -2,6 +2,7 @@
   <library name="meteor-packages-auto-import-browser" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/gadicohen_robots-txt/0.0.10/web.browser/packages/gadicohen_robots-txt.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram_login_button.css" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram_client.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram.js" />
@@ -204,7 +205,6 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/multiple.done.before.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/interfaces/bdd.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/uncaught.hook.js" />
-        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/force-ssl/1.0.13/web.browser/force_ssl_common.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/uncaught.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/timeout.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/passing.js" />
@@ -479,6 +479,7 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/gadicohen_robots-txt/0.0.10/web.browser/packages/gadicohen_robots-txt.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram_login_button.css" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram_client.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bozhao_accounts-instagram/0.2.2/web.browser/instagram.js" />
@@ -681,7 +682,6 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/multiple.done.before.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/interfaces/bdd.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/uncaught.hook.js" />
-      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/force-ssl/1.0.13/web.browser/force_ssl_common.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/uncaught.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/timeout.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/integration/fixtures/passing.js" />

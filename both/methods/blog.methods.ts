@@ -7,14 +7,16 @@ import { Roles } from 'meteor/alanning:roles';
 
 Meteor.methods({
     insertBlog: function (title: string, subtitle: string, content: string, owner: string) {
+        // validate user inputs
         check(title, String);
         check(subtitle, String);
         check(content, String);
         check(owner, String);
-
-        if (this.userId == owner) {
-            if (Meteor.isServer) {
-
+        // change action to server
+        if (Meteor.isServer) {
+            // if we are the current user
+            if (this.userId == owner) {
+                // build the blog object to be inserted
                 let blog: Blog = {
                     "title" : title,
                     "subtitle": subtitle,
@@ -23,6 +25,7 @@ Meteor.methods({
                     "public": true,
                     "createdAt": new Date()
                 }
+                // insert it now.
                 Blogs.insert(blog);
             }
         }
@@ -31,10 +34,10 @@ Meteor.methods({
         // validate user inputs
         check(blogId, String);
         check(user, String);
-        // if it is current user
-        if (this.userId == user) {
-            // convert action to server
-            if (Meteor.isServer) {
+        // convert action to server
+        if (Meteor.isServer) {
+            // if it is current user
+            if (this.userId == user) {
                 // delete it
                 Blogs.remove(blogId);
                 // also delete related post comments

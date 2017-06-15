@@ -12,7 +12,7 @@
   },
   "INTRO": {
     "GREETING": "WELCOME TO <span class='color'>ACADEMICSUPPORT</span>",
-    "DESCRIPTION": "We strengthen your academic career with our academic support",
+    "DESCRIPTION": "We strengthen your academic career with academic support",
     "START_USING": "Start Using"
   },
   "ABOUT": {
@@ -72,7 +72,7 @@
     "OUR_SERVICES":"TAKE A LOOK TO <strong>OUR SERVICES</strong>",
     "SERVICE_ONE": {
       "TITLE": "Editing Thesis",
-      "DESCRIPTION": "Reeditting your thesis, paper, book, etc. according to guidelines, table of contents- figures- tables creation, adding references and bibliography, page numbering and formatting İn M.S. WORD, LATEX or any word processing software. You can also refer us for tracing of your submission processes."
+      "DESCRIPTION": "Editing your thesis, paper, book, etc. according to guidelines, table of contents- figures- tables creation, adding references and bibliography, page numbering and formatting İn M.S. WORD, LATEX or any word processing software. You can also refer us for tracing of your submission processes."
     },
     "SERVICE_TWO": {
       "TITLE": "Data Editing/ Analysis",
@@ -80,15 +80,15 @@
     },
     "SERVICE_THREE": {
       "TITLE": "Algorithm Construction, Mathematical Calculation, Optimization",
-      "DESCRIPTION": "Algortihm designs for your analyses, improving/correcting your algorithms, mathematicla and probabilistic optimization, approaches to complex and NP_Hard problems with evalutionary and meta-heuristic algorithms."
+      "DESCRIPTION": "Algorithm designs for your analyses, improving/correcting your algorithms, mathematical and probabilistic optimization, approaches to complex and NP-Hard problems with evolutionary and meta-heuristic algorithms."
     },
     "SERVICE_FOUR": {
       "TITLE": "Building E-Commerce Web Sites and Management",
-      "DESCRIPTION": "İnternet üzerinden veri toplama, anket uygulamaları"
+      "DESCRIPTION": "Data collection via Internet, survey applications."
     },
     "SERVICE_SIX": {
       "TITLE": "Simulation Studies",
-      "DESCRIPTION": "Simulation of real world porblems, searching for optimization with design and development studies."
+      "DESCRIPTION": "Simulation of real world problems, searching for optimization with design and development studies."
     },
     "SERVICE_SEVEN": {
       "TITLE": "Turkish- English Text Checks",

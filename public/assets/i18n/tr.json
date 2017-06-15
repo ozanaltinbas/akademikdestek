@@ -12,14 +12,14 @@
   },
   "INTRO": {
     "GREETING": "<span class='color'>AKADEMİK</span>DESTEK'E HOŞGELDİNİZ",
-    "DESCRIPTION": "Akademik kariyerinizi, akademik destek ile <strong>daha da güçlendiriyoruz</strong>",
+    "DESCRIPTION": "Akademik kariyerinizi, akademik destek ile <strong>güçlendiriyoruz</strong>",
     "START_USING": "Kullanmaya Başla"
   },
   "ABOUT": {
-    "SOME_WORDS": "<strong>HAKKIMIZDA</strong> BİRKAÇ KELİME",
-    "DESCRIPTION": "Akademik kadromuz sizlere, çeşitli uzmanlık alanlarında ihtiyaç duyduğunuz birçok destek ve hizmeti vermek için burada. Hizmetlerimizle ilgili bilgilere <a href='#services' class='page-scroll'><strong>buradan</strong></a> ulaşabilirsiniz.",
+    "SOME_WORDS": "<strong>HAKKIMIZDA</strong>",
+    "DESCRIPTION": "Akademik kadromuz, çeşitli uzmanlık alanlarında ihtiyaç duyduğunuz destek ve hizmeti vermek için burada. Hizmetlerimizle ilgili bilgilere <a href='#services' class='page-scroll'><strong>buradan</strong></a> ulaşabilirsiniz.",
     "CONTACT": "Sitemizdeki bağlantılardan e-posta ve sosyal medya hesaplarımız aracılığıyla bizlere ulaşabilirsiniz.",
-    "REPLY": "İsteğinize en kısa sürede yanıt verilecektir."
+    "REPLY": "Başvurunuza en kısa sürede yanıt verilecektir."
   },
   "TEAM": {
     "MEET_OUR_TEAM": "<strong>EKİBİMİZLE</strong> TANIŞIN",
@@ -98,8 +98,8 @@
     "ALL_RIGHTS_RESERVED": "Tüm Hakları Saklıdır."
   },
   "CONTACT": {
-    "FEEL_FREE_TO_CONTACT": "<strong>BİZE ULAŞMAK</strong> İÇİN KENDİNİZİ RAHAT HİSSEDİN",
-    "CONTACT_DESCRIPTION": "Bizimle istediğiniz zaman iletişime geçebilirsiniz. En kısa sürede sorularınıza ve taleplerinize yanıt veriyor olucaz.",
+    "FEEL_FREE_TO_CONTACT": "<strong>BİZE ULAŞIN</strong>",
+    "CONTACT_DESCRIPTION": "Bizimle istediğiniz zaman iletişime geçebilirsiniz. Başvurunuza en kısa sürede yanıt vereceğiz.",
     "EMAIL": "E-Posta Adresi",
     "ENTER_EMAIL": "E-Posta girin",
     "ENTER_SUBJECT": "Konu girin",
@@ -223,7 +223,7 @@
       "Verify email link expired" : "E-Posta doğrulama linki geçerli değildir. Lütfen yeni bir link gönderip işleminize devam edin.",
       "All fields required" : "Tüm alanların girilmiş olması gerekmektedir.",
       "too-many-requests" : "Çok fazla istek gönderdiniz. Lütfen kısa bir süre sonra tekrar deneyin.",
-      "not-a-user" : "Bu E-Posta adresi ya da kullanıcı adı henüz alınmamış.",
+      "not-a-user" : "Bu E-Posta adresi ya da Kullanıcı Adı henüz alınmamış.",
       "username-required" : "Kullanıcı adı girmeniz gerekmektedir.",
       "username-invalid-character" : "Geçerli bir kullanıcı adı girmeniz gerekmektedir.",
       "username-min-length" : "Girdiğiniz kullanıcı adı en az 3 karakter uzunluğunda olmalıdır.",

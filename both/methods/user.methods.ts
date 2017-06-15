@@ -28,8 +28,11 @@ Meteor.methods({
                     imageUrl: ''
                 }
             });
-            // this is user right ?
-            Roles.addUsersToRoles( userId, [ 'user' ] );
+            // if the user is created successfully
+            if (userId) {
+                // add this one as a user.
+                Roles.addUsersToRoles( userId, [ 'user' ] );
+            }
             // then return userId
             return userId;
         }

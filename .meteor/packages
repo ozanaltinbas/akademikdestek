@@ -39,5 +39,4 @@ twbs:bootstrap
 jalik:ufs
 jalik:ufs-gridfs
 bozhao:accounts-instagram
-force-ssl
-dferber:prerender
+gadicohen:sitemaps

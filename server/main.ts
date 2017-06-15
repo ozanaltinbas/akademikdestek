@@ -10,6 +10,7 @@ import { loadUsers } from './fixtures/users';
 import { startServiceConfiguration } from './imports/service-configuration';
 import { startSmtpConfiguration } from './imports/smtp';
 import { accountsConfig } from './accounts-config';
+import { preRender } from './prerender';
 
 Meteor.startup(() => {
     startServiceConfiguration();

@@ -11,14 +11,15 @@ Meteor.methods({
         check(blogId, String);
         check(content, String);
         check(owner, String);
-        // everything seems OK. if current user tries to insert a new comment
-        if (this.userId == owner) {
-            // change action to server
-            if (Meteor.isServer) {
+        // change action to server
+        if (Meteor.isServer) {
+            // everything seems OK. if current user tries to insert a new comment
+            if (this.userId == owner) {
                 // create blogComment object to be inserted
                 let blogComment: BlogComment = {
                     'blogId': blogId,
                     'content': content,
+                    'indexContent' : content.replace(/ /g, '').toLowerCase(),
                     'owner': owner,
                     'public': true,
                     'createdAt': new Date()
@@ -33,14 +34,17 @@ Meteor.methods({
         // validate input values
         check(blogCommentId, String);
         check(owner, String);
-        // everything seems OK. if current user tries to insert a new comment
-        if (this.userId == owner) {
-            // get the blog comment
-            let blogComment = BlogComments.findOne({ _id : blogCommentId, owner : owner });
-            // if found
-            if (blogComment) {
-                // delete it
-                BlogComments.remove(blogCommentId);
+        // change action to server
+        if (Meteor.isServer) {
+            // everything seems OK. if current user tries to insert a new comment
+            if (this.userId == owner) {
+                // get the blog comment
+                let blogComment = BlogComments.findOne({ _id : blogCommentId, owner : owner });
+                // if found
+                if (blogComment) {
+                    // delete it
+                    BlogComments.remove(blogCommentId);
+                }
             }
         }
     },
@@ -48,12 +52,15 @@ Meteor.methods({
         // validate user inputs
         check(blogCommentId, String);
         check(user, String);
-        // if it is current user
-        if (this.userId == user) {
-            // convert action to serve. if the user is an admin
-            if (Roles.userIsInRole(user, ['admin'])) {
-                // Thats it. Post can be set as private
-                BlogComments.update(blogCommentId, { set: { public : false } })
+        // change action to server
+        if (Meteor.isServer) {
+            // if it is current user
+            if (this.userId == user) {
+                // convert action to serve. if the user is an admin
+                if (Roles.userIsInRole(user, ['admin'])) {
+                    // Thats it. Post can be set as private
+                    BlogComments.update(blogCommentId, { set: { public : false } })
+                }
             }
         }
     }

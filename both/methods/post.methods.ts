@@ -13,10 +13,10 @@ Meteor.methods({
             content : post.content,
             owner : post.owner
         });
-        // if it is current user
-        if (this.userId == post.owner) {
-            // convert action to server
-            if (Meteor.isServer) {
+        // convert action to server
+        if (Meteor.isServer) {
+            // if it is current user
+            if (this.userId == post.owner) {
                 // create the post object
                 let postObject: Post = {
                     'title' : post.title,
@@ -36,9 +36,10 @@ Meteor.methods({
         check(postId, String);
         check(user, String);
         // if it is current user
-        if (this.userId == user) {
-            // convert action to server
-            if (Meteor.isServer) {
+        // convert action to server
+        if (Meteor.isServer) {
+            // if we are the current user
+            if (this.userId == user) {
                 // delete it
                 Posts.remove(postId);
                 // also delete related post comments
@@ -50,10 +51,10 @@ Meteor.methods({
         // validate user inputs
         check(postId, String);
         check(user, String);
-        // if it is current user
-        if (this.userId == user) {
-            // convert action to serve.
-            if (Meteor.isServer) {
+        // convert action to serve.
+        if (Meteor.isServer) {
+            // if it is current user
+            if (this.userId == user) {
                 //  if the user is an admin
                 if (Roles.userIsInRole(user, ['admin'])) {
                     // Thats it. Post can be set as private
